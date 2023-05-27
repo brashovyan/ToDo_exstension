@@ -7,6 +7,7 @@
         <input type="email" placeholder="Email" v-model="login_email">
         <input type="password" placeholder="Password" v-model="login_password">
         <button @click="login_try">Войти</button>
+        <button @click="login_try_google">Гугл</button>
         <button @click="register_show">Зарегистрироваться</button>
       </div>
     </template>
@@ -141,6 +142,12 @@ export default {
       axios.post("https://663b-130-0-219-137.ngrok-free.app/login_user", article)
         .then(response => {this.user_id = response.data.user_id; this.save_user();})
         .catch(error => { console.log(error.message); });
+    },
+
+    login_try_google(){
+      chrome.identity.getAuthToken({ interactive: true }, function (token) {
+        console.log(token);
+      });
     },
 
 

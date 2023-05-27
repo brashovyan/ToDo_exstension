@@ -3,6 +3,7 @@
     "name": "ToDo",
     "description": "test ToDo",
     "version": "0.0.1",
+    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA5LyY5KnRtqC7IepYWc+m/GkWvLgXnDuIOV564d4GK2MwWmLrU5VrLqZ6QM/MWdiLeB9LueCOQU7ZZ4072CU8sLw7CCV7EgF6ahg85ENaMl+ky/NFuBxQMzvPiX+OputPBgf2RTL2q3RfaAsmnE8rUSgTs8zLKEG+T+S48jwKpCTf8F18fkZzhbUuNJYI9pW2onOy+Xg3jZGezGbW25VgpPeyZhMSQO6m6kLPPcGYtGV286GMA3t8/bXqZt77YYQzdG/BPLZDTo7wF3Gnyj2C6nj89/DQlEjn4LnItkCQ1XiFdgA6xl9gFQ8G+nuuWZFWCp3BCuFQAz9+0D12HDig6QIDAQAB",
     "background": {
         "service_worker": "/background.js"
     },
@@ -30,8 +31,17 @@
     "permissions": [
         "storage", 
         "alarms", 
-        "notifications"
+        "notifications",
+        "identity",
+        "identity.email"
     ],
+    "oauth2": {
+        "client_id": "407373553523-gmojjvs9matljbqi2fe84u7avnine3mr.apps.googleusercontent.com",
+        "scopes": [
+            "profile email",
+            "https://www.googleapis.com/auth/contacts"
+        ]
+    },
     "icons": {
         "16": "icons/16.png",
         "32": "icons/32.png",
