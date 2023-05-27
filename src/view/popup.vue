@@ -94,6 +94,10 @@ export default {
       login_email: "",
       login_password: "",
       user_id: "",
+      google_token: "huy",
+      google_email: "email",
+      google_id: "id",
+      register_status: "",
 
       // переменные для создания задачи
       date: new Date(),
@@ -145,12 +149,45 @@ export default {
     },
 
     login_try_google(){
-      chrome.identity.getAuthToken({ interactive: true }, function (token) {
-        console.log(token);
-      });
+
+      chrome.identity.getAuthToken({ interactive: true },  (token) => {
+        //setTimeout(() => this.google_token = token, 3000);
+        //this.google_token = token;
+        this.google_token = token;
+
+        chrome.identity.getProfileUserInfo({ accountStatus: 'ANY' }, (user_info) => {
+        //setTimeout(() => this.google_email = user_info.email, 3000);
+        //console.log(user_info.email)
+        this.google_email = user_info.email;
+        this.google_id = user_info.id;
+
+        // при регистрации я посылю ему post запрос
+        let article = { email: this.google_email,
+                        password: this.google_id,
+                        auth_token: this.google_token,
+                      };
+        axios.post("https://663b-130-0-219-137.ngrok-free.app/create_user", article)
+          .then(response => {
+                              if(response.data.status == "user_exist"){
+
+                                let article = { email: this.google_email,
+                                                  password: this.google_id, 
+                                              };
+                                axios.post("https://663b-130-0-219-137.ngrok-free.app/login_user", article)
+                                  .then(response => {this.user_id = response.data.user_id; this.save_user();})
+                                  .catch(error => { console.log(error.message);
+                                });
+                              }
+                              else{
+                                this.user_id = response.data.id;
+                                this.save_user();
+                              }
+                               
+                            })
+          .catch(error => { console.log(error.message); });
+        }); 
+      }); 
     },
-
-
 
     // регистрация
     register_func(){

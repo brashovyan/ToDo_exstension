@@ -10,10 +10,11 @@ chrome.runtime.onInstalled.addListener(() => {
   });
 
 // запускаю таймер, который периодично будет вызывать функцию для проверки задач
-setInterval(check_tasks, 20000);
+setInterval(check_tasks, 100000);
 
 function check_tasks(){
     // посылаю post запрос
+    console.log("Отправил запрос");
     chrome.storage.local.get(["user_id"]).then((result) => {
 
         fetch('https://663b-130-0-219-137.ngrok-free.app/check_tasks', {
