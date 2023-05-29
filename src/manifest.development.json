@@ -1,11 +1,12 @@
 {
     "manifest_version": 3,
-    "name": "ToDo",
-    "description": "test ToDo",
+    "name": "Shiva",
+    "description": "Приложения для людей с сдвг. Либо просто список задач напоминанием)",
     "version": "0.0.1",
     "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsMYFOu54eQE+Zq05U3VNsR4I8YMC9EcfwJ6/9adhi5AmG5VkP7NY4YxNjhTwD/JgrX/2cn7TvDWo4lA44+gFEr+KAy9wq4u4qFuLdDBJsx6L8zTJxYW9/M08vyHmjvqLjuPPAa+xDl2Z0lwHqI9e2AcxXmgW5dLT7VkJ4pHqxkvcX4bZ15ErtabKYxspCSQ7POhI837R5KB8ea2GqRkF7cziO7Yg9YqZ5SM2k7Oc1dVinZ10enoV2XS/Jh2ETkjswhSpnEyLVoXu5yqhP8/tVMEAeGGEHs6lGw6wS6RtGupO7nQOIu5mPJ571SOToL1Ix7zFQ1X6vp0j34ARU7SClQIDAQAB",
     "background": {
-        "service_worker": "/background.js"
+        "service_worker": "/background.js",
+        "type": "module"
     },
     "action": {
         "default_popup": "popup.html",
@@ -39,7 +40,8 @@
         "client_id": "407373553523-bpurq76lm602fque5eak7v87k4i3utqb.apps.googleusercontent.com",
         "scopes": [
             "profile email",
-            "https://www.googleapis.com/auth/contacts"
+            "https://www.googleapis.com/auth/contacts",
+            "https://www.googleapis.com/auth/calendar"
         ]
     },
     "icons": {

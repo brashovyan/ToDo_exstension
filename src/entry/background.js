@@ -1,8 +1,8 @@
 // При установке отправляю уведомление с инфой об расширении
 chrome.runtime.onInstalled.addListener(() => {
     var options = {
-        title: "Спасибо за установку ToDO!",
-        message: "Тут короче описание",
+        title: "Спасибо за установку Shiva!",
+        message: "Для начала работы зарегистрируйтесь в нашем расширении, либо войдите через Google аккаунт.",
         iconUrl: "icons/128.png",
         type: "basic",
       };
@@ -10,14 +10,14 @@ chrome.runtime.onInstalled.addListener(() => {
   });
 
 // запускаю таймер, который периодично будет вызывать функцию для проверки задач
-setInterval(check_tasks, 100000);
+setInterval(check_tasks, 30000);
 
 function check_tasks(){
     // посылаю post запрос
     console.log("Отправил запрос");
     chrome.storage.local.get(["user_id"]).then((result) => {
 
-        fetch('https://663b-130-0-219-137.ngrok-free.app/check_tasks', {
+        fetch('https://3a7a-91-193-218-144.ngrok-free.app/check_tasks', {
         method: 'POST',
         body: JSON.stringify({
                 user_id : result['user_id'].toString(),
@@ -62,10 +62,11 @@ function check_response(received_response){
             if (notifId === myNotificationID) {
                 if (btnIdx === 0) {
                     // выполнить
-                    fetch('https://663b-130-0-219-137.ngrok-free.app/', {
+                    fetch('https://3a7a-91-193-218-144.ngrok-free.app/change_task_status', {
                     method: 'POST',
                     body: JSON.stringify({
-                            user_id : result['user_id'].toString(),
+                            task_id : received_response.id,
+                            status : "done",
                         })
                     }).then(function(response) {
                         // Стоит проверить код ответа.
@@ -79,7 +80,7 @@ function check_response(received_response){
                         // Далее будем использовать только JSON из тела ответа.
                         return response.json();
                     }).then(function(data) {
-                        check_response(data.task);
+                        console.log(data);
                     }).catch(function(error) {
                         console.log(error);
                     });
@@ -87,10 +88,11 @@ function check_response(received_response){
                     chrome.notifications.clear(myNotificationID);
                 } else if (btnIdx === 1) {
                     // отклонить
-                    fetch('https://663b-130-0-219-137.ngrok-free.app/', {
+                    fetch('https://3a7a-91-193-218-144.ngrok-free.app/change_task_status', {
                     method: 'POST',
                     body: JSON.stringify({
-                            user_id : result['user_id'].toString(),
+                                task_id : received_response.id,
+                                status : "cancel",
                         })
                     }).then(function(response) {
                         // Стоит проверить код ответа.
@@ -104,7 +106,7 @@ function check_response(received_response){
                         // Далее будем использовать только JSON из тела ответа.
                         return response.json();
                     }).then(function(data) {
-                        check_response(data.task);
+                        console.log(data);
                     }).catch(function(error) {
                         console.log(error);
                     });
