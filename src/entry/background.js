@@ -1,12 +1,12 @@
 // При установке отправляю уведомление с инфой об расширении
 chrome.runtime.onInstalled.addListener(() => {
-    var options = {
+    /*var options = {
         title: "Спасибо за установку Shiva!",
         message: "Для начала работы зарегистрируйтесь в нашем расширении, либо войдите через Google аккаунт.",
         iconUrl: "icons/128.png",
         type: "basic",
       };
-      chrome.notifications.create("", options);
+      chrome.notifications.create("", options);*/
   });
 
 // запускаю таймер, который периодично будет вызывать функцию для проверки задач
@@ -17,7 +17,7 @@ function check_tasks(){
     console.log("Отправил запрос");
     chrome.storage.local.get(["user_id"]).then((result) => {
 
-        fetch('https://3a7a-91-193-218-144.ngrok-free.app/check_tasks', {
+        fetch('https://d10e-130-0-219-137.ngrok-free.app/check_tasks', {
         method: 'POST',
         body: JSON.stringify({
                 user_id : result['user_id'].toString(),
@@ -62,7 +62,7 @@ function check_response(received_response){
             if (notifId === myNotificationID) {
                 if (btnIdx === 0) {
                     // выполнить
-                    fetch('https://3a7a-91-193-218-144.ngrok-free.app/change_task_status', {
+                    fetch('https://d10e-130-0-219-137.ngrok-free.app/change_task_status', {
                     method: 'POST',
                     body: JSON.stringify({
                             task_id : received_response.id,
@@ -88,7 +88,7 @@ function check_response(received_response){
                     chrome.notifications.clear(myNotificationID);
                 } else if (btnIdx === 1) {
                     // отклонить
-                    fetch('https://3a7a-91-193-218-144.ngrok-free.app/change_task_status', {
+                    fetch('https://d10e-130-0-219-137.ngrok-free.app/change_task_status', {
                     method: 'POST',
                     body: JSON.stringify({
                                 task_id : received_response.id,

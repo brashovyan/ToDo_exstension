@@ -67,17 +67,33 @@
           <button @click="create_task" class="btn__task">Создать</button>
         </div>
       </div>
+
+      <div id="my-modal" class="modal">
+        <div class="modal-content">
+          <div class="modal-body">
+            <p>В процессе...</p>
+            <p>Ваша задача обрабатывается нейронной сетью. Это может занять до 30 секунд. Пожалуйста, подождите и не закрывайте расширение. Когда мы закончим, то перебросим вас на список задач.</p>
+            <div class="loader">
+              <div class="inner one"></div>
+              <div class="inner two"></div>
+              <div class="inner three"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
     </template>
 
     <!-- Список задач (главная) -->
     <template v-if="login_status == true && list_task == true ">
       <div class="main__buttons">
         <button class="main__btn" @click="logout_func">Выйти</button>
-        <div>
-          <button class="main__btn" @click="add_task_show">Добавить задачу</button>
-          <button class="main__btn" @click="statistic_show">Статистика</button>
-
-        </div>
+        <button class="main__btn" @click="add_task_show">Добавить задачу</button>
+        <button class="main__btn" @click="statistic_show">Статистика</button>
+        <button class="main__btn" @click="show_settings">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+        </button>
       </div>
       <div class="list__task__main">
         <template v-for="(task, index) in received_tasks.tasks" :key="index">
@@ -138,7 +154,7 @@ export default {
       user_task: "",
       answer: "",
       answer_error: "",
-      test: "",
+      response_message: "",
 
       // переменные для списка задач
       received_tasks: [],
@@ -149,6 +165,7 @@ export default {
   mounted() {
       // при открытии расширения
       this.login_func();
+      //this.list_task_show();
   },
 
   methods: {
@@ -177,7 +194,7 @@ export default {
       let article = { email: this.login_email,
                       password: this.login_password,
                     };
-      axios.post("https://3a7a-91-193-218-144.ngrok-free.app/login_user", article)
+      axios.post("https://d10e-130-0-219-137.ngrok-free.app/login_user", article)
         .then(response => {this.user_id = response.data.user_id; this.save_user();})
         .catch(error => { console.log(error.message); });
     },
@@ -196,14 +213,14 @@ export default {
                         password: this.google_id,
                         auth_token: this.google_token,
                       };
-        axios.post("https://3a7a-91-193-218-144.ngrok-free.app/create_user", article)
+        axios.post("https://d10e-130-0-219-137.ngrok-free.app/create_user", article)
           .then(response => {
                               if(response.data.status == "user_exist"){
 
                                 let article = { email: this.google_email,
                                                   password: this.google_id, 
                                               };
-                                axios.post("https://3a7a-91-193-218-144.ngrok-free.app/login_user", article)
+                                axios.post("https://d10e-130-0-219-137.ngrok-free.app/login_user", article)
                                   .then(response => {this.user_id = response.data.user_id; this.save_user();})
                                   .catch(error => { console.log(error.message);
                                 });
@@ -224,7 +241,7 @@ export default {
       let article = { email: this.register_email,
                       password: this.register_password,
                     };
-      axios.post("https://3a7a-91-193-218-144.ngrok-free.app/create_user", article)
+      axios.post("https://d10e-130-0-219-137.ngrok-free.app/create_user", article)
         .then(response => {this.user_id = response.data.user_id; this.check_for_welcome(); })
         .catch(error => { console.log(error.message); });
     },
@@ -254,14 +271,26 @@ export default {
         let article = { user_id: this.user_id,
                         auth_token: this.google_token,
                       };
-        axios.post("https://3a7a-91-193-218-144.ngrok-free.app/add_google_data", article)
+        axios.post("https://d10e-130-0-219-137.ngrok-free.app/add_google_data", article)
           .then(response => { this.save_user(); })
           .catch(error => { console.log(error.message); });
       }); 
     },
 
     add_notion(){
-      console.log("Заглушка");
+      let article = { user_id: this.user_id,
+                    };
+      axios.post("https://d10e-130-0-219-137.ngrok-free.app/redirect_to_notion", article)
+        .then(response => { console.log("Тяжело... Тяжело...");
+                              chrome.tabs.create({
+                              url: `${response.data.url}`,
+                              active: true
+                            }); 
+      
+                          })
+        .catch(error => { console.log(error.message); });
+
+              
     },
 
     settings(){
@@ -324,6 +353,10 @@ export default {
       this.welcome = false;
     },
 
+    show_settings(){
+      chrome.runtime.openOptionsPage();
+    },
+
     list_task_show(){
       this.login_status = true;
       this.list_task = true;
@@ -333,10 +366,19 @@ export default {
       this.login = false;
       this.welcome = false;
 
+      try{
+        let modal = document.querySelector('#my-modal');
+        modal.style.display = 'none';
+      }
+      catch{
+        console.log("Костыль");
+      };
+      
+
       // здесь я получаю список задач
       let article = { user_id: this.user_id,
                     };
-      axios.post("https://3a7a-91-193-218-144.ngrok-free.app/get_user_tasks", article)
+      axios.post("https://d10e-130-0-219-137.ngrok-free.app/get_user_tasks", article)
         .then(response => {this.received_tasks = response.data;})
         .catch(error => { console.log(error.message); });
     },
@@ -364,9 +406,12 @@ export default {
                         header: task_text,
                         start_time: task_date,
                       };
-      axios.post("https://3a7a-91-193-218-144.ngrok-free.app/create_task", article)
-        .then(response => {this.test = response.data; this.list_task_show()})
-        .catch(error => { this.test = error.message; this.list_task_show()});
+      axios.post("https://d10e-130-0-219-137.ngrok-free.app/create_task", article)
+        .then(response => {this.response_message = response.data; this.list_task_show(); })
+        .catch(error => { this.response_message = error.message; this.list_task_show(); });
+      
+        let modal = document.querySelector('#my-modal');
+        modal.style.display = 'block';
     },
   },
 }
@@ -469,7 +514,10 @@ body{
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
-  margin: 5px;
+  margin: 3px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: 25px;
 }
 
 .main__btn:hover{
@@ -532,9 +580,117 @@ body{
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
+  height: 20px;
 }
 
 .btn__login:hover{
   background-color: rgb(194, 194, 255);
 }
+
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  margin: 10% auto;
+  width: 60%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+}
+
+
+.modal-body {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background: #fff;
+  margin-top: 195px;
+  height: 235px;
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.loader {
+  position: absolute;
+  left: calc(50% - 32px);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  perspective: 800px;
+}
+
+
+.inner {
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;  
+}
+
+.inner.one {
+  left: 0%;
+  top: 0%;
+  animation: rotate-one 1s linear infinite;
+  border-bottom: 3px solid #808080;
+}
+
+.inner.two {
+  right: 0%;
+  top: 0%;
+  animation: rotate-two 1s linear infinite;
+  border-right: 3px solid #808080;
+}
+
+.inner.three {
+  right: 0%;
+  bottom: 0%;
+  animation: rotate-three 1s linear infinite;
+  border-top: 3px solid #808080;
+}
+
+@keyframes rotate-one {
+  0% {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+  }
+}
+
+@keyframes rotate-two {
+  0% {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+  }
+}
+
+@keyframes rotate-three {
+  0% {
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
+  }
+}
+
 </style>
