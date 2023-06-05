@@ -59,7 +59,87 @@
       <button class="login__back" @click="list_task_show">Назад</button>
       <div class="calendar__main__div">
         <div class="calendar__div">
-          <DatePicker v-model="date" mode="dateTime" :min-date='new Date()' is24hr/>
+          <DatePicker v-model="date" mode="date" :min-date='new Date()'/>
+          <div class="add__radio">
+
+            <template v-if="available_date.includes('08:00')">
+              <div class="div__radio"> 
+                <input type="radio" name="time" id="time1" value="1" v-model="add_time"  class="add__input">
+                <label for="time1">08:00 - 10:00</label>
+              </div>
+            </template>
+            <template v-else>
+              <div class="div__radio"> 
+                <input type="radio" name="time" id="time1" value="1" v-model="add_time" class="add__input" disabled>
+                <label for="time1">08:00 - 10:00</label>
+              </div>
+            </template>
+            
+            <template v-if="available_date.includes('10:00')">
+              <div class="div__radio">
+                <input type="radio" name="time" id="time2" value="2" v-model="add_time" class="add__input">
+                <label for="time2">10:00 - 12:00</label>
+              </div>
+            </template>
+            <template v-else>
+              <div class="div__radio">
+                <input type="radio" name="time" id="time2" value="2" v-model="add_time" class="add__input" disabled>
+                <label for="time2">10:00 - 12:00</label>
+              </div>
+            </template>
+            
+            <template v-if="available_date.includes('12:00')">
+              <div class="div__radio">
+                <input type="radio" name="time" id="time3" value="3" v-model="add_time" class="add__input">
+                <label for="time3">12:00 - 14:00</label>
+              </div>
+            </template>
+            <template v-else>
+              <div class="div__radio">
+                <input type="radio" name="time" id="time3" value="3" v-model="add_time" class="add__input" disabled>
+                <label for="time3">12:00 - 14:00</label>
+              </div>
+            </template>
+
+            <template v-if="available_date.includes('14:00')">
+              <div class="div__radio">
+                <input type="radio" name="time" id="time4" value="4" v-model="add_time" class="add__input">
+                <label for="time4">14:00 - 16:00</label>
+              </div>
+            </template>
+            <template v-else>
+              <div class="div__radio">
+                <input type="radio" name="time" id="time4" value="4" v-model="add_time" class="add__input" disabled>
+                <label for="time4">14:00 - 16:00</label>
+              </div>
+            </template>
+
+            <template v-if="available_date.includes('16:00')">
+              <div class="div__radio">
+                <input type="radio" name="time" id="time5" value="5" v-model="add_time" class="add__input">
+                <label for="time5">16:00 - 18:00</label>
+              </div>
+            </template>
+            <template v-else>
+              <div class="div__radio">
+                <input type="radio" name="time" id="time5" value="5" v-model="add_time" class="add__input" disabled>
+                <label for="time5">16:00 - 18:00</label>
+              </div>
+            </template>
+
+            <template v-if="available_date.includes('18:00')">
+              <div class="div__radio">
+                <input type="radio" name="time" id="time6" value="6" v-model="add_time" class="add__input">
+                <label for="time6">18:00 - 20:00</label>
+              </div>
+            </template>
+            <template v-else>
+              <div class="div__radio">
+                <input type="radio" name="time" id="time6" value="6" v-model="add_time" class="add__input" disabled>
+                <label for="time6">18:00 - 20:00</label>
+              </div>
+            </template>
+          </div>
         </div>
 
         <div class="add__task">
@@ -81,8 +161,6 @@
           </div>
         </div>
       </div>
-
-      
     </template>
 
     <!-- Список задач (главная) -->
@@ -99,9 +177,16 @@
         <template v-for="(task, index) in received_tasks.tasks" :key="index">
           <div class="task__div">
             <p>{{ task.header }}</p>
-            <p>{{ task.text }}</p>
-            <p>{{ task.start_time }}</p>
-            <P>{{ task.status }}</P>
+            <div class="list__description">
+              <p>{{ task.text }}</p>
+              <p>{{ task.start_time }}</p>
+              <P>{{ task.status }}</P>
+            </div>
+            <div class="list__btns">
+              <button class="list__btn1" @click="close_task(task.id)">Отлонить</button>
+              <button class="list__btn2" @click="relocate_task(task.id)">Отложить</button>
+              <button class="list__btn3" @click="complete_task(task.id)">Выполнено</button>
+            </div>
           </div>
         </template>
       </div>
@@ -151,21 +236,51 @@ export default {
 
       // переменные для создания задачи
       date: new Date(),
+      add_time: "",
       user_task: "",
       answer: "",
       answer_error: "",
       response_message: "",
+      available_date: "",
 
       // переменные для списка задач
-      received_tasks: [],
+      //received_tasks: [],
+      received_tasks: {
+          "tasks": [
+          {
+          "id": 1,
+          "user_id" : 1,
+          "header" : "Заголовок",
+          "text": "Тут короче большой текст задачи",
+          "start_time": "2023-05-26T14:00:00.808Z",
+          "status": "waiting",
+        },
+        {
+          "id": 2,
+          "user_id" : 2,
+          "header" : "Заголовок",
+          "text": "Тут короче большой текст задачи",
+          "start_time": "2023-05-26T14:00:00.808Z",
+          "status": "waiting",
+        },
+      ],
+    },
+        
+    
       tasks_error: "",
     }
   },
 
   mounted() {
       // при открытии расширения
-      this.login_func();
-      //this.list_task_show();
+      //this.login_func();
+      this.list_task_show();
+  },
+
+  watch: {
+    date: function(){ // при смене фильтра для процов
+      this.check_available_date();
+    }
   },
 
   methods: {
@@ -194,7 +309,7 @@ export default {
       let article = { email: this.login_email,
                       password: this.login_password,
                     };
-      axios.post("https://d10e-130-0-219-137.ngrok-free.app/login_user", article)
+      axios.post("https://043d-89-19-216-253.ngrok-free.app/login_user", article)
         .then(response => {this.user_id = response.data.user_id; this.save_user();})
         .catch(error => { console.log(error.message); });
     },
@@ -213,14 +328,14 @@ export default {
                         password: this.google_id,
                         auth_token: this.google_token,
                       };
-        axios.post("https://d10e-130-0-219-137.ngrok-free.app/create_user", article)
+        axios.post("https://043d-89-19-216-253.ngrok-free.app/create_user", article)
           .then(response => {
                               if(response.data.status == "user_exist"){
 
                                 let article = { email: this.google_email,
                                                   password: this.google_id, 
                                               };
-                                axios.post("https://d10e-130-0-219-137.ngrok-free.app/login_user", article)
+                                axios.post("https://043d-89-19-216-253.ngrok-free.app/login_user", article)
                                   .then(response => {this.user_id = response.data.user_id; this.save_user();})
                                   .catch(error => { console.log(error.message);
                                 });
@@ -241,7 +356,7 @@ export default {
       let article = { email: this.register_email,
                       password: this.register_password,
                     };
-      axios.post("https://d10e-130-0-219-137.ngrok-free.app/create_user", article)
+      axios.post("https://043d-89-19-216-253.ngrok-free.app/create_user", article)
         .then(response => {this.user_id = response.data.user_id; this.check_for_welcome(); })
         .catch(error => { console.log(error.message); });
     },
@@ -271,8 +386,14 @@ export default {
         let article = { user_id: this.user_id,
                         auth_token: this.google_token,
                       };
-        axios.post("https://d10e-130-0-219-137.ngrok-free.app/add_google_data", article)
-          .then(response => { this.save_user(); })
+        axios.post("https://043d-89-19-216-253.ngrok-free.app/add_google_data", article)
+          .then(response => { 
+                              if(Number(this.user_id) > 0){
+                                  chrome.storage.local.set({ user_id: this.user_id.toString() }).then(() => {
+                                  console.log(`Добавлен user_id ${this.user_id}`);
+                                });
+                              }
+                            })
           .catch(error => { console.log(error.message); });
       }); 
     },
@@ -280,7 +401,7 @@ export default {
     add_notion(){
       let article = { user_id: this.user_id,
                     };
-      axios.post("https://d10e-130-0-219-137.ngrok-free.app/redirect_to_notion", article)
+      axios.post("https://043d-89-19-216-253.ngrok-free.app/redirect_to_notion", article)
         .then(response => { console.log("Тяжело... Тяжело...");
                               chrome.tabs.create({
                               url: `${response.data.url}`,
@@ -289,8 +410,6 @@ export default {
       
                           })
         .catch(error => { console.log(error.message); });
-
-              
     },
 
     settings(){
@@ -331,6 +450,10 @@ export default {
       this.register = false;
       this.login = false;
       this.welcome = false;
+
+      if(this.available_date == ""){
+        this.check_available_date();
+      }
     },
 
     statistic_show(){
@@ -378,40 +501,104 @@ export default {
       // здесь я получаю список задач
       let article = { user_id: this.user_id,
                     };
-      axios.post("https://d10e-130-0-219-137.ngrok-free.app/get_user_tasks", article)
+      axios.post("https://043d-89-19-216-253.ngrok-free.app/get_user_tasks", article)
         .then(response => {this.received_tasks = response.data;})
         .catch(error => { console.log(error.message); });
     },
 
     // создать задачу
     create_task(){
+      if(this.add_time != ""){
+        let year = this.date.getFullYear();
+        let month = this.date.getMonth() + 1;
+        let day = this.date.getDate();
+      
+        /* getHours не работает, поэтому костыли
+        let s = this.date.toString();
+        s = s.split(":");
+        let hours = s[0].slice(-2);
+        let minutes = s[1]*/
+
+        let hours = "";
+
+        if(this.add_time == "1"){
+          hours = "8";
+        }
+        else if(this.add_time = "2"){
+          hours = "10";
+        }
+        else if(this.add_time = "3"){
+          hours = "12";
+        }
+        else if(this.add_time = "4"){
+          hours = "14";
+        }
+        else if(this.add_time = "5"){
+          hours = "16";
+        }
+        else if(this.add_time = "6"){
+          hours = "18";
+        }
+
+        // дата задачи (строка) в формате %Y-%m-%d %H:%M:%S
+        let task_date = `${year}-${month}-${day} ${hours}:00:00`;
+
+        // текст задачи
+        let task_text = this.user_task;
+
+        // post запрос бэку
+        let article = { user_id: this.user_id,
+                          header: task_text,
+                          start_time: task_date,
+                        };
+        axios.post("https://043d-89-19-216-253.ngrok-free.app/create_task", article)
+          .then(response => {this.response_message = response.data; this.list_task_show(); })
+          .catch(error => { this.response_message = error.message; this.list_task_show(); });
+        
+          let modal = document.querySelector('#my-modal');
+          modal.style.display = 'block';
+      }
+    },
+
+    check_available_date(){
+      console.log("Меня вызвали");
       let year = this.date.getFullYear();
       let month = this.date.getMonth() + 1;
       let day = this.date.getDate();
-     
-      // getHours не работает, поэтому костыли
-      let s = this.date.toString();
-      s = s.split(":");
-      let hours = s[0].slice(-2);
-      let minutes = s[1]
+      let article = { date: `${year}-${month}-${day}`,
+                      user_id: this.user_id,
+                    };
+      axios.post("https://043d-89-19-216-253.ngrok-free.app/get_available_time", article)
+        .then(response => {this.available_date = response.data.time_list; })
+        .catch(error => { console.log(error.message); });
+    },
 
-      // дата задачи (строка) в формате %Y-%m-%d %H:%M:%S
-      let task_date = `${year}-${month}-${day} ${hours}:${minutes}:00`;
+    close_task(task_id){
+      let article = { task_id: task_id,
+                      user_id: this.user_id,
+                    };
+      axios.post("https://043d-89-19-216-253.ngrok-free.app/get_available_time", article)
+        .then(response => {this.available_date = response.data.time_list; })
+        .catch(error => { console.log(error.message); });
+    },
 
-      // текст задачи
-      let task_text = this.user_task;
+    relocate_task(task_id){
+      let article = { task_id: task_id,
+                      user_id: this.user_id,
+                    };
+      axios.post("https://043d-89-19-216-253.ngrok-free.app/get_available_time", article)
+        .then(response => {this.available_date = response.data.time_list; })
+        .catch(error => { console.log(error.message); });
+    },
 
-      // post запрос бэку
-      let article = { user_id: this.user_id,
-                        header: task_text,
-                        start_time: task_date,
-                      };
-      axios.post("https://d10e-130-0-219-137.ngrok-free.app/create_task", article)
-        .then(response => {this.response_message = response.data; this.list_task_show(); })
-        .catch(error => { this.response_message = error.message; this.list_task_show(); });
-      
-        let modal = document.querySelector('#my-modal');
-        modal.style.display = 'block';
+    complete_task(task_id){
+      let article = { task_id: task_id,
+                      user_id: this.user_id,
+                    };
+      axios.post("https://043d-89-19-216-253.ngrok-free.app/get_available_time", article)
+        .then(response => {this.available_date = response.data.time_list; })
+        .catch(error => { console.log(error.message); });
+
     },
   },
 }
@@ -535,7 +722,7 @@ body{
 }
 
 .task__div{
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(255, 244, 218);
   border-radius: 0.5rem;
   margin: 5px;
   padding: 5px;
@@ -691,6 +878,83 @@ body{
   100% {
     transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
   }
+}
+
+.list__description{
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: #edffc9;
+  border-radius: 0.5rem;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.add__radio{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-top: 7px;
+}
+
+.add__input{
+  margin: 5px;
+  font-size: 16px;
+}
+
+.div__radio{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 5px;
+}
+
+.list__btns{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.list__btn1{
+  margin: 5px;
+  border-radius: 0.5rem;
+  border: none;
+  padding: 5px;
+  background-color: rgb(255, 184, 184);
+}
+
+.list__btn1:hover{
+  cursor: pointer;
+  background-color: rgb(255, 208, 208);
+}
+
+.list__btn2{
+  margin: 5px;
+  border-radius: 0.5rem;
+  border: none;
+  padding: 5px;
+  background-color: rgb(253, 255, 132);
+}
+
+.list__btn2:hover{
+  cursor: pointer;
+  background-color: rgb(254, 255, 199);
+}
+
+.list__btn3{
+  margin: 5px;
+  border-radius: 0.5rem;
+  border: none;
+  padding: 5px;
+  background-color: rgb(191, 255, 132);
+}
+
+.list__btn3:hover{
+  cursor: pointer;
+  background-color: rgb(224, 255, 195);
 }
 
 </style>
