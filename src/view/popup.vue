@@ -244,8 +244,9 @@ export default {
       available_date: "",
 
       // переменные для списка задач
-      //received_tasks: [],
-      received_tasks: {
+      received_tasks: [],
+      
+      /*received_tasks: {
           "tasks": [
           {
           "id": 1,
@@ -264,7 +265,7 @@ export default {
           "status": "waiting",
         },
       ],
-    },
+    },*/
         
     
       tasks_error: "",
@@ -273,8 +274,8 @@ export default {
 
   mounted() {
       // при открытии расширения
-      //this.login_func();
-      this.list_task_show();
+      this.login_func();
+      //this.list_task_show();
   },
 
   watch: {
