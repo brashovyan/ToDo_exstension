@@ -189,7 +189,7 @@
               <P>{{ task.status }}</P>
             </div>
             <div class="list__btns">
-              <button class="list__btn1" @click="close_task(task.id)">Отлонить</button>
+              <button class="list__btn1" @click="close_task(task.id)">Отклонить</button>
               <button class="list__btn2" @click="defer_task_show(task.id)">Отложить</button>
               <button class="list__btn3" @click="complete_task(task.id)">Выполнено</button>
             </div>
