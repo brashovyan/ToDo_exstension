@@ -144,7 +144,13 @@
 
         <div class="add__task">
           <textarea cols="29" rows="8" name="user_task" class="user__task" v-model="user_task"></textarea>
-          <button @click="create_task" class="btn__task">Создать</button>
+          <div class="div__add__input">
+            <button @click="create_task" class="btn__task">Создать</button>
+            <div class="div__input__number">
+              <p>Число подзадач:&nbsp;</p>
+              <input type="number" placeholder="Число" name="number_tickets" min="1" class="add__input__number" v-model="number_tickets">
+            </div>
+          </div>
         </div>
       </div>
 
@@ -337,6 +343,7 @@ export default {
       answer_error: "",
       response_message: "",
       available_date: "",
+      number_tickets: "5",
 
       // переменные для списка задач
       received_tasks: [],
@@ -408,7 +415,7 @@ export default {
       let article = { email: this.login_email,
                       password: this.login_password,
                     };
-      axios.post("https://8c18-91-193-218-144.ngrok-free.app/login_user", article)
+      axios.post("https://d41b-130-0-219-137.ngrok-free.app/login_user", article)
         .then(response => {this.user_id = response.data.user_id; this.save_user();})
         .catch(error => { console.log(error.message); });
     },
@@ -427,14 +434,14 @@ export default {
                         password: this.google_id,
                         auth_token: this.google_token,
                       };
-        axios.post("https://8c18-91-193-218-144.ngrok-free.app/create_user", article)
+        axios.post("https://d41b-130-0-219-137.ngrok-free.app/create_user", article)
           .then(response => {
                               if(response.data.status == "user_exist"){
 
                                 let article = { email: this.google_email,
                                                   password: this.google_id, 
                                               };
-                                axios.post("https://8c18-91-193-218-144.ngrok-free.app/login_user", article)
+                                axios.post("https://d41b-130-0-219-137.ngrok-free.app/login_user", article)
                                   .then(response => {this.user_id = response.data.user_id; this.save_user();})
                                   .catch(error => { console.log(error.message);
                                 });
@@ -455,7 +462,7 @@ export default {
       let article = { email: this.register_email,
                       password: this.register_password,
                     };
-      axios.post("https://8c18-91-193-218-144.ngrok-free.app/create_user", article)
+      axios.post("https://d41b-130-0-219-137.ngrok-free.app/create_user", article)
         .then(response => {this.user_id = response.data.user_id; this.check_for_welcome(); })
         .catch(error => { console.log(error.message); });
     },
@@ -485,7 +492,7 @@ export default {
         let article = { user_id: this.user_id,
                         auth_token: this.google_token,
                       };
-        axios.post("https://8c18-91-193-218-144.ngrok-free.app/add_google_data", article)
+        axios.post("https://d41b-130-0-219-137.ngrok-free.app/add_google_data", article)
           .then(response => { 
                               if(Number(this.user_id) > 0){
                                   chrome.storage.local.set({ user_id: this.user_id.toString() }).then(() => {
@@ -500,7 +507,7 @@ export default {
     add_notion(){
       let article = { user_id: this.user_id,
                     };
-      axios.post("https://8c18-91-193-218-144.ngrok-free.app/redirect_to_notion", article)
+      axios.post("https://d41b-130-0-219-137.ngrok-free.app/redirect_to_notion", article)
         .then(response => { console.log("Тяжело... Тяжело...");
                               chrome.tabs.create({
                               url: `${response.data.url}`,
@@ -604,7 +611,7 @@ export default {
       // здесь я получаю список задач
       let article = { user_id: this.user_id,
                     };
-      axios.post("https://8c18-91-193-218-144.ngrok-free.app/get_user_tasks", article)
+      axios.post("https://d41b-130-0-219-137.ngrok-free.app/get_user_tasks", article)
         .then(response => {this.received_tasks = response.data;})
         .catch(error => { console.log(error.message); });
     },
@@ -663,12 +670,18 @@ export default {
         // текст задачи
         let task_text = this.user_task;
 
+        this.number_tickets = Math.round(this.number_tickets);
+        if(this.number_tickets <= 0){
+          this.number_tickets = 5;
+        }
+
         // post запрос бэку
         let article = { user_id: this.user_id,
                           header: task_text,
                           start_time: task_date,
+                          task_num: this.number_tickets,
                         };
-        axios.post("https://8c18-91-193-218-144.ngrok-free.app/create_task", article)
+        axios.post("https://d41b-130-0-219-137.ngrok-free.app/create_task", article)
           .then(response => {this.response_message = response.data; this.list_task_show(); })
           .catch(error => { this.response_message = error.message; this.list_task_show(); });
         
@@ -684,7 +697,7 @@ export default {
       let article = { date: `${year}-${month}-${day}`,
                       user_id: this.user_id,
                     };
-      axios.post("https://8c18-91-193-218-144.ngrok-free.app/get_available_time", article)
+      axios.post("https://d41b-130-0-219-137.ngrok-free.app/get_available_time", article)
         .then(response => {this.available_date = response.data.time_list; })
         .catch(error => { console.log(error.message); });
     },
@@ -693,7 +706,7 @@ export default {
       let article = { task_id: task_id,
                       status: "cancel",
                     };
-      axios.post("https://8c18-91-193-218-144.ngrok-free.app/change_task_status", article)
+      axios.post("https://d41b-130-0-219-137.ngrok-free.app/change_task_status", article)
         .then(response => { this.list_task_show(); })
         .catch(error => { console.log(error.message); });
     },
@@ -702,7 +715,7 @@ export default {
       let article = { task_id: task_id,
                       status: "waiting",
                     };
-      axios.post("https://8c18-91-193-218-144.ngrok-free.app/change_task_status", article)
+      axios.post("https://d41b-130-0-219-137.ngrok-free.app/change_task_status", article)
         .then(response => { this.list_task_show(); })
         .catch(error => { console.log(error.message); });
     },
@@ -711,7 +724,7 @@ export default {
       let article = { task_id: task_id,
                       status: "done",
                     };
-      axios.post("https://8c18-91-193-218-144.ngrok-free.app/change_task_status", article)
+      axios.post("https://d41b-130-0-219-137.ngrok-free.app/change_task_status", article)
         .then(response => { this.list_task_show(); })
         .catch(error => { console.log(error.message); });
     },
@@ -751,7 +764,7 @@ export default {
                           task_id: this.defer_task_id,
                           start_time: task_date,
                         };
-        axios.post("https://8c18-91-193-218-144.ngrok-free.app/move_task_time", article)
+        axios.post("https://d41b-130-0-219-137.ngrok-free.app/move_task_time", article)
           .then(response => {this.response_message = response.data; this.list_task_show(); })
           .catch(error => { this.response_message = error.message; this.list_task_show(); });
         
@@ -1114,6 +1127,24 @@ body{
 .list__btn3:hover{
   cursor: pointer;
   background-color: rgb(224, 255, 195);
+}
+
+.div__add__input{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.div__input__number{
+  display: flex;
+  align-items: center;
+  width: 170px;
+  margin-top: -8px;
+}
+
+.add__input__number{
+  width: 59px;
+  height: 13px;
 }
 
 </style>

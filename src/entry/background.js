@@ -17,7 +17,7 @@ function check_tasks(){
     console.log("Отправил запрос");
     chrome.storage.local.get(["user_id"]).then((result) => {
 
-        fetch('https://8c18-91-193-218-144.ngrok-free.app/check_tasks', {
+        fetch('https://d41b-130-0-219-137.ngrok-free.app/check_tasks', {
         method: 'POST',
         body: JSON.stringify({
                 user_id : result['user_id'].toString(),
@@ -62,7 +62,7 @@ function check_response(received_response){
             if (notifId === myNotificationID) {
                 if (btnIdx === 0) {
                     // выполнить
-                    fetch('https://8c18-91-193-218-144.ngrok-free.app/change_task_status', {
+                    fetch('https://d41b-130-0-219-137.ngrok-free.app/change_task_status', {
                     method: 'POST',
                     body: JSON.stringify({
                             task_id : received_response.id,
@@ -88,7 +88,7 @@ function check_response(received_response){
                     chrome.notifications.clear(myNotificationID);
                 } else if (btnIdx === 1) {
                     // отклонить
-                    fetch('https://8c18-91-193-218-144.ngrok-free.app/change_task_status', {
+                    fetch('https://d41b-130-0-219-137.ngrok-free.app/change_task_status', {
                     method: 'POST',
                     body: JSON.stringify({
                                 task_id : received_response.id,
