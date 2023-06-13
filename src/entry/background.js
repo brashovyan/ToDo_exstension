@@ -1,12 +1,12 @@
 // При установке отправляю уведомление с инфой об расширении
 chrome.runtime.onInstalled.addListener(() => {
-    /*var options = {
-        title: "Спасибо за установку Shiva!",
-        message: "Для начала работы зарегистрируйтесь в нашем расширении, либо войдите через Google аккаунт.",
+    var options = {
+        title: "Thanks for installing!",
+        message: "To get started, register in our extension.",
         iconUrl: "icons/128.png",
         type: "basic",
       };
-      chrome.notifications.create("", options);*/
+      chrome.notifications.create("", options);
   });
 
 // запускаю таймер, который периодично будет вызывать функцию для проверки задач
@@ -51,8 +51,8 @@ function check_response(received_response){
             message: received_response.text.toString(),
             iconUrl: "icons/128.png",
             buttons: [
-                { title: 'Выполнить' },
-                { title: 'Отклонить' }
+                { title: 'Done' },
+                { title: 'Dismiss' }
               ],
             type: "basic",
           };

@@ -6,11 +6,11 @@
       <div class="login">
         <input type="email" placeholder="Email" v-model="login_email" class="input__login">
         <input type="password" placeholder="Password" v-model="login_password" class="input__login">
-        <button @click="login_try" class="btn__login">Войти</button>
+        <button @click="login_try" class="btn__login">Login</button>
         <button class="google__btn" @click="login_try_google"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 48 48" class="abcRioButtonSvg"><g><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path><path fill="none" d="M0 0h48v48H0z"></path></g>
                 </svg>
             </button>
-        <button @click="register_show" class="btn__login">Зарегистрироваться</button>
+        <button @click="register_show" class="btn__login">Register</button>
       </div>
     </template>
 
@@ -19,17 +19,17 @@
       <div class="login">
         <input type="email" placeholder="Email" v-model="register_email" class="input__login">
         <input type="password" placeholder="Password" v-model="register_password" class="input__login">
-        <button @click="register_func" class="btn__login">Регистрация</button>
-        <button @click="login_show" class="btn__login">Назад</button>
+        <button @click="register_func" class="btn__login">Register</button>
+        <button @click="login_show" class="btn__login">Back</button>
       </div>
     </template>
 
     <!-- Приветственное окно -->
     <template v-if="login_status == true && welcome == true">
       <div class="login">
-        <h1 class="welcome__h1">Добро пожаловать в Shiva!</h1>
-        <p class="welcome__p">У нас есть интеграция с Google календарём и Notion</p>
-        <p class="welcome__p">Для этого войдите в свои аккаунты:</p>
+        <h1 class="welcome__h1">Welcome to the Shiva!</h1>
+        <p class="welcome__p">We have integration with Google Calendar and Notion</p>
+        <p class="welcome__p">You can log in to your accounts:</p>
         <template v-if="google_token.length < 1">
           <div style="display: flex;">
             <button class="google__btn" @click="add_google"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 48 48" class="abcRioButtonSvg"><g><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path><path fill="none" d="M0 0h48v48H0z"></path></g>
@@ -39,7 +39,7 @@
             <button class="google__btn" @click="add_notion"><svg height="25" width="25" xmlns="http://www.w3.org/2000/svg" viewBox="12 0.18999999999999906 487.619 510.941"><path d="M96.085 91.118c15.81 12.845 21.741 11.865 51.43 9.884l279.888-16.806c5.936 0 1-5.922-.98-6.906L379.94 43.686c-8.907-6.915-20.773-14.834-43.516-12.853L65.408 50.6c-9.884.98-11.858 5.922-7.922 9.883zm16.804 65.228v294.491c0 15.827 7.909 21.748 25.71 20.769l307.597-17.799c17.81-.979 19.794-11.865 19.794-24.722V136.57c0-12.836-4.938-19.758-15.84-18.77l-321.442 18.77c-11.863.997-15.82 6.931-15.82 19.776zm303.659 15.797c1.972 8.903 0 17.798-8.92 18.799l-14.82 2.953v217.412c-12.868 6.916-24.734 10.87-34.622 10.87-15.831 0-19.796-4.945-31.654-19.76l-96.944-152.19v147.248l30.677 6.922s0 17.78-24.75 17.78l-68.23 3.958c-1.982-3.958 0-13.832 6.921-15.81l17.805-4.935V210.7l-24.721-1.981c-1.983-8.903 2.955-21.74 16.812-22.736l73.195-4.934 100.889 154.171V198.836l-25.723-2.952c-1.974-10.884 5.927-18.787 15.819-19.767zM42.653 23.919l281.9-20.76c34.618-2.969 43.525-.98 65.283 14.825l89.986 63.247c14.848 10.876 19.797 13.837 19.797 25.693v346.883c0 21.74-7.92 34.597-35.608 36.564L136.64 510.14c-20.785.991-30.677-1.971-41.562-15.815l-66.267-85.978C16.938 392.52 12 380.68 12 366.828V58.495c0-17.778 7.922-32.608 30.653-34.576z" fill-rule="evenodd"/></svg>
             </button>
           </div>
-          <p class="welcome__ps">P.s. входить нужно будет через ранее зарегистрированный аккаунт,а не через Google или Notion</p>
+          <p class="welcome__ps">P.s. Authorization will take place through previously entered login and password</p>
         </template>
         <template v-if="google_token.length > 1">
           <div style="display: flex;">
@@ -47,96 +47,96 @@
             <button class="google__btn" @click="add_notion"><svg height="25" width="25" xmlns="http://www.w3.org/2000/svg" viewBox="12 0.18999999999999906 487.619 510.941"><path d="M96.085 91.118c15.81 12.845 21.741 11.865 51.43 9.884l279.888-16.806c5.936 0 1-5.922-.98-6.906L379.94 43.686c-8.907-6.915-20.773-14.834-43.516-12.853L65.408 50.6c-9.884.98-11.858 5.922-7.922 9.883zm16.804 65.228v294.491c0 15.827 7.909 21.748 25.71 20.769l307.597-17.799c17.81-.979 19.794-11.865 19.794-24.722V136.57c0-12.836-4.938-19.758-15.84-18.77l-321.442 18.77c-11.863.997-15.82 6.931-15.82 19.776zm303.659 15.797c1.972 8.903 0 17.798-8.92 18.799l-14.82 2.953v217.412c-12.868 6.916-24.734 10.87-34.622 10.87-15.831 0-19.796-4.945-31.654-19.76l-96.944-152.19v147.248l30.677 6.922s0 17.78-24.75 17.78l-68.23 3.958c-1.982-3.958 0-13.832 6.921-15.81l17.805-4.935V210.7l-24.721-1.981c-1.983-8.903 2.955-21.74 16.812-22.736l73.195-4.934 100.889 154.171V198.836l-25.723-2.952c-1.974-10.884 5.927-18.787 15.819-19.767zM42.653 23.919l281.9-20.76c34.618-2.969 43.525-.98 65.283 14.825l89.986 63.247c14.848 10.876 19.797 13.837 19.797 25.693v346.883c0 21.74-7.92 34.597-35.608 36.564L136.64 510.14c-20.785.991-30.677-1.971-41.562-15.815l-66.267-85.978C16.938 392.52 12 380.68 12 366.828V58.495c0-17.778 7.922-32.608 30.653-34.576z" fill-rule="evenodd"/></svg>
             </button>
           </div>
-          <p class="welcome__ps">P.s. входить нужно будет через Google</p>
+          <p class="welcome__ps">P.s. You have registered by Google</p>
         </template>
-        <p class="welcome__p">Вы сможете это сделать в любой момент в настройках расширения</p>
-        <button @click="login_func" class="btn__task" style="width: auto; height: 40px;">Далее</button>
+        <p class="welcome__p">You can link accounts in the settings</p>
+        <button @click="login_func" class="btn__task" style="width: auto; height: 40px;">Continue</button>
       </div>
     </template>
 
     <!-- Формочка добавления задачи -->
     <template v-if="login_status == true && add_task == true">
-      <button class="login__back" @click="list_task_show">Назад</button>
+      <button class="login__back" @click="list_task_show">Back</button>
       <div class="calendar__main__div">
         <div class="calendar__div">
-          <DatePicker v-model="date" mode="date" :min-date='new Date()'/>
+          <DatePicker v-model="date" mode="date" :min-date='new Date()' locale="en"/>
           <div class="add__radio">
 
             <template v-if="available_date.includes('08:00')">
               <div class="div__radio"> 
                 <input type="radio" name="time" id="time1" value="1" v-model="add_time"  class="add__input">
-                <label for="time1">08:00 - 10:00</label>
+                <label for="time1">&nbsp;&nbsp;8 am - 10 am</label>
               </div>
             </template>
             <template v-else>
               <div class="div__radio"> 
                 <input type="radio" name="time" id="time1" value="1" v-model="add_time" class="add__input" disabled>
-                <label for="time1">08:00 - 10:00</label>
+                <label for="time1">&nbsp;&nbsp;8 am - 10 am</label>
               </div>
             </template>
             
             <template v-if="available_date.includes('10:00')">
               <div class="div__radio">
                 <input type="radio" name="time" id="time2" value="2" v-model="add_time" class="add__input">
-                <label for="time2">10:00 - 12:00</label>
+                <label for="time2">10 am - 12 pm</label>
               </div>
             </template>
             <template v-else>
               <div class="div__radio">
                 <input type="radio" name="time" id="time2" value="2" v-model="add_time" class="add__input" disabled>
-                <label for="time2">10:00 - 12:00</label>
+                <label for="time2">10 am - 12 pm</label>
               </div>
             </template>
             
             <template v-if="available_date.includes('12:00')">
               <div class="div__radio">
                 <input type="radio" name="time" id="time3" value="3" v-model="add_time" class="add__input">
-                <label for="time3">12:00 - 14:00</label>
+                <label for="time3">12 pm - 14 pm</label>
               </div>
             </template>
             <template v-else>
               <div class="div__radio">
                 <input type="radio" name="time" id="time3" value="3" v-model="add_time" class="add__input" disabled>
-                <label for="time3">12:00 - 14:00</label>
+                <label for="time3">12 pm - 14 pm</label>
               </div>
             </template>
 
             <template v-if="available_date.includes('14:00')">
               <div class="div__radio">
                 <input type="radio" name="time" id="time4" value="4" v-model="add_time" class="add__input">
-                <label for="time4">14:00 - 16:00</label>
+                <label for="time4">14 pm - 16 pm</label>
               </div>
             </template>
             <template v-else>
               <div class="div__radio">
                 <input type="radio" name="time" id="time4" value="4" v-model="add_time" class="add__input" disabled>
-                <label for="time4">14:00 - 16:00</label>
+                <label for="time4">14 pm - 16 pm</label>
               </div>
             </template>
 
             <template v-if="available_date.includes('16:00')">
               <div class="div__radio">
                 <input type="radio" name="time" id="time5" value="5" v-model="add_time" class="add__input">
-                <label for="time5">16:00 - 18:00</label>
+                <label for="time5">16 pm - 18 pm</label>
               </div>
             </template>
             <template v-else>
               <div class="div__radio">
                 <input type="radio" name="time" id="time5" value="5" v-model="add_time" class="add__input" disabled>
-                <label for="time5">16:00 - 18:00</label>
+                <label for="time5">16 pm - 18 pm</label>
               </div>
             </template>
 
             <template v-if="available_date.includes('18:00')">
               <div class="div__radio">
                 <input type="radio" name="time" id="time6" value="6" v-model="add_time" class="add__input">
-                <label for="time6">18:00 - 20:00</label>
+                <label for="time6">18 pm - 20 pm</label>
               </div>
             </template>
             <template v-else>
               <div class="div__radio">
                 <input type="radio" name="time" id="time6" value="6" v-model="add_time" class="add__input" disabled>
-                <label for="time6">18:00 - 20:00</label>
+                <label for="time6">18 pm - 20 pm</label>
               </div>
             </template>
           </div>
@@ -145,9 +145,9 @@
         <div class="add__task">
           <textarea cols="29" rows="8" name="user_task" class="user__task" v-model="user_task"></textarea>
           <div class="div__add__input">
-            <button @click="create_task" class="btn__task">Создать</button>
+            <button @click="create_task" class="btn__task">Create</button>
             <div class="div__input__number">
-              <p>Число подзадач:&nbsp;</p>
+              <p>Number of subtasks:&nbsp;</p>
               <input type="number" placeholder="Число" name="number_tickets" min="1" class="add__input__number" v-model="number_tickets">
             </div>
           </div>
@@ -157,8 +157,8 @@
       <div id="my-modal" class="modal">
         <div class="modal-content">
           <div class="modal-body">
-            <p>В процессе...</p>
-            <p>Ваша задача обрабатывается нейронной сетью. Это может занять до 30 секунд. Пожалуйста, подождите и не закрывайте расширение. Когда мы закончим, то перебросим вас на список задач.</p>
+            <p>In progress...</p>
+            <p>Your task is processed by a neural network. This may take up to 1 minute. Please wait and don't close the extension. When we're done, we'll move you to the task list.</p>
             <div class="loader">
               <div class="inner one"></div>
               <div class="inner two"></div>
@@ -172,9 +172,9 @@
     <!-- Список задач (главная) -->
     <template v-if="login_status == true && list_task == true ">
       <div class="main__buttons">
-        <button class="main__btn" @click="logout_func">Выйти</button>
-        <button class="main__btn" @click="add_task_show">Добавить задачу</button>
-        <button class="main__btn" @click="statistic_show">Статистика</button>
+        <button class="main__btn" @click="logout_func">Logout</button>
+        <button class="main__btn" @click="add_task_show">Add task</button>
+        <button class="main__btn" @click="statistic_show">statistics</button>
         <button class="main__btn" @click="show_settings">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
         </button>
@@ -189,9 +189,9 @@
               <P>{{ task.status }}</P>
             </div>
             <div class="list__btns">
-              <button class="list__btn1" @click="close_task(task.id)">Отклонить</button>
-              <button class="list__btn2" @click="defer_task_show(task.id)">Отложить</button>
-              <button class="list__btn3" @click="complete_task(task.id)">Выполнено</button>
+              <button class="list__btn1" @click="close_task(task.id)">Dismiss</button>
+              <button class="list__btn2" @click="defer_task_show(task.id)">Defer</button>
+              <button class="list__btn3" @click="complete_task(task.id)">Done</button>
             </div>
           </div>
         </template>
@@ -200,102 +200,102 @@
 
     <!-- Формочка чтобы отложить задачу -->
     <template v-if="login_status == true && defer_task == true">
-      <button class="login__back" @click="list_task_show">Назад</button>
+      <button class="login__back" @click="list_task_show">Back</button>
       <div class="calendar__main__div">
         <div class="calendar__div">
-          <DatePicker v-model="date" mode="date" :min-date='new Date()'/>
+          <DatePicker v-model="date" mode="date" :min-date='new Date()' locale="en"/>
           <div class="add__radio">
 
             <template v-if="available_date.includes('08:00')">
               <div class="div__radio"> 
                 <input type="radio" name="time" id="time1" value="1" v-model="add_time"  class="add__input">
-                <label for="time1">08:00 - 10:00</label>
+                <label for="time1">&nbsp;&nbsp;8 am - 10 am</label>
               </div>
             </template>
             <template v-else>
               <div class="div__radio"> 
                 <input type="radio" name="time" id="time1" value="1" v-model="add_time" class="add__input" disabled>
-                <label for="time1">08:00 - 10:00</label>
+                <label for="time1">&nbsp;&nbsp;8 am - 10 am</label>
               </div>
             </template>
             
             <template v-if="available_date.includes('10:00')">
               <div class="div__radio">
                 <input type="radio" name="time" id="time2" value="2" v-model="add_time" class="add__input">
-                <label for="time2">10:00 - 12:00</label>
+                <label for="time2">10 am - 12 pm</label>
               </div>
             </template>
             <template v-else>
               <div class="div__radio">
                 <input type="radio" name="time" id="time2" value="2" v-model="add_time" class="add__input" disabled>
-                <label for="time2">10:00 - 12:00</label>
+                <label for="time2">10 am - 12 pm</label>
               </div>
             </template>
             
             <template v-if="available_date.includes('12:00')">
               <div class="div__radio">
                 <input type="radio" name="time" id="time3" value="3" v-model="add_time" class="add__input">
-                <label for="time3">12:00 - 14:00</label>
+                <label for="time3">12 pm - 14 pm</label>
               </div>
             </template>
             <template v-else>
               <div class="div__radio">
                 <input type="radio" name="time" id="time3" value="3" v-model="add_time" class="add__input" disabled>
-                <label for="time3">12:00 - 14:00</label>
+                <label for="time3">12 pm - 14 pm</label>
               </div>
             </template>
 
             <template v-if="available_date.includes('14:00')">
               <div class="div__radio">
                 <input type="radio" name="time" id="time4" value="4" v-model="add_time" class="add__input">
-                <label for="time4">14:00 - 16:00</label>
+                <label for="time4">14 pm - 16 pm</label>
               </div>
             </template>
             <template v-else>
               <div class="div__radio">
                 <input type="radio" name="time" id="time4" value="4" v-model="add_time" class="add__input" disabled>
-                <label for="time4">14:00 - 16:00</label>
+                <label for="time4">14 pm - 16 pm</label>
               </div>
             </template>
 
             <template v-if="available_date.includes('16:00')">
               <div class="div__radio">
                 <input type="radio" name="time" id="time5" value="5" v-model="add_time" class="add__input">
-                <label for="time5">16:00 - 18:00</label>
+                <label for="time5">16 pm - 18 pm</label>
               </div>
             </template>
             <template v-else>
               <div class="div__radio">
                 <input type="radio" name="time" id="time5" value="5" v-model="add_time" class="add__input" disabled>
-                <label for="time5">16:00 - 18:00</label>
+                <label for="time5">16 pm - 18 pm</label>
               </div>
             </template>
 
             <template v-if="available_date.includes('18:00')">
               <div class="div__radio">
                 <input type="radio" name="time" id="time6" value="6" v-model="add_time" class="add__input">
-                <label for="time6">18:00 - 20:00</label>
+                <label for="time6">18 pm - 20 pm</label>
               </div>
             </template>
             <template v-else>
               <div class="div__radio">
                 <input type="radio" name="time" id="time6" value="6" v-model="add_time" class="add__input" disabled>
-                <label for="time6">18:00 - 20:00</label>
+                <label for="time6">18 pm - 20 pm</label>
               </div>
             </template>
           </div>
         </div>
 
         <div style="width: 100%; display: flex; align-items: flex-start; margin-top: 10px; margin-left: 30px;">
-          <button @click="defer_task_click" class="btn__task">Создать</button>
+          <button @click="defer_task_click" class="btn__task">Defer</button>
         </div>
       </div>
     </template>
 
     <!-- Статистика -->
     <template v-if="login_status == true && statistics == true ">
-      <button class="login__back" @click="list_task_show">Назад</button>
-      <p>Статистика</p>
+      <button class="login__back" @click="list_task_show">Back</button>
+      <p>Statistics</p>
     </template>
   </div>
 </template>
@@ -346,9 +346,9 @@ export default {
       number_tickets: "5",
 
       // переменные для списка задач
-      received_tasks: [],
+      //received_tasks: [],
       
-      /*received_tasks: {
+      received_tasks: {
           "tasks": [
           {
           "id": 1,
@@ -367,7 +367,7 @@ export default {
           "status": "waiting",
         },
       ],
-    },*/
+    },
         
     
       tasks_error: "",
@@ -1066,8 +1066,8 @@ body{
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
-  margin-left: 25px;
-  margin-right: 25px;
+  margin-left: 20px;
+  margin-right: 10px;
   margin-top: 7px;
 }
 
@@ -1143,7 +1143,7 @@ body{
 }
 
 .add__input__number{
-  width: 59px;
+  width: 42px;
   height: 13px;
 }
 
