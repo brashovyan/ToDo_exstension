@@ -1,4 +1,31 @@
 <template>
+  <header class="main__header">
+    <div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="100" height="50" viewBox="0 0 4160 1280" fill="none">
+        <g clip-path="url(#clip0_51_631)">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M305.192 1037.91L482.384 731H128V549H482.384L305.192 242.095L305.191 242.095L462.808 151.095L462.809 151.095L640 458L817.192 151.095L974.809 242.095L797.617 549H1152V731H797.617L974.808 1037.91L817.191 1128.91L640 822L462.809 1128.91L305.192 1037.91Z" fill="black"/>
+        </g>
+        <path d="M1781.14 473.52C1777.74 439.173 1763.12 412.491 1737.29 393.473C1711.46 374.454 1676.4 364.945 1632.12 364.945C1602.03 364.945 1576.63 369.203 1555.91 377.719C1535.18 385.951 1519.29 397.447 1508.22 412.207C1497.43 426.967 1492.04 443.715 1492.04 462.449C1491.47 478.061 1494.74 491.686 1501.83 503.324C1509.21 514.962 1519.29 525.039 1532.06 533.555C1544.84 541.786 1559.6 549.025 1576.34 555.27C1593.09 561.231 1610.97 566.34 1629.99 570.598L1708.34 589.332C1746.37 597.848 1781.29 609.202 1813.08 623.395C1844.87 637.587 1872.4 655.044 1895.68 675.766C1918.96 696.487 1936.98 720.898 1949.75 749C1962.81 777.102 1969.48 809.319 1969.77 845.652C1969.48 899.017 1955.86 945.285 1928.89 984.457C1902.21 1023.35 1863.6 1053.58 1813.08 1075.15C1762.84 1096.44 1702.23 1107.08 1631.27 1107.08C1560.87 1107.08 1499.56 1096.3 1447.33 1074.72C1395.39 1053.15 1354.8 1021.22 1325.56 978.922C1296.61 936.344 1281.42 883.689 1280 820.957H1458.4C1460.39 850.194 1468.76 874.606 1483.52 894.191C1498.57 913.494 1518.58 928.112 1543.56 938.047C1568.82 947.698 1597.35 952.523 1629.14 952.523C1660.36 952.523 1687.47 947.982 1710.46 938.898C1733.74 929.815 1751.77 917.184 1764.54 901.004C1777.31 884.824 1783.7 866.232 1783.7 845.227C1783.7 825.641 1777.88 809.177 1766.24 795.836C1754.89 782.495 1738.14 771.141 1716 761.773C1694.14 752.406 1667.32 743.891 1635.53 736.227L1540.58 712.383C1467.06 694.5 1409.01 666.54 1366.43 628.504C1323.86 590.467 1302.71 539.232 1302.99 474.797C1302.71 422 1316.76 375.874 1345.14 336.418C1373.81 296.962 1413.13 266.164 1463.09 244.023C1513.04 221.883 1569.82 210.813 1633.4 210.813C1698.12 210.813 1754.6 221.883 1802.86 244.023C1851.4 266.164 1889.15 296.962 1916.12 336.418C1943.08 375.874 1956.99 421.574 1957.84 473.52H1781.14Z" fill="black"/>
+        <path d="M2210.31 716.641V1094.73H2028.93V222.734H2205.2V556.121H2212.87C2227.63 517.517 2251.47 487.286 2284.4 465.43C2317.32 443.289 2358.62 432.219 2408.3 432.219C2453.72 432.219 2493.31 442.154 2527.09 462.023C2561.15 481.609 2587.55 509.853 2606.29 546.754C2625.31 583.371 2634.67 627.227 2634.39 678.32V1094.73H2453.01V710.68C2453.29 670.372 2443.07 639.007 2422.35 616.582C2401.91 594.158 2373.24 582.945 2336.34 582.945C2311.65 582.945 2289.79 588.197 2270.77 598.699C2252.04 609.202 2237.28 624.53 2226.49 644.684C2215.99 664.553 2210.59 688.539 2210.31 716.641Z" fill="black"/>
+        <path d="M2715.69 1094.73V440.734H2897.08V1094.73H2715.69ZM2806.81 356.43C2779.84 356.43 2756.71 347.488 2737.41 329.605C2718.39 311.439 2708.88 289.724 2708.88 264.461C2708.88 239.482 2718.39 218.051 2737.41 200.168C2756.71 182.001 2779.84 172.918 2806.81 172.918C2833.78 172.918 2856.77 182.001 2875.79 200.168C2895.09 218.051 2904.74 239.482 2904.74 264.461C2904.74 289.724 2895.09 311.439 2875.79 329.605C2856.77 347.488 2833.78 356.43 2806.81 356.43Z" fill="black"/>
+        <path d="M3590.65 440.734L3362.01 1094.73H3157.63L2928.99 440.734H3120.59L3256.41 908.668H3263.23L3398.62 440.734H3590.65Z" fill="black"/>
+        <path d="M3790.96 1107.08C3749.23 1107.08 3712.05 1099.84 3679.41 1085.37C3646.76 1070.61 3620.93 1048.89 3601.91 1020.22C3583.18 991.27 3573.81 955.22 3573.81 912.074C3573.81 875.741 3580.48 845.227 3593.82 820.531C3607.17 795.836 3625.33 775.966 3648.32 760.922C3671.32 745.878 3697.43 734.523 3726.67 726.859C3756.19 719.195 3787.13 713.802 3819.49 710.68C3857.52 706.706 3888.18 703.016 3911.46 699.609C3934.73 695.919 3951.62 690.526 3962.12 683.43C3972.63 676.333 3977.88 665.831 3977.88 651.922V649.367C3977.88 622.401 3969.36 601.538 3952.33 586.777C3935.58 572.017 3911.74 564.637 3880.8 564.637C3848.16 564.637 3822.18 571.875 3802.88 586.352C3783.58 600.544 3770.81 618.427 3764.56 640L3596.8 626.375C3605.32 586.635 3622.07 552.289 3647.05 523.336C3672.03 494.099 3704.24 471.674 3743.7 456.062C3783.44 440.167 3829.42 432.219 3881.65 432.219C3917.99 432.219 3952.76 436.477 3985.97 444.992C4019.46 453.508 4049.13 466.707 4074.96 484.59C4101.07 502.473 4121.65 525.465 4136.7 553.566C4151.74 581.384 4159.26 614.737 4159.26 653.625V1094.73H3987.25V1004.04H3982.14C3971.63 1024.48 3957.58 1042.51 3939.98 1058.12C3922.39 1073.45 3901.24 1085.51 3876.54 1094.31C3851.85 1102.82 3823.32 1107.08 3790.96 1107.08ZM3842.91 981.902C3869.59 981.902 3893.15 976.651 3913.59 966.148C3934.02 955.362 3950.06 940.885 3961.7 922.719C3973.34 904.552 3979.16 883.973 3979.16 860.981V791.578C3973.48 795.268 3965.67 798.675 3955.74 801.797C3946.09 804.635 3935.16 807.332 3922.95 809.887C3910.75 812.158 3898.54 814.287 3886.34 816.273C3874.13 817.977 3863.06 819.538 3853.12 820.957C3831.84 824.079 3813.24 829.047 3797.35 835.859C3781.45 842.672 3769.1 851.897 3760.3 863.535C3751.5 874.889 3747.11 889.082 3747.11 906.113C3747.11 930.809 3756.05 949.685 3773.93 962.742C3792.1 975.516 3815.09 981.902 3842.91 981.902Z" fill="black"/>
+        <defs>
+        <clipPath id="clip0_51_631">
+        <rect width="1280" height="1280" fill="white"/>
+        </clipPath>
+        </defs>
+      </svg>
+    </div>
+    
+    <div @click="show_settings" class="settings__div">
+      <svg width="20" height="20" viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.4531 22.0273C16.875 22.0273 16.3438 21.8828 15.8594 21.5938C15.3828 21.3125 15 20.9336 14.7109 20.457C14.4297 19.9805 14.2891 19.4531 14.2891 18.875C14.2891 18.2969 14.4297 17.7695 14.7109 17.293C15 16.8086 15.3828 16.4258 15.8594 16.1445C16.3438 15.8555 16.875 15.7109 17.4531 15.7109C18.0391 15.7109 18.5703 15.8555 19.0469 16.1445C19.5234 16.4258 19.9023 16.8086 20.1836 17.293C20.4727 17.7695 20.6172 18.2969 20.6172 18.875C20.6172 19.4531 20.4727 19.9805 20.1836 20.457C19.9023 20.9336 19.5195 21.3125 19.0352 21.5938C18.5586 21.8828 18.0312 22.0273 17.4531 22.0273ZM17.4531 20.3516C17.8672 20.3516 18.2188 20.207 18.5078 19.918C18.7969 19.6289 18.9414 19.2812 18.9414 18.875C18.9414 18.4531 18.7969 18.1016 18.5078 17.8203C18.2188 17.5312 17.8672 17.3867 17.4531 17.3867C17.0469 17.3867 16.6992 17.5312 16.4102 17.8203C16.1211 18.1016 15.9766 18.4531 15.9766 18.875C15.9766 19.2812 16.1211 19.6289 16.4102 19.918C16.6992 20.207 17.0469 20.3516 17.4531 20.3516ZM15.3672 17.6328V20.1055H1.91406C1.58594 20.1055 1.30078 19.9844 1.05859 19.7422C0.824219 19.4922 0.707031 19.2031 0.707031 18.875C0.707031 18.5312 0.824219 18.2383 1.05859 17.9961C1.29297 17.7539 1.57812 17.6328 1.91406 17.6328H15.3672ZM24.0977 17.6328C24.4258 17.6328 24.707 17.7539 24.9414 17.9961C25.1758 18.2383 25.293 18.5312 25.293 18.875C25.293 19.2031 25.1758 19.4922 24.9414 19.7422C24.707 19.9844 24.4258 20.1055 24.0977 20.1055H19.6445V17.6328H24.0977ZM8.67578 14.6445C8.09766 14.6445 7.56641 14.5 7.08203 14.2109C6.60547 13.9219 6.22656 13.5391 5.94531 13.0625C5.66406 12.5859 5.52344 12.0547 5.52344 11.4688C5.52344 10.8906 5.66406 10.3633 5.94531 9.88672C6.22656 9.41016 6.60547 9.03125 7.08203 8.75C7.56641 8.46094 8.09766 8.31641 8.67578 8.31641C9.25391 8.31641 9.78125 8.46094 10.2578 8.75C10.7344 9.03125 11.1172 9.41016 11.4062 9.88672C11.6953 10.3633 11.8398 10.8906 11.8398 11.4688C11.8398 12.0547 11.6953 12.5859 11.4062 13.0625C11.1172 13.5391 10.7344 13.9219 10.2578 14.2109C9.78125 14.5 9.25391 14.6445 8.67578 14.6445ZM8.67578 12.957C9.09766 12.957 9.44922 12.8125 9.73047 12.5234C10.0195 12.2344 10.1641 11.8828 10.1641 11.4688C10.1641 11.0469 10.0195 10.6953 9.73047 10.4141C9.44922 10.1328 9.09766 9.99219 8.67578 9.99219C8.26172 9.99219 7.91016 10.1328 7.62109 10.4141C7.33203 10.6953 7.1875 11.0469 7.1875 11.4688C7.1875 11.8828 7.33203 12.2344 7.62109 12.5234C7.91016 12.8125 8.26172 12.957 8.67578 12.957ZM1.89062 10.2266H6.54297V12.7109H1.89062C1.57031 12.7109 1.29297 12.5898 1.05859 12.3477C0.824219 12.0977 0.707031 11.8047 0.707031 11.4688C0.707031 11.1328 0.824219 10.8438 1.05859 10.6016C1.29297 10.3516 1.57031 10.2266 1.89062 10.2266ZM24.0742 10.2266C24.4102 10.2266 24.6953 10.3477 24.9297 10.5898C25.1719 10.832 25.293 11.125 25.293 11.4688C25.293 11.8125 25.1719 12.1055 24.9297 12.3477C24.6953 12.5898 24.4102 12.7109 24.0742 12.7109H10.7148V10.2266H24.0742ZM17.4531 7.23828C16.875 7.23828 16.3438 7.09375 15.8594 6.80469C15.3828 6.51562 15 6.13281 14.7109 5.65625C14.4297 5.17969 14.2891 4.65234 14.2891 4.07422C14.2891 3.49609 14.4297 2.96875 14.7109 2.49219C15 2.00781 15.3828 1.625 15.8594 1.34375C16.3438 1.05469 16.875 0.910156 17.4531 0.910156C18.0312 0.910156 18.5586 1.05469 19.0352 1.34375C19.5195 1.625 19.9023 2.00781 20.1836 2.49219C20.4727 2.96875 20.6172 3.49609 20.6172 4.07422C20.6172 4.65234 20.4727 5.17969 20.1836 5.65625C19.9023 6.13281 19.5195 6.51562 19.0352 6.80469C18.5586 7.09375 18.0312 7.23828 17.4531 7.23828ZM17.4531 5.5625C17.8672 5.5625 18.2188 5.41797 18.5078 5.12891C18.7969 4.83203 18.9414 4.47656 18.9414 4.0625C18.9414 3.64844 18.7969 3.30078 18.5078 3.01953C18.2188 2.73047 17.8672 2.58594 17.4531 2.58594C17.0469 2.58594 16.6992 2.73047 16.4102 3.01953C16.1211 3.30078 15.9766 3.64844 15.9766 4.0625C15.9766 4.47656 16.1211 4.83203 16.4102 5.12891C16.6992 5.41797 17.0469 5.5625 17.4531 5.5625ZM15.4023 2.83203V5.31641H1.91406C1.58594 5.31641 1.30078 5.19141 1.05859 4.94141C0.824219 4.69141 0.707031 4.40234 0.707031 4.07422C0.707031 3.73828 0.824219 3.44922 1.05859 3.20703C1.29297 2.95703 1.57812 2.83203 1.91406 2.83203H15.4023ZM24.0977 2.83203C24.4258 2.83203 24.707 2.95703 24.9414 3.20703C25.1758 3.44922 25.293 3.73828 25.293 4.07422C25.293 4.41016 25.1758 4.70312 24.9414 4.95312C24.707 5.19531 24.4258 5.31641 24.0977 5.31641H19.5273V2.83203H24.0977Z" fill="#7F7F7F" style="mix-blend-mode:luminosity"/>
+        <path d="M17.4531 22.0273C16.875 22.0273 16.3438 21.8828 15.8594 21.5938C15.3828 21.3125 15 20.9336 14.7109 20.457C14.4297 19.9805 14.2891 19.4531 14.2891 18.875C14.2891 18.2969 14.4297 17.7695 14.7109 17.293C15 16.8086 15.3828 16.4258 15.8594 16.1445C16.3438 15.8555 16.875 15.7109 17.4531 15.7109C18.0391 15.7109 18.5703 15.8555 19.0469 16.1445C19.5234 16.4258 19.9023 16.8086 20.1836 17.293C20.4727 17.7695 20.6172 18.2969 20.6172 18.875C20.6172 19.4531 20.4727 19.9805 20.1836 20.457C19.9023 20.9336 19.5195 21.3125 19.0352 21.5938C18.5586 21.8828 18.0312 22.0273 17.4531 22.0273ZM17.4531 20.3516C17.8672 20.3516 18.2188 20.207 18.5078 19.918C18.7969 19.6289 18.9414 19.2812 18.9414 18.875C18.9414 18.4531 18.7969 18.1016 18.5078 17.8203C18.2188 17.5312 17.8672 17.3867 17.4531 17.3867C17.0469 17.3867 16.6992 17.5312 16.4102 17.8203C16.1211 18.1016 15.9766 18.4531 15.9766 18.875C15.9766 19.2812 16.1211 19.6289 16.4102 19.918C16.6992 20.207 17.0469 20.3516 17.4531 20.3516ZM15.3672 17.6328V20.1055H1.91406C1.58594 20.1055 1.30078 19.9844 1.05859 19.7422C0.824219 19.4922 0.707031 19.2031 0.707031 18.875C0.707031 18.5312 0.824219 18.2383 1.05859 17.9961C1.29297 17.7539 1.57812 17.6328 1.91406 17.6328H15.3672ZM24.0977 17.6328C24.4258 17.6328 24.707 17.7539 24.9414 17.9961C25.1758 18.2383 25.293 18.5312 25.293 18.875C25.293 19.2031 25.1758 19.4922 24.9414 19.7422C24.707 19.9844 24.4258 20.1055 24.0977 20.1055H19.6445V17.6328H24.0977ZM8.67578 14.6445C8.09766 14.6445 7.56641 14.5 7.08203 14.2109C6.60547 13.9219 6.22656 13.5391 5.94531 13.0625C5.66406 12.5859 5.52344 12.0547 5.52344 11.4688C5.52344 10.8906 5.66406 10.3633 5.94531 9.88672C6.22656 9.41016 6.60547 9.03125 7.08203 8.75C7.56641 8.46094 8.09766 8.31641 8.67578 8.31641C9.25391 8.31641 9.78125 8.46094 10.2578 8.75C10.7344 9.03125 11.1172 9.41016 11.4062 9.88672C11.6953 10.3633 11.8398 10.8906 11.8398 11.4688C11.8398 12.0547 11.6953 12.5859 11.4062 13.0625C11.1172 13.5391 10.7344 13.9219 10.2578 14.2109C9.78125 14.5 9.25391 14.6445 8.67578 14.6445ZM8.67578 12.957C9.09766 12.957 9.44922 12.8125 9.73047 12.5234C10.0195 12.2344 10.1641 11.8828 10.1641 11.4688C10.1641 11.0469 10.0195 10.6953 9.73047 10.4141C9.44922 10.1328 9.09766 9.99219 8.67578 9.99219C8.26172 9.99219 7.91016 10.1328 7.62109 10.4141C7.33203 10.6953 7.1875 11.0469 7.1875 11.4688C7.1875 11.8828 7.33203 12.2344 7.62109 12.5234C7.91016 12.8125 8.26172 12.957 8.67578 12.957ZM1.89062 10.2266H6.54297V12.7109H1.89062C1.57031 12.7109 1.29297 12.5898 1.05859 12.3477C0.824219 12.0977 0.707031 11.8047 0.707031 11.4688C0.707031 11.1328 0.824219 10.8438 1.05859 10.6016C1.29297 10.3516 1.57031 10.2266 1.89062 10.2266ZM24.0742 10.2266C24.4102 10.2266 24.6953 10.3477 24.9297 10.5898C25.1719 10.832 25.293 11.125 25.293 11.4688C25.293 11.8125 25.1719 12.1055 24.9297 12.3477C24.6953 12.5898 24.4102 12.7109 24.0742 12.7109H10.7148V10.2266H24.0742ZM17.4531 7.23828C16.875 7.23828 16.3438 7.09375 15.8594 6.80469C15.3828 6.51562 15 6.13281 14.7109 5.65625C14.4297 5.17969 14.2891 4.65234 14.2891 4.07422C14.2891 3.49609 14.4297 2.96875 14.7109 2.49219C15 2.00781 15.3828 1.625 15.8594 1.34375C16.3438 1.05469 16.875 0.910156 17.4531 0.910156C18.0312 0.910156 18.5586 1.05469 19.0352 1.34375C19.5195 1.625 19.9023 2.00781 20.1836 2.49219C20.4727 2.96875 20.6172 3.49609 20.6172 4.07422C20.6172 4.65234 20.4727 5.17969 20.1836 5.65625C19.9023 6.13281 19.5195 6.51562 19.0352 6.80469C18.5586 7.09375 18.0312 7.23828 17.4531 7.23828ZM17.4531 5.5625C17.8672 5.5625 18.2188 5.41797 18.5078 5.12891C18.7969 4.83203 18.9414 4.47656 18.9414 4.0625C18.9414 3.64844 18.7969 3.30078 18.5078 3.01953C18.2188 2.73047 17.8672 2.58594 17.4531 2.58594C17.0469 2.58594 16.6992 2.73047 16.4102 3.01953C16.1211 3.30078 15.9766 3.64844 15.9766 4.0625C15.9766 4.47656 16.1211 4.83203 16.4102 5.12891C16.6992 5.41797 17.0469 5.5625 17.4531 5.5625ZM15.4023 2.83203V5.31641H1.91406C1.58594 5.31641 1.30078 5.19141 1.05859 4.94141C0.824219 4.69141 0.707031 4.40234 0.707031 4.07422C0.707031 3.73828 0.824219 3.44922 1.05859 3.20703C1.29297 2.95703 1.57812 2.83203 1.91406 2.83203H15.4023ZM24.0977 2.83203C24.4258 2.83203 24.707 2.95703 24.9414 3.20703C25.1758 3.44922 25.293 3.73828 25.293 4.07422C25.293 4.41016 25.1758 4.70312 24.9414 4.95312C24.707 5.19531 24.4258 5.31641 24.0977 5.31641H19.5273V2.83203H24.0977Z" fill="black" style="mix-blend-mode:overlay"/>
+      </svg>
+    </div>
+  </header>
+
   <div class="main__div">
 
     <!-- Логин -->
@@ -56,10 +83,12 @@
 
     <!-- Формочка добавления задачи -->
     <template v-if="login_status == true && add_task == true">
-      <button class="login__back" @click="list_task_show">Back</button>
+      <div class="calendar__div__back">
+        <button class="login__back" @click="list_task_show">Back</button>
+      </div>
       <div class="calendar__main__div">
         <div class="calendar__div">
-          <DatePicker v-model="date" mode="date" :min-date='new Date()' locale="en"/>
+          <DatePicker v-model="date" mode="date" :min-date='new Date()' locale="en" is-dark/>
           <div class="add__radio">
 
             <template v-if="available_date.includes('08:00')">
@@ -171,39 +200,42 @@
 
     <!-- Список задач (главная) -->
     <template v-if="login_status == true && list_task == true ">
-      <div class="main__buttons">
-        <button class="main__btn" @click="logout_func">Logout</button>
-        <button class="main__btn" @click="add_task_show">Add task</button>
-        <button class="main__btn" @click="statistic_show">statistics</button>
-        <button class="main__btn" @click="show_settings">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
-        </button>
-      </div>
-      <div class="list__task__main">
-        <template v-for="(task, index) in received_tasks.tasks" :key="index">
-          <div class="task__div">
-            <p>{{ task.header }}</p>
-            <div class="list__description">
-              <p>{{ task.text }}</p>
-              <p>{{ task.start_time }}</p>
-              <P>{{ task.status }}</P>
+      <div class="list__div__main">
+        <div class="main__buttons">
+          <button class="main__btn" @click="logout_func">Logout</button>
+          <button class="main__btn" @click="add_task_show">Add task</button>
+          <button class="main__btn" @click="statistic_show">statistics</button>
+        </div>
+        <div class="list__task__main">
+          <template v-for="(task, index) in received_tasks.tasks" :key="index">
+            <div class="task__div">
+              <p class="task__header"><strong>{{ task.header }}</strong></p>
+              <div class="list__description">
+                <p>{{ task.text }}</p>
+                <p>{{ task.start_time }}</p>
+                <div class="list__status">
+                  <P>{{ task.status }}</P>
+                  <div class="list__btns">
+                    <button class="list__btn1" @click="close_task(task.id)">Dismiss</button>
+                    <button class="list__btn2" @click="defer_task_show(task.id)">Defer</button>
+                    <button class="list__btn3" @click="complete_task(task.id)">Done</button>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="list__btns">
-              <button class="list__btn1" @click="close_task(task.id)">Dismiss</button>
-              <button class="list__btn2" @click="defer_task_show(task.id)">Defer</button>
-              <button class="list__btn3" @click="complete_task(task.id)">Done</button>
-            </div>
-          </div>
-        </template>
+          </template>
+        </div>
       </div>
     </template>
 
     <!-- Формочка чтобы отложить задачу -->
     <template v-if="login_status == true && defer_task == true">
-      <button class="login__back" @click="list_task_show">Back</button>
+      <div class="calendar__div__back">
+        <button class="login__back" @click="list_task_show">Back</button>
+      </div>
       <div class="calendar__main__div">
         <div class="calendar__div">
-          <DatePicker v-model="date" mode="date" :min-date='new Date()' locale="en"/>
+          <DatePicker v-model="date" mode="date" :min-date='new Date()' locale="en" is-dark/>
           <div class="add__radio">
 
             <template v-if="available_date.includes('08:00')">
@@ -286,16 +318,18 @@
           </div>
         </div>
 
-        <div style="width: 100%; display: flex; align-items: flex-start; margin-top: 10px; margin-left: 30px;">
-          <button @click="defer_task_click" class="btn__task">Defer</button>
+        <div style="width: 100%; display: flex; align-items: flex-start; margin-top: 10px; margin-left: 30px; height: 168px;">
+          <button @click="defer_task_click" class="btn__task" style="margin-left: 10px;">Defer</button>
         </div>
       </div>
     </template>
 
     <!-- Статистика -->
     <template v-if="login_status == true && statistics == true ">
-      <button class="login__back" @click="list_task_show">Back</button>
-      <p>Statistics</p>
+      <div class="statistics__div">
+        <button class="login__back" @click="list_task_show">Back</button>
+        <p>Statistics</p>
+      </div>
     </template>
   </div>
 </template>
@@ -346,9 +380,9 @@ export default {
       number_tickets: "5",
 
       // переменные для списка задач
-      //received_tasks: [],
+      received_tasks: [],
       
-      received_tasks: {
+      /*received_tasks: {
           "tasks": [
           {
           "id": 1,
@@ -367,7 +401,7 @@ export default {
           "status": "waiting",
         },
       ],
-    },
+    },*/
         
     
       tasks_error: "",
@@ -415,7 +449,7 @@ export default {
       let article = { email: this.login_email,
                       password: this.login_password,
                     };
-      axios.post("https://d41b-130-0-219-137.ngrok-free.app/login_user", article)
+      axios.post("http://startup-lab.me/login_user", article)
         .then(response => {this.user_id = response.data.user_id; this.save_user();})
         .catch(error => { console.log(error.message); });
     },
@@ -434,14 +468,14 @@ export default {
                         password: this.google_id,
                         auth_token: this.google_token,
                       };
-        axios.post("https://d41b-130-0-219-137.ngrok-free.app/create_user", article)
+        axios.post("http://startup-lab.me/create_user", article)
           .then(response => {
                               if(response.data.status == "user_exist"){
 
                                 let article = { email: this.google_email,
                                                   password: this.google_id, 
                                               };
-                                axios.post("https://d41b-130-0-219-137.ngrok-free.app/login_user", article)
+                                axios.post("http://startup-lab.me/login_user", article)
                                   .then(response => {this.user_id = response.data.user_id; this.save_user();})
                                   .catch(error => { console.log(error.message);
                                 });
@@ -462,7 +496,7 @@ export default {
       let article = { email: this.register_email,
                       password: this.register_password,
                     };
-      axios.post("https://d41b-130-0-219-137.ngrok-free.app/create_user", article)
+      axios.post("http://startup-lab.me/create_user", article)
         .then(response => {this.user_id = response.data.user_id; this.check_for_welcome(); })
         .catch(error => { console.log(error.message); });
     },
@@ -492,7 +526,7 @@ export default {
         let article = { user_id: this.user_id,
                         auth_token: this.google_token,
                       };
-        axios.post("https://d41b-130-0-219-137.ngrok-free.app/add_google_data", article)
+        axios.post("http://startup-lab.me/add_google_data", article)
           .then(response => { 
                               if(Number(this.user_id) > 0){
                                   chrome.storage.local.set({ user_id: this.user_id.toString() }).then(() => {
@@ -507,7 +541,7 @@ export default {
     add_notion(){
       let article = { user_id: this.user_id,
                     };
-      axios.post("https://d41b-130-0-219-137.ngrok-free.app/redirect_to_notion", article)
+      axios.post("http://startup-lab.me/redirect_to_notion", article)
         .then(response => { console.log("Тяжело... Тяжело...");
                               chrome.tabs.create({
                               url: `${response.data.url}`,
@@ -611,7 +645,7 @@ export default {
       // здесь я получаю список задач
       let article = { user_id: this.user_id,
                     };
-      axios.post("https://d41b-130-0-219-137.ngrok-free.app/get_user_tasks", article)
+      axios.post("http://startup-lab.me/get_user_tasks", article)
         .then(response => {this.received_tasks = response.data;})
         .catch(error => { console.log(error.message); });
     },
@@ -681,7 +715,7 @@ export default {
                           start_time: task_date,
                           task_num: this.number_tickets,
                         };
-        axios.post("https://d41b-130-0-219-137.ngrok-free.app/create_task", article)
+        axios.post("http://startup-lab.me/create_task", article)
           .then(response => {this.response_message = response.data; this.list_task_show(); })
           .catch(error => { this.response_message = error.message; this.list_task_show(); });
         
@@ -697,8 +731,8 @@ export default {
       let article = { date: `${year}-${month}-${day}`,
                       user_id: this.user_id,
                     };
-      axios.post("https://d41b-130-0-219-137.ngrok-free.app/get_available_time", article)
-        .then(response => {this.available_date = response.data.time_list; })
+      axios.post("http://startup-lab.me/get_available_time", article)
+        .then(response => {this.available_date = response.data.time_list; console.log(this.check_available_date)})
         .catch(error => { console.log(error.message); });
     },
 
@@ -706,7 +740,7 @@ export default {
       let article = { task_id: task_id,
                       status: "cancel",
                     };
-      axios.post("https://d41b-130-0-219-137.ngrok-free.app/change_task_status", article)
+      axios.post("http://startup-lab.me/change_task_status", article)
         .then(response => { this.list_task_show(); })
         .catch(error => { console.log(error.message); });
     },
@@ -715,7 +749,7 @@ export default {
       let article = { task_id: task_id,
                       status: "waiting",
                     };
-      axios.post("https://d41b-130-0-219-137.ngrok-free.app/change_task_status", article)
+      axios.post("http://startup-lab.me/change_task_status", article)
         .then(response => { this.list_task_show(); })
         .catch(error => { console.log(error.message); });
     },
@@ -724,7 +758,7 @@ export default {
       let article = { task_id: task_id,
                       status: "done",
                     };
-      axios.post("https://d41b-130-0-219-137.ngrok-free.app/change_task_status", article)
+      axios.post("http://startup-lab.me/change_task_status", article)
         .then(response => { this.list_task_show(); })
         .catch(error => { console.log(error.message); });
     },
@@ -764,7 +798,7 @@ export default {
                           task_id: this.defer_task_id,
                           start_time: task_date,
                         };
-        axios.post("https://d41b-130-0-219-137.ngrok-free.app/move_task_time", article)
+        axios.post("http://startup-lab.me/move_task_time", article)
           .then(response => {this.response_message = response.data; this.list_task_show(); })
           .catch(error => { this.response_message = error.message; this.list_task_show(); });
         
@@ -778,13 +812,28 @@ export default {
 
 <style>
 body{
-  background: linear-gradient(rgb(164, 164, 254), rgb(189, 255, 191));
+  background: #DFE1E5;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   width: 350px;
-  height: 100%;
+  height: 550px;
   
   margin: 0;
   padding: 0;
+}
+
+.main__header{
+  width: 93%;
+  height: 50px;
+  background-color: #DFE1E5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 20px;
+}
+
+.settings__div:hover{
+  cursor: pointer;
 }
 
 .app{
@@ -802,8 +851,26 @@ body{
   align-items: center;
   justify-content: center;
   width: 350px;
-  height: 450px;
+  height: 550px;
   flex-direction: column;
+  background: rgb(255, 255, 255);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.list__div__main{
+  background: rgb(255, 255, 255);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 350px;
+  height: 100%;
+}
+
+.calendar__div__back{
+  width: 350px;
+  background: rgb(255, 255, 255);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .calendar__main__div{
@@ -811,6 +878,8 @@ body{
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background: rgb(255, 255, 255);
+  margin-top: -5px;
 }
 
 .calendar__div{
@@ -825,26 +894,29 @@ body{
   width: 250px;
   height: 100%;
   background-color: white;
-  margin-top: 10px;
-  margin-bottom: 30px;
+  margin-top: 0px;
+  margin-bottom: 3px;
   border-radius: 0.5rem;
 }
 
 .user__task{
   margin: 7px;
+  resize: none;
 }
 
 .btn__task{
-  margin-left: 7px;
+  margin-left: -11px;
   margin-bottom: 7px;
-  background-color: rgb(218, 218, 255);
+  background-color: #eaeaea;
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
+  height: 25px;
+  width: 70px;
 }
 
 .btn__task:hover{
-  background-color: rgb(194, 194, 255);
+  background-color: #c6c6c6;
 }
 
 .login__back{
@@ -852,24 +924,28 @@ body{
   margin-left: 10px;
   margin-left: 7px;
   margin-bottom: 7px;
-  background-color: rgb(207, 255, 185);
+  background-color: #eaeaea;
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
+  height: 25px;
+  width: 70px;
 }
 
 .login__back:hover{
-  background-color: rgb(152, 255, 159);
+  background-color: #c6c6c6;
 }
 
 .main__buttons{
   display: flex;
   align-items: center;
   justify-content: space-around;
+  padding-top: 5px;
+  margin-bottom: -8px;
 }
 
 .main__btn{
-  background-color: rgb(207, 255, 185);
+  background-color: #eaeaea;
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
@@ -877,10 +953,11 @@ body{
   margin-top: 5px;
   margin-bottom: 5px;
   height: 25px;
+  width: 70px;
 }
 
 .main__btn:hover{
-  background-color: rgb(152, 255, 159);
+  background-color: rgb(222, 222, 222);
 }
 
 .list__task__main{
@@ -894,14 +971,27 @@ body{
 }
 
 .task__div{
-  background-color: rgb(255, 244, 218);
+  background-color: rgb(237, 237, 237);
   border-radius: 0.5rem;
   margin: 5px;
   padding: 5px;
+  margin-top: 10px;
+}
+
+.task__header{
+  margin-top: 1px;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.list__status{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .welcome__h1{
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .welcome__p{
@@ -917,12 +1007,13 @@ body{
 }
 
 .google__btn{
-  width:50px;
-  height: 50px;
+  width:70px;
+  height: 30px;
   border: none;
-  background-color: white;
+  background-color: #eaeaea;
   cursor: pointer;
   margin: 10px;
+  border-radius: 5px;
 }
 
 .google__btn:hover{
@@ -931,19 +1022,23 @@ body{
 
 .input__login{
   margin: 5px;
+  border-radius: 5px;
+  font-size: 16px;
 }
 
 .btn__login{
   margin: 5px;
-  background-color: rgb(218, 218, 255);
+  background-color: #eaeaea;
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
   height: 20px;
+  color: black;
+  width: 80px;
 }
 
 .btn__login:hover{
-  background-color: rgb(194, 194, 255);
+  background-color: #c6c6c6;
 }
 
 
@@ -1055,7 +1150,7 @@ body{
 .list__description{
   padding-left: 5px;
   padding-right: 5px;
-  background-color: #edffc9;
+  background-color: #ffffff;
   border-radius: 0.5rem;
   padding-top: 1px;
   padding-bottom: 1px;
@@ -1095,12 +1190,14 @@ body{
   border-radius: 0.5rem;
   border: none;
   padding: 5px;
-  background-color: rgb(255, 184, 184);
+  background-color: rgb(56, 56, 56);
+  width: 60px;
+  color: white;
 }
 
 .list__btn1:hover{
   cursor: pointer;
-  background-color: rgb(255, 208, 208);
+  background-color: rgb(137, 137, 137);
 }
 
 .list__btn2{
@@ -1108,12 +1205,14 @@ body{
   border-radius: 0.5rem;
   border: none;
   padding: 5px;
-  background-color: rgb(253, 255, 132);
+  background-color: rgb(56, 56, 56);
+  width: 60px;
+  color: white;
 }
 
 .list__btn2:hover{
   cursor: pointer;
-  background-color: rgb(254, 255, 199);
+  background-color: rgb(137, 137, 137);
 }
 
 .list__btn3{
@@ -1121,12 +1220,14 @@ body{
   border-radius: 0.5rem;
   border: none;
   padding: 5px;
-  background-color: rgb(191, 255, 132);
+  background-color: rgb(56, 56, 56);
+  width: 60px;
+  color: white;
 }
 
 .list__btn3:hover{
   cursor: pointer;
-  background-color: rgb(224, 255, 195);
+  background-color: rgb(137, 137, 137);
 }
 
 .div__add__input{
@@ -1147,4 +1248,39 @@ body{
   height: 13px;
 }
 
+.statistics__div{
+  width: 350px;
+  height: 550px;
+  background: rgb(255, 255, 255);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.vc-header .vc-title {
+  color: black;
+}
+
+.vc-nav-title, .vc-nav-arrow, .vc-nav-item {
+  color: black;
+}
+
+.vc-nav-title:hover, .vc-nav-arrow:hover, .vc-nav-item:hover {
+  color: rgb(255, 255, 255);
+}
+
+.vc-header .vc-prev {
+  color: black;
+}
+
+.vc-header .vc-arrow {
+  color: black;
+}
+
+.vc-header:hover .vc-prev:hover {
+  color: rgb(255, 255, 255);
+}
+
+.vc-header:hover .vc-arrow:hover {
+  color: rgb(255, 255, 255);
+}
 </style>

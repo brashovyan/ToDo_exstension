@@ -43,7 +43,7 @@ export default {
         let article = { user_id: this.user_id,
                         auth_token: this.google_token,
                       };
-        axios.post("https://d10e-130-0-219-137.ngrok-free.app/add_google_data", article)
+        axios.post("http://startup-lab.me/add_google_data", article)
           .then(response => { console.log("Ураа"); })
           .catch(error => { console.log(error.message); });
       }); 
@@ -61,7 +61,7 @@ export default {
 
       let article = { user_id: this.user_id,
                     };
-      axios.post("https://d10e-130-0-219-137.ngrok-free.app/redirect_to_notion", article)
+      axios.post("http://startup-lab.me/redirect_to_notion", article)
         .then(response => { console.log("Тяжело... Тяжело...");
                               chrome.tabs.create({
                               url: `${response.data.url}`,
