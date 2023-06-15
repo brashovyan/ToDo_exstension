@@ -1,6 +1,6 @@
 <template>
   <header class="main__header">
-    <div>
+    <div style="display: flex; align-items: center;">
       <svg xmlns="http://www.w3.org/2000/svg" width="100" height="50" viewBox="0 0 4160 1280" fill="none">
         <g clip-path="url(#clip0_51_631)">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M305.192 1037.91L482.384 731H128V549H482.384L305.192 242.095L305.191 242.095L462.808 151.095L462.809 151.095L640 458L817.192 151.095L974.809 242.095L797.617 549H1152V731H797.617L974.808 1037.91L817.191 1128.91L640 822L462.809 1128.91L305.192 1037.91Z" fill="black"/>
@@ -16,6 +16,12 @@
         </clipPath>
         </defs>
       </svg>
+
+        <div class="loader">
+          <div class="inner one"></div>
+          <div class="inner two"></div>
+          <div class="inner three"></div>
+        </div>
     </div>
     
     <div @click="show_settings" class="settings__div">
@@ -94,13 +100,13 @@
             <template v-if="available_date.includes('08:00')">
               <div class="div__radio"> 
                 <input type="radio" name="time" id="time1" value="1" v-model="add_time"  class="add__input">
-                <label for="time1">&nbsp;&nbsp;8 am - 10 am</label>
+                <label for="time1"><span style="color: white">1</span>8 am - 10 am</label>
               </div>
             </template>
             <template v-else>
               <div class="div__radio"> 
                 <input type="radio" name="time" id="time1" value="1" v-model="add_time" class="add__input" disabled>
-                <label for="time1">&nbsp;&nbsp;8 am - 10 am</label>
+                <label for="time1"><span style="color: white">1</span>8 am - 10 am</label>
               </div>
             </template>
             
@@ -214,7 +220,7 @@
                 <p>{{ task.text }}</p>
                 <p>{{ task.start_time }}</p>
                 <div class="list__status">
-                  <P>{{ task.status }}</P>
+                  <P><strong>{{ task.status }}</strong></P>
                   <div class="list__btns">
                     <button class="list__btn1" @click="close_task(task.id)">Dismiss</button>
                     <button class="list__btn2" @click="defer_task_show(task.id)">Defer</button>
@@ -241,13 +247,13 @@
             <template v-if="available_date.includes('08:00')">
               <div class="div__radio"> 
                 <input type="radio" name="time" id="time1" value="1" v-model="add_time"  class="add__input">
-                <label for="time1">&nbsp;&nbsp;8 am - 10 am</label>
+                <label for="time1"><span style="color: white">1</span>8 am - 10 am</label>
               </div>
             </template>
             <template v-else>
               <div class="div__radio"> 
                 <input type="radio" name="time" id="time1" value="1" v-model="add_time" class="add__input" disabled>
-                <label for="time1">&nbsp;&nbsp;8 am - 10 am</label>
+                <label for="time1"><span style="color: white">1</span>8 am - 10 am</label>
               </div>
             </template>
             
@@ -633,13 +639,13 @@ export default {
       this.welcome = false;
       this.defer_task = false;
 
-      try{
+      /*try{
         let modal = document.querySelector('#my-modal');
         modal.style.display = 'none';
       }
       catch{
         console.log("Костыль");
-      };
+      };*/
       
 
       // здесь я получаю список задач
@@ -716,11 +722,22 @@ export default {
                           task_num: this.number_tickets,
                         };
         axios.post("http://startup-lab.me/create_task", article)
-          .then(response => {this.response_message = response.data; this.list_task_show(); })
+          .then(response => {
+            this.response_message = response.data; 
+            let load = document.querySelector('.loader'); 
+            load.style.display = 'none';
+
+            let article = { user_id: this.user_id, };
+            axios.post("http://startup-lab.me/get_user_tasks", article)
+              .then(response => {this.received_tasks = response.data;})
+              .catch(error => { console.log(error.message); });
+
+          })
           .catch(error => { this.response_message = error.message; this.list_task_show(); });
-        
-          let modal = document.querySelector('#my-modal');
-          modal.style.display = 'block';
+                        
+          let load = document.querySelector('.loader'); 
+          load.style.display = 'block';
+          this.list_task_show();
       }
     },
 
@@ -799,11 +816,21 @@ export default {
                           start_time: task_date,
                         };
         axios.post("http://startup-lab.me/move_task_time", article)
-          .then(response => {this.response_message = response.data; this.list_task_show(); })
+          .then(response => {
+            this.response_message = response.data; 
+            let load = document.querySelector('.loader'); 
+            load.style.display = 'none';
+            let article = { user_id: this.user_id, };
+            axios.post("http://startup-lab.me/get_user_tasks", article)
+              .then(response => {this.received_tasks = response.data;})
+              .catch(error => { console.log(error.message); }); 
+          })
           .catch(error => { this.response_message = error.message; this.list_task_show(); });
+
+          let load = document.querySelector('.loader'); 
+          load.style.display = 'block';
+          this.list_task_show();
         
-          let modal = document.querySelector('#my-modal');
-          modal.style.display = 'block';
       }
     },
   },
@@ -1083,11 +1110,12 @@ body{
 
 .loader {
   position: absolute;
-  left: calc(50% - 32px);
-  width: 64px;
-  height: 64px;
+  left: calc(43% - 32px);
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   perspective: 800px;
+  display: none;
 }
 
 
@@ -1161,8 +1189,8 @@ body{
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
-  margin-left: 20px;
-  margin-right: 10px;
+  margin-left: 15px;
+  margin-right: 0px;
   margin-top: 7px;
 }
 
