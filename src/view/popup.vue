@@ -180,7 +180,13 @@
         <div class="add__task">
           <textarea cols="29" rows="8" name="user_task" class="user__task" v-model="user_task"></textarea>
           <div class="div__add__input">
-            <button @click="create_task" class="btn__task">Create</button>
+            <template v-if="add_time != ''">
+              <button @click="create_task" class="btn__task">Create</button>
+            </template>
+            <template v-else>
+              <button @click="create_task" class="btn__task" disabled>Create</button>
+            </template>
+            
             <div class="div__input__number">
               <p>Number of subtasks:&nbsp;</p>
               <input type="number" placeholder="Число" name="number_tickets" min="1" class="add__input__number" v-model="number_tickets">
@@ -325,7 +331,12 @@
         </div>
 
         <div style="width: 100%; display: flex; align-items: flex-start; margin-top: 10px; margin-left: 30px; height: 168px;">
-          <button @click="defer_task_click" class="btn__task" style="margin-left: 10px;">Defer</button>
+          <template v-if="add_time != ''">
+            <button @click="defer_task_click" class="btn__task" style="margin-left: 10px;">Defer</button>
+          </template>
+          <template v-else>
+            <button @click="defer_task_click" class="btn__task" style="margin-left: 10px;" disabled>Defer</button>
+          </template>
         </div>
       </div>
     </template>
@@ -365,6 +376,7 @@ export default {
       // переменные для регистрации
       register_email: "",
       register_password: "",
+      utc_offset: "",
 
       // переменные для логина
       login_email: "",
@@ -469,10 +481,23 @@ export default {
         this.google_email = user_info.email;
         this.google_id = user_info.id;
 
+        let d = new Date();
+        let time_zone = d.getTimezoneOffset();
+        if(Number(time_zone) < 0){
+          let k = time_zone / -60;
+          this.utc_offset = k;
+          
+        }
+        else{
+          let k = time_zone / 60;
+          this.utc_offset = k;
+        }
+
         // при регистрации я посылю ему post запрос
         let article = { email: this.google_email,
                         password: this.google_id,
                         auth_token: this.google_token,
+                        utc_offset: this.utc_offset,
                       };
         axios.post("http://startup-lab.me/create_user", article)
           .then(response => {
@@ -499,8 +524,21 @@ export default {
     // регистрация
     register_func(){
       // при регистрации я посылю ему post запрос
+      let d = new Date();
+      let time_zone = d.getTimezoneOffset();
+      if(Number(time_zone) < 0){
+        let k = time_zone / -60;
+        this.utc_offset = k;
+        
+      }
+      else{
+        let k = time_zone / 60;
+        this.utc_offset = k;
+      }
+      
       let article = { email: this.register_email,
                       password: this.register_password,
+                      utc_offset: this.utc_offset,
                     };
       axios.post("http://startup-lab.me/create_user", article)
         .then(response => {this.user_id = response.data.user_id; this.check_for_welcome(); })
@@ -676,6 +714,7 @@ export default {
         let year = this.date.getFullYear();
         let month = this.date.getMonth() + 1;
         let day = this.date.getDate();
+        
       
         /* getHours не работает, поэтому костыли
         let s = this.date.toString();
@@ -737,6 +776,7 @@ export default {
                         
           let load = document.querySelector('.loader'); 
           load.style.display = 'block';
+          this.add_time = "";
           this.list_task_show();
       }
     },
@@ -749,7 +789,37 @@ export default {
                       user_id: this.user_id,
                     };
       axios.post("http://startup-lab.me/get_available_time", article)
-        .then(response => {this.available_date = response.data.time_list; console.log(this.check_available_date)})
+        .then(response => {this.available_date = response.data.time_list; console.log(this.check_available_date);
+
+          let hours = "";
+
+          if(this.add_time == "1"){
+            hours = "8:00";
+          }
+          else if(this.add_time == "2"){
+            hours = "10:00";
+          }
+          else if(this.add_time == "3"){
+            hours = "12:00";
+          }
+          else if(this.add_time == "4"){
+            hours = "14:00";
+          }
+          else if(this.add_time == "5"){
+            hours = "16:00";
+          }
+          else if(this.add_time == "6"){
+            hours = "18:00";
+          } 
+
+          if(this.available_date.includes(hours)){
+            console.log("Yes");
+          }
+          else{
+            this.add_time = "";
+          }
+          
+        })
         .catch(error => { console.log(error.message); });
     },
 
@@ -785,6 +855,7 @@ export default {
         let year = this.date.getFullYear();
         let month = this.date.getMonth() + 1;
         let day = this.date.getDate();
+        let time_zone = this.date.getTimezoneOffset();
 
         let hours = "";
 
@@ -829,6 +900,7 @@ export default {
 
           let load = document.querySelector('.loader'); 
           load.style.display = 'block';
+          this.add_time = "";
           this.list_task_show();
         
       }
