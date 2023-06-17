@@ -220,21 +220,94 @@
         </div>
         <div class="list__task__main">
           <template v-for="(task, index) in received_tasks.tasks" :key="index">
-            <div class="task__div">
-              <p class="task__header"><strong>{{ task.header }}</strong></p>
-              <div class="list__description">
-                <p>{{ task.text }}</p>
-                <p>{{ task.start_time }}</p>
-                <div class="list__status">
-                  <P><strong>{{ task.status }}</strong></P>
-                  <div class="list__btns">
-                    <button class="list__btn1" @click="close_task(task.id)">Dismiss</button>
-                    <button class="list__btn2" @click="defer_task_show(task.id)">Defer</button>
-                    <button class="list__btn3" @click="complete_task(task.id)">Done</button>
+              <template v-if="index==0">
+                <div class="task__div">
+                  <p class="task__header"><strong>{{ task.header }}</strong></p>
+
+                  <div class="list__description">
+                    <p>{{ task.text }}</p>
+                    <p>{{ task.start_time }}</p>
+                    <div class="list__status">
+                      <P><strong>{{ task.status }}</strong></P>
+                      <div class="list__btns">
+                        <button class="list__btn1" @click="close_task(task.id)">Dismiss</button>
+                        <button class="list__btn2" @click="defer_task_show(task.id)">Defer</button>
+                        <button class="list__btn3" @click="complete_task(task.id)">Done</button>
+                      </div>
+                    </div>
                   </div>
+
+                  <template v-if="received_tasks.tasks.length >= 2">
+                    <template v-for="(task2, index2) in received_tasks.tasks" :key="index2">
+                      <template v-if="index2 != 0">
+                 
+                        <template v-if="received_tasks.tasks[index].header ==  received_tasks.tasks[index2].header">
+
+                          <div class="list__description">
+                            <p>{{ task2.text }}</p>
+                            <p>{{ task2.start_time }}</p>
+                            <div class="list__status">
+                              <P><strong>{{ task2.status }}</strong></P>
+                              <div class="list__btns">
+                                <button class="list__btn1" @click="close_task(task2.id)">Dismiss</button>
+                                <button class="list__btn2" @click="defer_task_show(task2.id)">Defer</button>
+                                <button class="list__btn3" @click="complete_task(task2.id)">Done</button>
+                              </div>
+                            </div>
+                          </div>
+
+                        </template>
+                      </template>
+                    </template>
+                  </template>
                 </div>
-              </div>
-            </div>
+              </template>
+              <template v-else>
+                <template v-if="received_tasks.tasks[index-1].header !=  received_tasks.tasks[index].header">
+
+                  <div class="task__div">
+                    <p class="task__header"><strong>{{ task.header }}</strong></p>
+
+                    <div class="list__description">
+                      <p>{{ task.text }}</p>
+                      <p>{{ task.start_time }}</p>
+                      <div class="list__status">
+                        <P><strong>{{ task.status }}</strong></P>
+                        <div class="list__btns">
+                          <button class="list__btn1" @click="close_task(task.id)">Dismiss</button>
+                          <button class="list__btn2" @click="defer_task_show(task.id)">Defer</button>
+                          <button class="list__btn3" @click="complete_task(task.id)">Done</button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <template v-if="received_tasks.tasks.length >= 2">
+                      <template v-for="(task3, index3) in received_tasks.tasks" :key="index3">
+                        <template v-if="index < index3">
+                          <template v-if="received_tasks.tasks[index].header ==  received_tasks.tasks[index3].header">
+
+                            <div class="list__description">
+                              <p>{{ task3.text }}</p>
+                              <p>{{ task3.start_time }}</p>
+                              <div class="list__status">
+                                <P><strong>{{ task3.status }}</strong></P>
+                                <div class="list__btns">
+                                  <button class="list__btn1" @click="close_task(task3.id)">Dismiss</button>
+                                  <button class="list__btn2" @click="defer_task_show(task3.id)">Defer</button>
+                                  <button class="list__btn3" @click="complete_task(task3.id)">Done</button>
+                                </div>
+                              </div>
+                            </div>
+
+                          </template>
+                        </template>
+                      </template>
+                    </template>
+                  </div>
+
+                </template>
+              </template>
+
           </template>
         </div>
       </div>
@@ -1080,7 +1153,7 @@ body{
 .task__header{
   margin-top: 1px;
   margin-bottom: 5px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .list__status{
@@ -1254,6 +1327,7 @@ body{
   border-radius: 0.5rem;
   padding-top: 1px;
   padding-bottom: 1px;
+  margin-bottom: 5px;
 }
 
 .add__radio{
