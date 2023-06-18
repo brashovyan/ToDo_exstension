@@ -225,10 +225,10 @@
                   <p class="task__header"><strong>{{ task.header }}</strong></p>
 
                   <div class="list__description">
-                    <p>{{ task.text }}</p>
-                    <p>{{ task.start_time }}</p>
+                    <p v-html="task.text.replace(/(?:\r\n|\r|\n)/g, '<br />')"></p>
+                    <strong><p v-html="task.start_time.replace('T', '&nbsp;').replace('Z', '&nbsp;')"></p></strong>
                     <div class="list__status">
-                      <P><strong>{{ task.status }}</strong></P>
+                      <p style="font-size: 13px"><strong>{{ task.status }}</strong></p>
                       <div class="list__btns">
                         <button class="list__btn1" @click="close_task(task.id)">Dismiss</button>
                         <button class="list__btn2" @click="defer_task_show(task.id)">Defer</button>
@@ -244,10 +244,10 @@
                         <template v-if="received_tasks.tasks[index].header ==  received_tasks.tasks[index2].header">
 
                           <div class="list__description">
-                            <p>{{ task2.text }}</p>
-                            <p>{{ task2.start_time }}</p>
+                            <p v-html="task2.text.replace(/(?:\r\n|\r|\n)/g, '<br />')"></p>
+                            <strong><p v-html="task2.start_time.replace('T', '&nbsp;').replace('Z', '&nbsp;')"></p></strong>
                             <div class="list__status">
-                              <P><strong>{{ task2.status }}</strong></P>
+                              <p style="font-size: 13px"><strong>{{ task2.status }}</strong></p>
                               <div class="list__btns">
                                 <button class="list__btn1" @click="close_task(task2.id)">Dismiss</button>
                                 <button class="list__btn2" @click="defer_task_show(task2.id)">Defer</button>
@@ -269,10 +269,10 @@
                     <p class="task__header"><strong>{{ task.header }}</strong></p>
 
                     <div class="list__description">
-                      <p>{{ task.text }}</p>
-                      <p>{{ task.start_time }}</p>
+                      <p v-html="task.text.replace(/(?:\r\n|\r|\n)/g, '<br />')"></p>
+                      <strong><p v-html="task.start_time.replace('T', '&nbsp;').replace('Z', '&nbsp;')"></p></strong>
                       <div class="list__status">
-                        <P><strong>{{ task.status }}</strong></P>
+                        <p style="font-size: 13px"><strong>{{ task.status }}</strong></p>
                         <div class="list__btns">
                           <button class="list__btn1" @click="close_task(task.id)">Dismiss</button>
                           <button class="list__btn2" @click="defer_task_show(task.id)">Defer</button>
@@ -287,10 +287,10 @@
                           <template v-if="received_tasks.tasks[index].header ==  received_tasks.tasks[index3].header">
 
                             <div class="list__description">
-                              <p>{{ task3.text }}</p>
-                              <p>{{ task3.start_time }}</p>
+                              <p v-html="task3.text.replace(/(?:\r\n|\r|\n)/g, '<br />')"></p>
+                              <strong><p v-html="task3.start_time.replace('T', '&nbsp;').replace('Z', '&nbsp;')"></p></strong>
                               <div class="list__status">
-                                <P><strong>{{ task3.status }}</strong></P>
+                                <p style="font-size: 13px"><strong>{{ task3.status }}</strong></p>
                                 <div class="list__btns">
                                   <button class="list__btn1" @click="close_task(task3.id)">Dismiss</button>
                                   <button class="list__btn2" @click="defer_task_show(task3.id)">Defer</button>
@@ -310,7 +310,13 @@
 
           </template>
         </div>
+
+        
       </div>
+
+      <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
     </template>
 
     <!-- Формочка чтобы отложить задачу -->
@@ -919,9 +925,24 @@ export default {
                       status: "done",
                     };
       axios.post("http://startup-lab.me/change_task_status", article)
-        .then(response => { this.list_task_show(); })
+        .then(response => { 
+                            this.list_task_show();
+                            let fire = document.querySelectorAll('.firework'); 
+                            for(let f of fire){
+                              f.style.display = 'block';
+                            }
+                            setTimeout(this.stop_firework, 3600);
+                          })
         .catch(error => { console.log(error.message); });
     },
+
+    stop_firework(){
+      let fire = document.querySelectorAll('.firework'); 
+      for(let f of fire){
+        f.style.display = 'none';
+      }
+    },
+
 
     defer_task_click(){
       if(this.add_time != ""){
@@ -1457,4 +1478,151 @@ body{
 .vc-header:hover .vc-arrow:hover {
   color: rgb(255, 255, 255);
 }
+
+@keyframes firework {
+  0% { transform: translate(var(--x), var(--initialY)); width: var(--initialSize); opacity: 1; }
+  50% { width: 0.5vmin; opacity: 1; }
+  100% { width: var(--finalSize); opacity: 0; }
+}
+
+/* @keyframes fireworkPseudo {
+  0% { transform: translate(-50%, -50%); width: var(--initialSize); opacity: 1; }
+  50% { width: 0.5vmin; opacity: 1; }
+  100% { width: var(--finalSize); opacity: 0; }
+}
+ */
+.firework,
+.firework::before,
+.firework::after
+{
+  display: none;
+  --initialSize: 6.5vmin;
+  --finalSize: 45vmin;
+  --particleSize: 1.5vmin;
+  --color1: yellow;
+  --color2: khaki;
+  --color3: white;
+  --color4: lime;
+  --color5: gold;
+  --color6: mediumseagreen;
+  --y: -30vmin;
+  --x: -50%;
+  --initialY: 60vmin;
+  content: "";
+  animation: firework 2s infinite;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, var(--y));
+  width: var(--initialSize);
+  aspect-ratio: 1;
+  background: 
+    /*
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 0% 0%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 100% 0%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 100% 100%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 0% 100%,
+    */
+    
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 50% 0%,
+    radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 100% 50%,
+    radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 50% 100%,
+    radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 0% 50%,
+    
+    /* bottom right */
+    radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 80% 90%,
+    radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 95% 90%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 90% 70%,
+    radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 100% 60%,
+    radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 55% 80%,
+    radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 70% 77%,
+    
+    /* bottom left */
+    radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 22% 90%,
+    radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 45% 90%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 33% 70%,
+    radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 10% 60%,
+    radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 31% 80%,
+    radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 28% 77%,
+    radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 13% 72%,
+    
+    /* top left */
+    radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 80% 10%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 95% 14%,
+    radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 90% 23%,
+    radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 100% 43%,
+    radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 85% 27%,
+    radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 77% 37%,
+    radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 60% 7%,
+    
+    /* top right */
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 22% 14%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 45% 20%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 33% 34%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 10% 29%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 31% 37%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 28% 7%,
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 13% 42%
+    ;
+  background-size: var(--initialSize) var(--initialSize);
+  background-repeat: no-repeat;
+}
+
+.firework::before {
+  --x: -50%;
+  --y: -50%;
+  --initialY: -50%;
+/*   transform: translate(-20vmin, -2vmin) rotate(40deg) scale(1.3) rotateY(40deg); */
+  transform: translate(-50%, -50%) rotate(40deg) scale(1.3) rotateY(40deg);
+/*   animation: fireworkPseudo 2s infinite; */
+}
+
+.firework::after {
+  --x: -50%;
+  --y: -50%;
+  --initialY: -50%;
+/*   transform: translate(44vmin, -50%) rotate(170deg) scale(1.15) rotateY(-30deg); */
+  transform: translate(-50%, -50%) rotate(170deg) scale(1.15) rotateY(-30deg);
+/*   animation: fireworkPseudo 2s infinite; */
+}
+
+.firework:nth-child(2) {
+  --x: 30vmin;
+}
+
+.firework:nth-child(2),
+.firework:nth-child(2)::before,
+.firework:nth-child(2)::after {
+  --color1: pink;
+  --color2: violet;
+  --color3: fuchsia;
+  --color4: orchid;
+  --color5: plum;
+  --color6: lavender;  
+  --finalSize: 40vmin;
+  left: 30%;
+  top: 60%;
+  animation-delay: -0.25s;
+}
+
+.firework:nth-child(3) {
+  --x: -30vmin;
+  --y: -50vmin;
+}
+
+.firework:nth-child(3),
+.firework:nth-child(3)::before,
+.firework:nth-child(3)::after {
+  --color1: cyan;
+  --color2: lightcyan;
+  --color3: lightblue;
+  --color4: PaleTurquoise;
+  --color5: SkyBlue;
+  --color6: lavender;
+  --finalSize: 35vmin;
+  left: 70%;
+  top: 60%;
+  animation-delay: -0.4s;
+}
+
 </style>
