@@ -61,16 +61,16 @@
     <template v-if="login_status == true && welcome == true">
       <div class="login">
         <h1 class="welcome__h1">Welcome to the Shiva!</h1>
-        <p class="welcome__p">We have integration with Google Calendar and Notion</p>
-        <p class="welcome__p">You can log in to your accounts:</p>
+        <p class="welcome__p">We have integration with Google Calendar</p>
+        <p class="welcome__p">You can log in to your account:</p>
         <template v-if="google_token.length < 1">
           <div style="display: flex;">
             <button class="google__btn" @click="add_google"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 48 48" class="abcRioButtonSvg"><g><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path><path fill="none" d="M0 0h48v48H0z"></path></g>
                 </svg>
             </button>
             
-            <button class="google__btn" @click="add_notion"><svg height="25" width="25" xmlns="http://www.w3.org/2000/svg" viewBox="12 0.18999999999999906 487.619 510.941"><path d="M96.085 91.118c15.81 12.845 21.741 11.865 51.43 9.884l279.888-16.806c5.936 0 1-5.922-.98-6.906L379.94 43.686c-8.907-6.915-20.773-14.834-43.516-12.853L65.408 50.6c-9.884.98-11.858 5.922-7.922 9.883zm16.804 65.228v294.491c0 15.827 7.909 21.748 25.71 20.769l307.597-17.799c17.81-.979 19.794-11.865 19.794-24.722V136.57c0-12.836-4.938-19.758-15.84-18.77l-321.442 18.77c-11.863.997-15.82 6.931-15.82 19.776zm303.659 15.797c1.972 8.903 0 17.798-8.92 18.799l-14.82 2.953v217.412c-12.868 6.916-24.734 10.87-34.622 10.87-15.831 0-19.796-4.945-31.654-19.76l-96.944-152.19v147.248l30.677 6.922s0 17.78-24.75 17.78l-68.23 3.958c-1.982-3.958 0-13.832 6.921-15.81l17.805-4.935V210.7l-24.721-1.981c-1.983-8.903 2.955-21.74 16.812-22.736l73.195-4.934 100.889 154.171V198.836l-25.723-2.952c-1.974-10.884 5.927-18.787 15.819-19.767zM42.653 23.919l281.9-20.76c34.618-2.969 43.525-.98 65.283 14.825l89.986 63.247c14.848 10.876 19.797 13.837 19.797 25.693v346.883c0 21.74-7.92 34.597-35.608 36.564L136.64 510.14c-20.785.991-30.677-1.971-41.562-15.815l-66.267-85.978C16.938 392.52 12 380.68 12 366.828V58.495c0-17.778 7.922-32.608 30.653-34.576z" fill-rule="evenodd"/></svg>
-            </button>
+            <!-- <button class="google__btn" @click="add_notion"><svg height="25" width="25" xmlns="http://www.w3.org/2000/svg" viewBox="12 0.18999999999999906 487.619 510.941"><path d="M96.085 91.118c15.81 12.845 21.741 11.865 51.43 9.884l279.888-16.806c5.936 0 1-5.922-.98-6.906L379.94 43.686c-8.907-6.915-20.773-14.834-43.516-12.853L65.408 50.6c-9.884.98-11.858 5.922-7.922 9.883zm16.804 65.228v294.491c0 15.827 7.909 21.748 25.71 20.769l307.597-17.799c17.81-.979 19.794-11.865 19.794-24.722V136.57c0-12.836-4.938-19.758-15.84-18.77l-321.442 18.77c-11.863.997-15.82 6.931-15.82 19.776zm303.659 15.797c1.972 8.903 0 17.798-8.92 18.799l-14.82 2.953v217.412c-12.868 6.916-24.734 10.87-34.622 10.87-15.831 0-19.796-4.945-31.654-19.76l-96.944-152.19v147.248l30.677 6.922s0 17.78-24.75 17.78l-68.23 3.958c-1.982-3.958 0-13.832 6.921-15.81l17.805-4.935V210.7l-24.721-1.981c-1.983-8.903 2.955-21.74 16.812-22.736l73.195-4.934 100.889 154.171V198.836l-25.723-2.952c-1.974-10.884 5.927-18.787 15.819-19.767zM42.653 23.919l281.9-20.76c34.618-2.969 43.525-.98 65.283 14.825l89.986 63.247c14.848 10.876 19.797 13.837 19.797 25.693v346.883c0 21.74-7.92 34.597-35.608 36.564L136.64 510.14c-20.785.991-30.677-1.971-41.562-15.815l-66.267-85.978C16.938 392.52 12 380.68 12 366.828V58.495c0-17.778 7.922-32.608 30.653-34.576z" fill-rule="evenodd"/></svg> -->
+            <!-- </button> -->
           </div>
           <p class="welcome__ps">P.s. Authorization will take place through previously entered login and password</p>
         </template>
@@ -187,10 +187,10 @@
               <button @click="create_task" class="btn__task" disabled>Create</button>
             </template>
             
-            <div class="div__input__number">
+            <!-- <div class="div__input__number">
               <p>Number of subtasks:&nbsp;</p>
               <input type="number" placeholder="Число" name="number_tickets" min="1" class="add__input__number" v-model="number_tickets">
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -216,13 +216,17 @@
         <div class="main__buttons">
           <button class="main__btn" @click="logout_func">Logout</button>
           <button class="main__btn" @click="add_task_show">Add task</button>
-          <button class="main__btn" @click="statistic_show">statistics</button>
+          <button class="main__btn" @click="statistic_show">Archive</button>
         </div>
         <div class="list__task__main">
           <template v-for="(task, index) in received_tasks.tasks" :key="index">
               <template v-if="index==0">
                 <div class="task__div">
-                  <p class="task__header"><strong>{{ task.header }}</strong></p>
+                  <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <p class="task__header"><strong>{{ task.header }}</strong></p>
+                    <button class="task__header__close" @click="close_all_task( task.header )">X</button>
+                  </div>
+                  
 
                   <div class="list__description">
                     <p v-html="task.text.replace(/(?:\r\n|\r|\n)/g, '<br />')"></p>
@@ -266,7 +270,10 @@
                 <template v-if="received_tasks.tasks[index-1].header !=  received_tasks.tasks[index].header">
 
                   <div class="task__div">
-                    <p class="task__header"><strong>{{ task.header }}</strong></p>
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                      <p class="task__header"><strong>{{ task.header }}</strong></p>
+                      <button class="task__header__close" @click="close_all_task(task.header)">X</button>
+                    </div>
 
                     <div class="list__description">
                       <p v-html="task.text.replace(/(?:\r\n|\r|\n)/g, '<br />')"></p>
@@ -307,7 +314,7 @@
 
                 </template>
               </template>
-
+              
           </template>
         </div>
 
@@ -420,12 +427,118 @@
       </div>
     </template>
 
-    <!-- Статистика -->
+    <!-- Архив (old статистика) -->
     <template v-if="login_status == true && statistics == true ">
-      <div class="statistics__div">
-        <button class="login__back" @click="list_task_show">Back</button>
-        <p>Statistics</p>
+      <div class="list__div__main">
+        <div class="calendar__div__back">
+          <button class="login__back" @click="list_task_show" style="margin-bottom: -3px;">Back</button>
+        </div>
+        <div class="list__task__main">
+          <template v-for="(task, index) in received_tasks_done.tasks" :key="index">
+              <template v-if="index==0">
+                <div class="task__div">
+             
+                    <p class="task__header"><strong>{{ task.header }}</strong></p>
+
+           
+                  
+
+                  <div class="list__description">
+                    <p v-html="task.text.replace(/(?:\r\n|\r|\n)/g, '<br />')"></p>
+                    <strong><p v-html="task.start_time.replace('T', '&nbsp;').replace('Z', '&nbsp;')"></p></strong>
+                    <div class="list__status">
+                      <p style="font-size: 13px"><strong>{{ task.status }}</strong></p>
+                      <!-- <div class="list__btns"> -->
+                        <!-- <button class="list__btn1" @click="close_task(task.id)">Dismiss</button> -->
+                        <!-- <button class="list__btn2" @click="defer_task_show(task.id)">Defer</button> -->
+                        <!-- <button class="list__btn3" @click="complete_task(task.id)">Done</button> -->
+                      <!-- </div> -->
+                    </div>
+                  </div>
+
+                  <template v-if="received_tasks_done.tasks.length >= 2">
+                    <template v-for="(task2, index2) in received_tasks_done.tasks" :key="index2">
+                      <template v-if="index2 != 0">
+                 
+                        <template v-if="received_tasks_done.tasks[index].header ==  received_tasks_done.tasks[index2].header">
+
+                          <div class="list__description">
+                            <p v-html="task2.text.replace(/(?:\r\n|\r|\n)/g, '<br />')"></p>
+                            <strong><p v-html="task2.start_time.replace('T', '&nbsp;').replace('Z', '&nbsp;')"></p></strong>
+                            <div class="list__status">
+                              <p style="font-size: 13px"><strong>{{ task2.status }}</strong></p>
+                              <!-- <div class="list__btns">
+                                <button class="list__btn1" @click="close_task(task2.id)">Dismiss</button>
+                                <button class="list__btn2" @click="defer_task_show(task2.id)">Defer</button>
+                                <button class="list__btn3" @click="complete_task(task2.id)">Done</button>
+                              </div> -->
+                            </div>
+                          </div>
+
+                        </template>
+                      </template>
+                    </template>
+                  </template>
+                </div>
+              </template>
+              <template v-else>
+                <template v-if="received_tasks_done.tasks[index-1].header !=  received_tasks_done.tasks[index].header">
+
+                  <div class="task__div">
+                  
+                      <p class="task__header"><strong>{{ task.header }}</strong></p>
+                  
+                
+
+                    <div class="list__description">
+                      <p v-html="task.text.replace(/(?:\r\n|\r|\n)/g, '<br />')"></p>
+                      <strong><p v-html="task.start_time.replace('T', '&nbsp;').replace('Z', '&nbsp;')"></p></strong>
+                      <div class="list__status">
+                        <p style="font-size: 13px"><strong>{{ task.status }}</strong></p>
+                        <!-- <div class="list__btns">
+                          <button class="list__btn1" @click="close_task(task.id)">Dismiss</button>
+                          <button class="list__btn2" @click="defer_task_show(task.id)">Defer</button>
+                          <button class="list__btn3" @click="complete_task(task.id)">Done</button>
+                        </div> -->
+                      </div>
+                    </div>
+
+                    <template v-if="received_tasks_done.tasks.length >= 2">
+                      <template v-for="(task3, index3) in received_tasks_done.tasks" :key="index3">
+                        <template v-if="index < index3">
+                          <template v-if="received_tasks_done.tasks[index].header ==  received_tasks_done.tasks[index3].header">
+
+                            <div class="list__description">
+                              <p v-html="task3.text.replace(/(?:\r\n|\r|\n)/g, '<br />')"></p>
+                              <strong><p v-html="task3.start_time.replace('T', '&nbsp;').replace('Z', '&nbsp;')"></p></strong>
+                              <div class="list__status">
+                                <p style="font-size: 13px"><strong>{{ task3.status }}</strong></p>
+                                <!-- <div class="list__btns">
+                                  <button class="list__btn1" @click="close_task(task3.id)">Dismiss</button>
+                                  <button class="list__btn2" @click="defer_task_show(task3.id)">Defer</button>
+                                  <button class="list__btn3" @click="complete_task(task3.id)">Done</button>
+                                </div> -->
+                              </div>
+                            </div>
+
+                          </template>
+                        </template>
+                      </template>
+                    </template>
+                  </div>
+
+                </template>
+              </template>
+
+          </template>
+        </div>
+
+        
       </div>
+
+        <div class="firework"></div>
+        <div class="firework"></div>
+        <div class="firework"></div>
     </template>
   </div>
 </template>
@@ -478,6 +591,7 @@ export default {
 
       // переменные для списка задач
       received_tasks: [],
+      received_tasks_done: [],
       
       /*received_tasks: {
           "tasks": [
@@ -721,6 +835,7 @@ export default {
     },
 
     statistic_show(){
+      //console.log(this.user_id);
       this.login_status = true;
       this.list_task = false;
       this.add_task = false;
@@ -729,6 +844,11 @@ export default {
       this.login = false;
       this.welcome = false;
       this.defer_task = false;
+
+      let article = { user_id: this.user_id, };
+      axios.post("http://startup-lab.me/archive", article)
+        .then(response => {this.received_tasks_done = response.data;})
+        .catch(error => { console.log(error.message); });
     },
 
     register_show(){
@@ -999,6 +1119,15 @@ export default {
         
       }
     },
+
+    close_all_task(task_name){
+      let article = { user_id: this.user_id,
+                      task_name: task_name,
+                    };
+      axios.post("http://startup-lab.me/delete_group_tasks", article)
+        .then(response => { this.list_task_show(); })
+        .catch(error => { console.log(error.message); });
+    },  
   },
 }
 </script>
@@ -1098,7 +1227,7 @@ body{
 }
 
 .btn__task{
-  margin-left: -11px;
+  margin-left: 6px;
   margin-bottom: 7px;
   background-color: #eaeaea;
   border: none;
@@ -1161,6 +1290,18 @@ body{
   background-color: white;
   border-radius: 0.5rem;
   padding: 5px;
+}
+
+.task__header__close{
+  cursor: pointer;
+  margin-bottom: 6px;
+  border-radius: 5px;
+  border: solid black 0.2ch;
+  background-color: #ffe7e7;
+}
+
+.task__header__close:hover{
+  background-color: #ffb1b1;
 }
 
 .task__div{
