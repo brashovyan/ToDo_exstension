@@ -89,10 +89,13 @@
 
     <!-- Формочка добавления задачи -->
     <template v-if="login_status == true && add_task == true">
-      <div class="calendar__div__back">
-        <button class="login__back" @click="list_task_show">Back</button>
-      </div>
       <div class="calendar__main__div">
+        <div class="main__buttons">
+          <button class="main__btn" @click="logout_func">Logout</button>
+          <button class="main__btn" @click="list_task_show">Main</button>
+          <button class="main__btn" @click="add_task_show" style="background-color: bisque;">Add task</button>
+          <button class="main__btn" @click="statistic_show">Archive</button>
+        </div>
         <div class="calendar__div">
           <DatePicker v-model="date" mode="date" :min-date='new Date()' locale="en" is-dark/>
           <div class="add__radio">
@@ -215,6 +218,7 @@
       <div class="list__div__main">
         <div class="main__buttons">
           <button class="main__btn" @click="logout_func">Logout</button>
+          <button class="main__btn" @click="list_task_show" style="background-color: bisque;">Main</button>
           <button class="main__btn" @click="add_task_show">Add task</button>
           <button class="main__btn" @click="statistic_show">Archive</button>
         </div>
@@ -331,7 +335,7 @@
       <div class="calendar__div__back">
         <button class="login__back" @click="list_task_show">Back</button>
       </div>
-      <div class="calendar__main__div">
+      <div class="calendar__main__div" style="border-top-left-radius: 0px; border-top-right-radius: 0px;">
         <div class="calendar__div">
           <DatePicker v-model="date" mode="date" :min-date='new Date()' locale="en" is-dark/>
           <div class="add__radio">
@@ -416,12 +420,12 @@
           </div>
         </div>
 
-        <div style="width: 100%; display: flex; align-items: flex-start; margin-top: 10px; margin-left: 30px; height: 168px;">
+        <div style="width: 100%; display: flex; align-items: center; justify-content: center; margin-top: 10px; height: 160px;">
           <template v-if="add_time != ''">
-            <button @click="defer_task_click" class="btn__task" style="margin-left: 10px;">Defer</button>
+            <button @click="defer_task_click" class="btn__task">Defer</button>
           </template>
           <template v-else>
-            <button @click="defer_task_click" class="btn__task" style="margin-left: 10px;" disabled>Defer</button>
+            <button @click="defer_task_click" class="btn__task" disabled>Defer</button>
           </template>
         </div>
       </div>
@@ -430,8 +434,11 @@
     <!-- Архив (old статистика) -->
     <template v-if="login_status == true && statistics == true ">
       <div class="list__div__main">
-        <div class="calendar__div__back">
-          <button class="login__back" @click="list_task_show" style="margin-bottom: -3px;">Back</button>
+        <div class="main__buttons">
+          <button class="main__btn" @click="logout_func">Logout</button>
+          <button class="main__btn" @click="list_task_show">Main</button>
+          <button class="main__btn" @click="add_task_show">Add task</button>
+          <button class="main__btn" @click="statistic_show" style="background-color: bisque;">Archive</button>
         </div>
         <div class="list__task__main">
           <template v-for="(task, index) in received_tasks_done.tasks" :key="index">
@@ -1198,10 +1205,11 @@ body{
 .calendar__main__div{
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-direction: column;
   background: rgb(255, 255, 255);
-  margin-top: -5px;
+  margin-top: 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .calendar__div{
@@ -1213,12 +1221,16 @@ body{
 }
 
 .add__task{
-  width: 250px;
+  width: 100%;
   height: 100%;
   background-color: white;
   margin-top: 0px;
   margin-bottom: 3px;
   border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .user__task{
