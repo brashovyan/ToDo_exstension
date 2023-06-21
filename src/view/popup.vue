@@ -24,7 +24,7 @@
         </div>
     </div>
     
-    <div @click="show_settings" class="settings__div">
+    <div class="settings__div">
       <svg width="20" height="20" viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M17.4531 22.0273C16.875 22.0273 16.3438 21.8828 15.8594 21.5938C15.3828 21.3125 15 20.9336 14.7109 20.457C14.4297 19.9805 14.2891 19.4531 14.2891 18.875C14.2891 18.2969 14.4297 17.7695 14.7109 17.293C15 16.8086 15.3828 16.4258 15.8594 16.1445C16.3438 15.8555 16.875 15.7109 17.4531 15.7109C18.0391 15.7109 18.5703 15.8555 19.0469 16.1445C19.5234 16.4258 19.9023 16.8086 20.1836 17.293C20.4727 17.7695 20.6172 18.2969 20.6172 18.875C20.6172 19.4531 20.4727 19.9805 20.1836 20.457C19.9023 20.9336 19.5195 21.3125 19.0352 21.5938C18.5586 21.8828 18.0312 22.0273 17.4531 22.0273ZM17.4531 20.3516C17.8672 20.3516 18.2188 20.207 18.5078 19.918C18.7969 19.6289 18.9414 19.2812 18.9414 18.875C18.9414 18.4531 18.7969 18.1016 18.5078 17.8203C18.2188 17.5312 17.8672 17.3867 17.4531 17.3867C17.0469 17.3867 16.6992 17.5312 16.4102 17.8203C16.1211 18.1016 15.9766 18.4531 15.9766 18.875C15.9766 19.2812 16.1211 19.6289 16.4102 19.918C16.6992 20.207 17.0469 20.3516 17.4531 20.3516ZM15.3672 17.6328V20.1055H1.91406C1.58594 20.1055 1.30078 19.9844 1.05859 19.7422C0.824219 19.4922 0.707031 19.2031 0.707031 18.875C0.707031 18.5312 0.824219 18.2383 1.05859 17.9961C1.29297 17.7539 1.57812 17.6328 1.91406 17.6328H15.3672ZM24.0977 17.6328C24.4258 17.6328 24.707 17.7539 24.9414 17.9961C25.1758 18.2383 25.293 18.5312 25.293 18.875C25.293 19.2031 25.1758 19.4922 24.9414 19.7422C24.707 19.9844 24.4258 20.1055 24.0977 20.1055H19.6445V17.6328H24.0977ZM8.67578 14.6445C8.09766 14.6445 7.56641 14.5 7.08203 14.2109C6.60547 13.9219 6.22656 13.5391 5.94531 13.0625C5.66406 12.5859 5.52344 12.0547 5.52344 11.4688C5.52344 10.8906 5.66406 10.3633 5.94531 9.88672C6.22656 9.41016 6.60547 9.03125 7.08203 8.75C7.56641 8.46094 8.09766 8.31641 8.67578 8.31641C9.25391 8.31641 9.78125 8.46094 10.2578 8.75C10.7344 9.03125 11.1172 9.41016 11.4062 9.88672C11.6953 10.3633 11.8398 10.8906 11.8398 11.4688C11.8398 12.0547 11.6953 12.5859 11.4062 13.0625C11.1172 13.5391 10.7344 13.9219 10.2578 14.2109C9.78125 14.5 9.25391 14.6445 8.67578 14.6445ZM8.67578 12.957C9.09766 12.957 9.44922 12.8125 9.73047 12.5234C10.0195 12.2344 10.1641 11.8828 10.1641 11.4688C10.1641 11.0469 10.0195 10.6953 9.73047 10.4141C9.44922 10.1328 9.09766 9.99219 8.67578 9.99219C8.26172 9.99219 7.91016 10.1328 7.62109 10.4141C7.33203 10.6953 7.1875 11.0469 7.1875 11.4688C7.1875 11.8828 7.33203 12.2344 7.62109 12.5234C7.91016 12.8125 8.26172 12.957 8.67578 12.957ZM1.89062 10.2266H6.54297V12.7109H1.89062C1.57031 12.7109 1.29297 12.5898 1.05859 12.3477C0.824219 12.0977 0.707031 11.8047 0.707031 11.4688C0.707031 11.1328 0.824219 10.8438 1.05859 10.6016C1.29297 10.3516 1.57031 10.2266 1.89062 10.2266ZM24.0742 10.2266C24.4102 10.2266 24.6953 10.3477 24.9297 10.5898C25.1719 10.832 25.293 11.125 25.293 11.4688C25.293 11.8125 25.1719 12.1055 24.9297 12.3477C24.6953 12.5898 24.4102 12.7109 24.0742 12.7109H10.7148V10.2266H24.0742ZM17.4531 7.23828C16.875 7.23828 16.3438 7.09375 15.8594 6.80469C15.3828 6.51562 15 6.13281 14.7109 5.65625C14.4297 5.17969 14.2891 4.65234 14.2891 4.07422C14.2891 3.49609 14.4297 2.96875 14.7109 2.49219C15 2.00781 15.3828 1.625 15.8594 1.34375C16.3438 1.05469 16.875 0.910156 17.4531 0.910156C18.0312 0.910156 18.5586 1.05469 19.0352 1.34375C19.5195 1.625 19.9023 2.00781 20.1836 2.49219C20.4727 2.96875 20.6172 3.49609 20.6172 4.07422C20.6172 4.65234 20.4727 5.17969 20.1836 5.65625C19.9023 6.13281 19.5195 6.51562 19.0352 6.80469C18.5586 7.09375 18.0312 7.23828 17.4531 7.23828ZM17.4531 5.5625C17.8672 5.5625 18.2188 5.41797 18.5078 5.12891C18.7969 4.83203 18.9414 4.47656 18.9414 4.0625C18.9414 3.64844 18.7969 3.30078 18.5078 3.01953C18.2188 2.73047 17.8672 2.58594 17.4531 2.58594C17.0469 2.58594 16.6992 2.73047 16.4102 3.01953C16.1211 3.30078 15.9766 3.64844 15.9766 4.0625C15.9766 4.47656 16.1211 4.83203 16.4102 5.12891C16.6992 5.41797 17.0469 5.5625 17.4531 5.5625ZM15.4023 2.83203V5.31641H1.91406C1.58594 5.31641 1.30078 5.19141 1.05859 4.94141C0.824219 4.69141 0.707031 4.40234 0.707031 4.07422C0.707031 3.73828 0.824219 3.44922 1.05859 3.20703C1.29297 2.95703 1.57812 2.83203 1.91406 2.83203H15.4023ZM24.0977 2.83203C24.4258 2.83203 24.707 2.95703 24.9414 3.20703C25.1758 3.44922 25.293 3.73828 25.293 4.07422C25.293 4.41016 25.1758 4.70312 24.9414 4.95312C24.707 5.19531 24.4258 5.31641 24.0977 5.31641H19.5273V2.83203H24.0977Z" fill="#7F7F7F" style="mix-blend-mode:luminosity"/>
         <path d="M17.4531 22.0273C16.875 22.0273 16.3438 21.8828 15.8594 21.5938C15.3828 21.3125 15 20.9336 14.7109 20.457C14.4297 19.9805 14.2891 19.4531 14.2891 18.875C14.2891 18.2969 14.4297 17.7695 14.7109 17.293C15 16.8086 15.3828 16.4258 15.8594 16.1445C16.3438 15.8555 16.875 15.7109 17.4531 15.7109C18.0391 15.7109 18.5703 15.8555 19.0469 16.1445C19.5234 16.4258 19.9023 16.8086 20.1836 17.293C20.4727 17.7695 20.6172 18.2969 20.6172 18.875C20.6172 19.4531 20.4727 19.9805 20.1836 20.457C19.9023 20.9336 19.5195 21.3125 19.0352 21.5938C18.5586 21.8828 18.0312 22.0273 17.4531 22.0273ZM17.4531 20.3516C17.8672 20.3516 18.2188 20.207 18.5078 19.918C18.7969 19.6289 18.9414 19.2812 18.9414 18.875C18.9414 18.4531 18.7969 18.1016 18.5078 17.8203C18.2188 17.5312 17.8672 17.3867 17.4531 17.3867C17.0469 17.3867 16.6992 17.5312 16.4102 17.8203C16.1211 18.1016 15.9766 18.4531 15.9766 18.875C15.9766 19.2812 16.1211 19.6289 16.4102 19.918C16.6992 20.207 17.0469 20.3516 17.4531 20.3516ZM15.3672 17.6328V20.1055H1.91406C1.58594 20.1055 1.30078 19.9844 1.05859 19.7422C0.824219 19.4922 0.707031 19.2031 0.707031 18.875C0.707031 18.5312 0.824219 18.2383 1.05859 17.9961C1.29297 17.7539 1.57812 17.6328 1.91406 17.6328H15.3672ZM24.0977 17.6328C24.4258 17.6328 24.707 17.7539 24.9414 17.9961C25.1758 18.2383 25.293 18.5312 25.293 18.875C25.293 19.2031 25.1758 19.4922 24.9414 19.7422C24.707 19.9844 24.4258 20.1055 24.0977 20.1055H19.6445V17.6328H24.0977ZM8.67578 14.6445C8.09766 14.6445 7.56641 14.5 7.08203 14.2109C6.60547 13.9219 6.22656 13.5391 5.94531 13.0625C5.66406 12.5859 5.52344 12.0547 5.52344 11.4688C5.52344 10.8906 5.66406 10.3633 5.94531 9.88672C6.22656 9.41016 6.60547 9.03125 7.08203 8.75C7.56641 8.46094 8.09766 8.31641 8.67578 8.31641C9.25391 8.31641 9.78125 8.46094 10.2578 8.75C10.7344 9.03125 11.1172 9.41016 11.4062 9.88672C11.6953 10.3633 11.8398 10.8906 11.8398 11.4688C11.8398 12.0547 11.6953 12.5859 11.4062 13.0625C11.1172 13.5391 10.7344 13.9219 10.2578 14.2109C9.78125 14.5 9.25391 14.6445 8.67578 14.6445ZM8.67578 12.957C9.09766 12.957 9.44922 12.8125 9.73047 12.5234C10.0195 12.2344 10.1641 11.8828 10.1641 11.4688C10.1641 11.0469 10.0195 10.6953 9.73047 10.4141C9.44922 10.1328 9.09766 9.99219 8.67578 9.99219C8.26172 9.99219 7.91016 10.1328 7.62109 10.4141C7.33203 10.6953 7.1875 11.0469 7.1875 11.4688C7.1875 11.8828 7.33203 12.2344 7.62109 12.5234C7.91016 12.8125 8.26172 12.957 8.67578 12.957ZM1.89062 10.2266H6.54297V12.7109H1.89062C1.57031 12.7109 1.29297 12.5898 1.05859 12.3477C0.824219 12.0977 0.707031 11.8047 0.707031 11.4688C0.707031 11.1328 0.824219 10.8438 1.05859 10.6016C1.29297 10.3516 1.57031 10.2266 1.89062 10.2266ZM24.0742 10.2266C24.4102 10.2266 24.6953 10.3477 24.9297 10.5898C25.1719 10.832 25.293 11.125 25.293 11.4688C25.293 11.8125 25.1719 12.1055 24.9297 12.3477C24.6953 12.5898 24.4102 12.7109 24.0742 12.7109H10.7148V10.2266H24.0742ZM17.4531 7.23828C16.875 7.23828 16.3438 7.09375 15.8594 6.80469C15.3828 6.51562 15 6.13281 14.7109 5.65625C14.4297 5.17969 14.2891 4.65234 14.2891 4.07422C14.2891 3.49609 14.4297 2.96875 14.7109 2.49219C15 2.00781 15.3828 1.625 15.8594 1.34375C16.3438 1.05469 16.875 0.910156 17.4531 0.910156C18.0312 0.910156 18.5586 1.05469 19.0352 1.34375C19.5195 1.625 19.9023 2.00781 20.1836 2.49219C20.4727 2.96875 20.6172 3.49609 20.6172 4.07422C20.6172 4.65234 20.4727 5.17969 20.1836 5.65625C19.9023 6.13281 19.5195 6.51562 19.0352 6.80469C18.5586 7.09375 18.0312 7.23828 17.4531 7.23828ZM17.4531 5.5625C17.8672 5.5625 18.2188 5.41797 18.5078 5.12891C18.7969 4.83203 18.9414 4.47656 18.9414 4.0625C18.9414 3.64844 18.7969 3.30078 18.5078 3.01953C18.2188 2.73047 17.8672 2.58594 17.4531 2.58594C17.0469 2.58594 16.6992 2.73047 16.4102 3.01953C16.1211 3.30078 15.9766 3.64844 15.9766 4.0625C15.9766 4.47656 16.1211 4.83203 16.4102 5.12891C16.6992 5.41797 17.0469 5.5625 17.4531 5.5625ZM15.4023 2.83203V5.31641H1.91406C1.58594 5.31641 1.30078 5.19141 1.05859 4.94141C0.824219 4.69141 0.707031 4.40234 0.707031 4.07422C0.707031 3.73828 0.824219 3.44922 1.05859 3.20703C1.29297 2.95703 1.57812 2.83203 1.91406 2.83203H15.4023ZM24.0977 2.83203C24.4258 2.83203 24.707 2.95703 24.9414 3.20703C25.1758 3.44922 25.293 3.73828 25.293 4.07422C25.293 4.41016 25.1758 4.70312 24.9414 4.95312C24.707 5.19531 24.4258 5.31641 24.0977 5.31641H19.5273V2.83203H24.0977Z" fill="black" style="mix-blend-mode:overlay"/>
@@ -61,16 +61,16 @@
     <template v-if="login_status == true && welcome == true">
       <div class="login">
         <h1 class="welcome__h1">Welcome to the Shiva!</h1>
-        <p class="welcome__p">We have integration with Google Calendar</p>
-        <p class="welcome__p">You can log in to your account:</p>
-        <template v-if="google_token.length < 1">
+        <p class="welcome__p">It's exstension for people with ADHD or just a ToDo app.</p>
+        <p class="welcome__p">You can create tasks and track their progress.</p>
+        <!-- <template v-if="google_token.length < 1">
           <div style="display: flex;">
             <button class="google__btn" @click="add_google"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 48 48" class="abcRioButtonSvg"><g><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path><path fill="none" d="M0 0h48v48H0z"></path></g>
                 </svg>
             </button>
             
-            <!-- <button class="google__btn" @click="add_notion"><svg height="25" width="25" xmlns="http://www.w3.org/2000/svg" viewBox="12 0.18999999999999906 487.619 510.941"><path d="M96.085 91.118c15.81 12.845 21.741 11.865 51.43 9.884l279.888-16.806c5.936 0 1-5.922-.98-6.906L379.94 43.686c-8.907-6.915-20.773-14.834-43.516-12.853L65.408 50.6c-9.884.98-11.858 5.922-7.922 9.883zm16.804 65.228v294.491c0 15.827 7.909 21.748 25.71 20.769l307.597-17.799c17.81-.979 19.794-11.865 19.794-24.722V136.57c0-12.836-4.938-19.758-15.84-18.77l-321.442 18.77c-11.863.997-15.82 6.931-15.82 19.776zm303.659 15.797c1.972 8.903 0 17.798-8.92 18.799l-14.82 2.953v217.412c-12.868 6.916-24.734 10.87-34.622 10.87-15.831 0-19.796-4.945-31.654-19.76l-96.944-152.19v147.248l30.677 6.922s0 17.78-24.75 17.78l-68.23 3.958c-1.982-3.958 0-13.832 6.921-15.81l17.805-4.935V210.7l-24.721-1.981c-1.983-8.903 2.955-21.74 16.812-22.736l73.195-4.934 100.889 154.171V198.836l-25.723-2.952c-1.974-10.884 5.927-18.787 15.819-19.767zM42.653 23.919l281.9-20.76c34.618-2.969 43.525-.98 65.283 14.825l89.986 63.247c14.848 10.876 19.797 13.837 19.797 25.693v346.883c0 21.74-7.92 34.597-35.608 36.564L136.64 510.14c-20.785.991-30.677-1.971-41.562-15.815l-66.267-85.978C16.938 392.52 12 380.68 12 366.828V58.495c0-17.778 7.922-32.608 30.653-34.576z" fill-rule="evenodd"/></svg> -->
-            <!-- </button> -->
+             <button class="google__btn" @click="add_notion"><svg height="25" width="25" xmlns="http://www.w3.org/2000/svg" viewBox="12 0.18999999999999906 487.619 510.941"><path d="M96.085 91.118c15.81 12.845 21.741 11.865 51.43 9.884l279.888-16.806c5.936 0 1-5.922-.98-6.906L379.94 43.686c-8.907-6.915-20.773-14.834-43.516-12.853L65.408 50.6c-9.884.98-11.858 5.922-7.922 9.883zm16.804 65.228v294.491c0 15.827 7.909 21.748 25.71 20.769l307.597-17.799c17.81-.979 19.794-11.865 19.794-24.722V136.57c0-12.836-4.938-19.758-15.84-18.77l-321.442 18.77c-11.863.997-15.82 6.931-15.82 19.776zm303.659 15.797c1.972 8.903 0 17.798-8.92 18.799l-14.82 2.953v217.412c-12.868 6.916-24.734 10.87-34.622 10.87-15.831 0-19.796-4.945-31.654-19.76l-96.944-152.19v147.248l30.677 6.922s0 17.78-24.75 17.78l-68.23 3.958c-1.982-3.958 0-13.832 6.921-15.81l17.805-4.935V210.7l-24.721-1.981c-1.983-8.903 2.955-21.74 16.812-22.736l73.195-4.934 100.889 154.171V198.836l-25.723-2.952c-1.974-10.884 5.927-18.787 15.819-19.767zM42.653 23.919l281.9-20.76c34.618-2.969 43.525-.98 65.283 14.825l89.986 63.247c14.848 10.876 19.797 13.837 19.797 25.693v346.883c0 21.74-7.92 34.597-35.608 36.564L136.64 510.14c-20.785.991-30.677-1.971-41.562-15.815l-66.267-85.978C16.938 392.52 12 380.68 12 366.828V58.495c0-17.778 7.922-32.608 30.653-34.576z" fill-rule="evenodd"/></svg> 
+            </button>
           </div>
           <p class="welcome__ps">P.s. Authorization will take place through previously entered login and password</p>
         </template>
@@ -81,8 +81,8 @@
             </button>
           </div>
           <p class="welcome__ps">P.s. You have registered by Google</p>
-        </template>
-        <p class="welcome__p">You can link accounts in the settings</p>
+        </template> -->
+        <!-- <p class="welcome__p">You can link accounts in the settings</p> -->
         <button @click="login_func" class="btn__task" style="width: auto; height: 40px;">Continue</button>
       </div>
     </template>
@@ -90,11 +90,8 @@
     <!-- Формочка добавления задачи -->
     <template v-if="login_status == true && add_task == true">
       <div class="calendar__main__div">
-        <div class="main__buttons">
-          <button class="main__btn" @click="logout_func">Logout</button>
-          <button class="main__btn" @click="list_task_show">Main</button>
-          <button class="main__btn" @click="add_task_show" style="background-color: bisque;">Add task</button>
-          <button class="main__btn" @click="statistic_show">Archive</button>
+        <div class="calendar__div__back">
+          <button class="login__back" @click="list_task_show">Back</button>
         </div>
         <div class="calendar__div">
           <DatePicker v-model="date" mode="date" :min-date='new Date()' locale="en" is-dark/>
@@ -102,78 +99,90 @@
 
             <template v-if="available_date.includes('08:00')">
               <div class="div__radio"> 
-                <input type="radio" name="time" id="time1" value="1" v-model="add_time"  class="add__input">
+                <!-- <input type="radio" name="time" id="time1" value="1" v-model="add_time"  class="add__input"> -->
+                <div class="div__as__radio"></div>
                 <label for="time1"><span style="color: white">1</span>8 am - 10 am</label>
               </div>
             </template>
             <template v-else>
-              <div class="div__radio"> 
-                <input type="radio" name="time" id="time1" value="1" v-model="add_time" class="add__input" disabled>
+              <div class="div__radio">
+                <div class="div__as__radio__dis"></div> 
+                <!-- <input type="radio" name="time" id="time1" value="1" v-model="add_time" class="add__input" disabled> -->
                 <label for="time1"><span style="color: white">1</span>8 am - 10 am</label>
               </div>
             </template>
             
             <template v-if="available_date.includes('10:00')">
               <div class="div__radio">
-                <input type="radio" name="time" id="time2" value="2" v-model="add_time" class="add__input">
+                <!-- <input type="radio" name="time" id="time2" value="2" v-model="add_time" class="add__input"> -->
+                <div class="div__as__radio"></div>
                 <label for="time2">10 am - 12 pm</label>
               </div>
             </template>
             <template v-else>
               <div class="div__radio">
-                <input type="radio" name="time" id="time2" value="2" v-model="add_time" class="add__input" disabled>
+                <div class="div__as__radio__dis"></div> 
+                <!-- <input type="radio" name="time" id="time2" value="2" v-model="add_time" class="add__input" disabled> -->
                 <label for="time2">10 am - 12 pm</label>
               </div>
             </template>
             
             <template v-if="available_date.includes('12:00')">
               <div class="div__radio">
-                <input type="radio" name="time" id="time3" value="3" v-model="add_time" class="add__input">
+                <div class="div__as__radio"></div>
+                <!-- <input type="radio" name="time" id="time3" value="3" v-model="add_time" class="add__input"> -->
                 <label for="time3">12 pm - 14 pm</label>
               </div>
             </template>
             <template v-else>
               <div class="div__radio">
-                <input type="radio" name="time" id="time3" value="3" v-model="add_time" class="add__input" disabled>
+                <div class="div__as__radio__dis"></div> 
+                <!-- <input type="radio" name="time" id="time3" value="3" v-model="add_time" class="add__input" disabled> -->
                 <label for="time3">12 pm - 14 pm</label>
               </div>
             </template>
 
             <template v-if="available_date.includes('14:00')">
               <div class="div__radio">
-                <input type="radio" name="time" id="time4" value="4" v-model="add_time" class="add__input">
+                <div class="div__as__radio"></div>
+                <!-- <input type="radio" name="time" id="time4" value="4" v-model="add_time" class="add__input"> -->
                 <label for="time4">14 pm - 16 pm</label>
               </div>
             </template>
             <template v-else>
               <div class="div__radio">
-                <input type="radio" name="time" id="time4" value="4" v-model="add_time" class="add__input" disabled>
+                <div class="div__as__radio__dis"></div> 
+                <!-- <input type="radio" name="time" id="time4" value="4" v-model="add_time" class="add__input" disabled> -->
                 <label for="time4">14 pm - 16 pm</label>
               </div>
             </template>
 
             <template v-if="available_date.includes('16:00')">
               <div class="div__radio">
-                <input type="radio" name="time" id="time5" value="5" v-model="add_time" class="add__input">
+                <div class="div__as__radio"></div>
+                <!-- <input type="radio" name="time" id="time5" value="5" v-model="add_time" class="add__input"> -->
                 <label for="time5">16 pm - 18 pm</label>
               </div>
             </template>
             <template v-else>
               <div class="div__radio">
-                <input type="radio" name="time" id="time5" value="5" v-model="add_time" class="add__input" disabled>
+                <div class="div__as__radio__dis"></div> 
+                <!-- <input type="radio" name="time" id="time5" value="5" v-model="add_time" class="add__input" disabled> -->
                 <label for="time5">16 pm - 18 pm</label>
               </div>
             </template>
 
             <template v-if="available_date.includes('18:00')">
               <div class="div__radio">
-                <input type="radio" name="time" id="time6" value="6" v-model="add_time" class="add__input">
+                <div class="div__as__radio"></div>
+                <!-- <input type="radio" name="time" id="time6" value="6" v-model="add_time" class="add__input"> -->
                 <label for="time6">18 pm - 20 pm</label>
               </div>
             </template>
             <template v-else>
               <div class="div__radio">
-                <input type="radio" name="time" id="time6" value="6" v-model="add_time" class="add__input" disabled>
+                <div class="div__as__radio__dis"></div> 
+                <!-- <input type="radio" name="time" id="time6" value="6" v-model="add_time" class="add__input" disabled> -->
                 <label for="time6">18 pm - 20 pm</label>
               </div>
             </template>
@@ -181,14 +190,15 @@
         </div>
 
         <div class="add__task">
-          <textarea cols="29" rows="8" name="user_task" class="user__task" v-model="user_task"></textarea>
+          <textarea cols="29" rows="8" name="user_task" class="user__task" v-model="user_task" placeholder="Your task"></textarea>
           <div class="div__add__input">
-            <template v-if="add_time != ''">
-              <button @click="create_task" class="btn__task">Create</button>
+            <template v-if="user_task.length > 0">
+              <button @click="confirm_task" class="btn__task">Create</button>
             </template>
             <template v-else>
-              <button @click="create_task" class="btn__task" disabled>Create</button>
+              <button @click="confirm_task" class="btn__task" disabled>Create</button>
             </template>
+
             
             <!-- <div class="div__input__number">
               <p>Number of subtasks:&nbsp;</p>
@@ -201,13 +211,21 @@
       <div id="my-modal" class="modal">
         <div class="modal-content">
           <div class="modal-body">
-            <p>In progress...</p>
-            <p>Your task is processed by a neural network. This may take up to 1 minute. Please wait and don't close the extension. When we're done, we'll move you to the task list.</p>
-            <div class="loader">
-              <div class="inner one"></div>
-              <div class="inner two"></div>
-              <div class="inner three"></div>
-            </div>
+            <template v-if="date_unavailable">
+              <p><strong>Error!</strong></p>
+              <p>There are no more slots today, please choose an another date.</p>
+              <button @click=create_cancel class="list__btn1">OK</button>
+            </template>
+            <template v-else>
+              <p><strong>Choose a time!</strong></p>
+              <p>We are suggest {{ suggested_time }}. Is it convenient?</p>
+              <div>
+                <button @click="task_yes" class="list__btn1">Yes</button>
+                <button @click="task_no" class="list__btn1">No</button>
+                <button @click=create_cancel class="list__btn1">Cancel</button>
+              </div>
+            </template>
+            
           </div>
         </div>
       </div>
@@ -218,7 +236,6 @@
       <div class="list__div__main">
         <div class="main__buttons">
           <button class="main__btn" @click="logout_func">Logout</button>
-          <button class="main__btn" @click="list_task_show" style="background-color: bisque;">Main</button>
           <button class="main__btn" @click="add_task_show">Add task</button>
           <button class="main__btn" @click="statistic_show">Archive</button>
         </div>
@@ -342,78 +359,90 @@
 
             <template v-if="available_date.includes('08:00')">
               <div class="div__radio"> 
-                <input type="radio" name="time" id="time1" value="1" v-model="add_time"  class="add__input">
+                <!-- <input type="radio" name="time" id="time1" value="1" v-model="add_time"  class="add__input"> -->
+                <div class="div__as__radio"></div>
                 <label for="time1"><span style="color: white">1</span>8 am - 10 am</label>
               </div>
             </template>
             <template v-else>
-              <div class="div__radio"> 
-                <input type="radio" name="time" id="time1" value="1" v-model="add_time" class="add__input" disabled>
+              <div class="div__radio">
+                <div class="div__as__radio__dis"></div> 
+                <!-- <input type="radio" name="time" id="time1" value="1" v-model="add_time" class="add__input" disabled> -->
                 <label for="time1"><span style="color: white">1</span>8 am - 10 am</label>
               </div>
             </template>
-            
+
             <template v-if="available_date.includes('10:00')">
               <div class="div__radio">
-                <input type="radio" name="time" id="time2" value="2" v-model="add_time" class="add__input">
+                <!-- <input type="radio" name="time" id="time2" value="2" v-model="add_time" class="add__input"> -->
+                <div class="div__as__radio"></div>
                 <label for="time2">10 am - 12 pm</label>
               </div>
             </template>
             <template v-else>
               <div class="div__radio">
-                <input type="radio" name="time" id="time2" value="2" v-model="add_time" class="add__input" disabled>
+                <div class="div__as__radio__dis"></div> 
+                <!-- <input type="radio" name="time" id="time2" value="2" v-model="add_time" class="add__input" disabled> -->
                 <label for="time2">10 am - 12 pm</label>
               </div>
             </template>
-            
+
             <template v-if="available_date.includes('12:00')">
               <div class="div__radio">
-                <input type="radio" name="time" id="time3" value="3" v-model="add_time" class="add__input">
+                <div class="div__as__radio"></div>
+                <!-- <input type="radio" name="time" id="time3" value="3" v-model="add_time" class="add__input"> -->
                 <label for="time3">12 pm - 14 pm</label>
               </div>
             </template>
             <template v-else>
               <div class="div__radio">
-                <input type="radio" name="time" id="time3" value="3" v-model="add_time" class="add__input" disabled>
+                <div class="div__as__radio__dis"></div> 
+                <!-- <input type="radio" name="time" id="time3" value="3" v-model="add_time" class="add__input" disabled> -->
                 <label for="time3">12 pm - 14 pm</label>
               </div>
             </template>
 
             <template v-if="available_date.includes('14:00')">
               <div class="div__radio">
-                <input type="radio" name="time" id="time4" value="4" v-model="add_time" class="add__input">
+                <div class="div__as__radio"></div>
+                <!-- <input type="radio" name="time" id="time4" value="4" v-model="add_time" class="add__input"> -->
                 <label for="time4">14 pm - 16 pm</label>
               </div>
             </template>
             <template v-else>
               <div class="div__radio">
-                <input type="radio" name="time" id="time4" value="4" v-model="add_time" class="add__input" disabled>
+                <div class="div__as__radio__dis"></div> 
+                <!-- <input type="radio" name="time" id="time4" value="4" v-model="add_time" class="add__input" disabled> -->
                 <label for="time4">14 pm - 16 pm</label>
               </div>
             </template>
 
             <template v-if="available_date.includes('16:00')">
               <div class="div__radio">
-                <input type="radio" name="time" id="time5" value="5" v-model="add_time" class="add__input">
+                <div class="div__as__radio"></div>
+                <!-- <input type="radio" name="time" id="time5" value="5" v-model="add_time" class="add__input"> -->
                 <label for="time5">16 pm - 18 pm</label>
               </div>
             </template>
             <template v-else>
               <div class="div__radio">
-                <input type="radio" name="time" id="time5" value="5" v-model="add_time" class="add__input" disabled>
+                <div class="div__as__radio__dis"></div> 
+                <!-- <input type="radio" name="time" id="time5" value="5" v-model="add_time" class="add__input" disabled> -->
                 <label for="time5">16 pm - 18 pm</label>
               </div>
             </template>
 
             <template v-if="available_date.includes('18:00')">
               <div class="div__radio">
-                <input type="radio" name="time" id="time6" value="6" v-model="add_time" class="add__input">
+                <div class="div__as__radio"></div>
+                <!-- <input type="radio" name="time" id="time6" value="6" v-model="add_time" class="add__input"> -->
                 <label for="time6">18 pm - 20 pm</label>
               </div>
             </template>
             <template v-else>
               <div class="div__radio">
-                <input type="radio" name="time" id="time6" value="6" v-model="add_time" class="add__input" disabled>
+                <div class="div__as__radio__dis"></div> 
+                <!-- <input type="radio" name="time" id="time6" value="6" v-model="add_time" class="add__input" disabled> -->
                 <label for="time6">18 pm - 20 pm</label>
               </div>
             </template>
@@ -421,12 +450,30 @@
         </div>
 
         <div style="width: 100%; display: flex; align-items: center; justify-content: center; margin-top: 10px; height: 160px;">
-          <template v-if="add_time != ''">
-            <button @click="defer_task_click" class="btn__task">Defer</button>
-          </template>
-          <template v-else>
-            <button @click="defer_task_click" class="btn__task" disabled>Defer</button>
-          </template>
+
+            <button @click="confirm_task" class="btn__task">Defer</button>
+        </div>
+      </div>
+
+      <div id="my-modal" class="modal">
+        <div class="modal-content">
+          <div class="modal-body">
+            <template v-if="date_unavailable">
+              <p><strong>Error!</strong></p>
+              <p>There are no more slots today, please choose an another date.</p>
+              <button @click=create_cancel class="list__btn1">OK</button>
+            </template>
+            <template v-else>
+              <p><strong>Choose a time!</strong></p>
+              <p>We are suggest {{ suggested_time }}. Is it convenient?</p>
+              <div>
+                <button @click="task_yes_defer" class="list__btn1">Yes</button>
+                <button @click="task_no" class="list__btn1">No</button>
+                <button @click=create_cancel class="list__btn1">Cancel</button>
+              </div>
+            </template>
+            
+          </div>
         </div>
       </div>
     </template>
@@ -434,11 +481,8 @@
     <!-- Архив (old статистика) -->
     <template v-if="login_status == true && statistics == true ">
       <div class="list__div__main">
-        <div class="main__buttons">
-          <button class="main__btn" @click="logout_func">Logout</button>
-          <button class="main__btn" @click="list_task_show">Main</button>
-          <button class="main__btn" @click="add_task_show">Add task</button>
-          <button class="main__btn" @click="statistic_show" style="background-color: bisque;">Archive</button>
+        <div class="calendar__div__back">
+          <button class="login__back" @click="list_task_show">Back</button>
         </div>
         <div class="list__task__main">
           <template v-for="(task, index) in received_tasks_done.tasks" :key="index">
@@ -595,6 +639,8 @@ export default {
       response_message: "",
       available_date: "",
       number_tickets: "5",
+      date_unavailable: false,
+      suggested_time: "",
 
       // переменные для списка задач
       received_tasks: [],
@@ -633,6 +679,8 @@ export default {
       // при открытии расширения
       this.login_func();
       //this.list_task_show();
+
+     
   },
 
   watch: {
@@ -750,6 +798,11 @@ export default {
         chrome.storage.local.set({ user_id: this.user_id.toString() }).then(() => {
           console.log(`Добавлен user_id ${this.user_id}`);
         });
+        if(this.google_email != ""){
+          chrome.storage.local.set({ google_token: this.google_token.toString() }).then(() => {
+            console.log(`Добавлен гугл ${this.google_token}`);
+          });
+        }
         this.welcome_show();
       }
     },
@@ -759,30 +812,67 @@ export default {
           chrome.storage.local.set({ user_id: this.user_id.toString() }).then(() => {
           console.log(`Добавлен user_id ${this.user_id}`);
         });
+        if(this.google_email != ""){
+          chrome.storage.local.set({ google_token: this.google_token.toString() }).then(() => {
+            console.log(`Добавлен гугл ${this.google_token}`);
+          });
+        }
         this.login_func();
       }
     },
 
-    add_google(){
-      chrome.identity.getAuthToken({ interactive: true },  (token) => {
-        this.google_token = token;
+    // пока рудимент
+    /*add_google(){
+      if(this.user_id != ""){
+          chrome.identity.getAuthToken({ interactive: true },  (token) => {
+          this.google_token = token;
 
-        let article = { user_id: this.user_id,
-                        auth_token: this.google_token,
-                      };
-        axios.post("http://startup-lab.me/add_google_data", article)
-          .then(response => { 
-                              if(Number(this.user_id) > 0){
-                                  chrome.storage.local.set({ user_id: this.user_id.toString() }).then(() => {
-                                  console.log(`Добавлен user_id ${this.user_id}`);
-                                });
-                              }
-                            })
-          .catch(error => { console.log(error.message); });
-      }); 
+          let article = { user_id: this.user_id,
+                          auth_token: this.google_token,
+                        };
+          axios.post("http://startup-lab.me/add_google_data", article)
+            .then(response => { 
+                                if(Number(this.user_id) > 0){
+                                    chrome.storage.local.set({ user_id: this.user_id.toString() }).then(() => {
+                                    console.log(`Добавлен user_id ${this.user_id}`);
+                                  });
+                                }
+
+                                if(this.google_email != ""){
+                                  chrome.storage.local.set({ google_token: this.google_token.toString() }).then(() => {
+                                    console.log(`Добавлен гугл ${this.google_token}`);
+                                  });
+                                }
+                              })
+            .catch(error => { console.log(error.message); });
+        });
+      }
+    },*/
+
+    refresh_google(){
+      chrome.storage.local.get(["google_token"]).then((result) => {
+          if(result['google_token']){
+            chrome.identity.getAuthToken({ interactive: true },  (token) => {
+              this.google_token = token;
+
+              let article = { user_id: this.user_id,
+                              auth_token: this.google_token,
+                            };
+              axios.post("http://startup-lab.me/add_google_data", article)
+                .then(response => { 
+                                    console.log("Токен успешно обновлён");
+                                  })
+                .catch(error => { console.log(error.message); });
+            });
+          }
+          else{
+            console.log("Ты авторизован не через гугл");
+          }
+        });
     },
 
-    add_notion(){
+    // пока рудимент
+    /*add_notion(){
       let article = { user_id: this.user_id,
                     };
       axios.post("http://startup-lab.me/redirect_to_notion", article)
@@ -794,7 +884,7 @@ export default {
       
                           })
         .catch(error => { console.log(error.message); });
-    },
+    },*/
 
     settings(){
       console.log("Заглушка");
@@ -802,7 +892,15 @@ export default {
 
     logout_func(){
       this.user_id = "";
-      chrome.storage.local.clear();
+      chrome.storage.local.remove(["user_id","google_token"],function(){
+      var error = chrome.runtime.lastError;
+          if (error) {
+              console.error(error);
+          }
+      });
+      this.google_token = "";
+      this.google_email = "";
+      this.google_id = "";
       this.login_show();
     },
 
@@ -839,6 +937,8 @@ export default {
       this.defer_task = false;
 
       this.check_available_date();
+
+      this.refresh_google();
     },
 
     statistic_show(){
@@ -883,13 +983,13 @@ export default {
       this.welcome = false;
       this.defer_task = false;
 
-      /*try{
+      try{
         let modal = document.querySelector('#my-modal');
         modal.style.display = 'none';
       }
       catch{
         console.log("Костыль");
-      };*/
+      };
       
 
       // здесь я получаю список задач
@@ -912,6 +1012,7 @@ export default {
 
       this.defer_task_id = id;
       this.check_available_date();
+      this.refresh_google();
     },
 
     // создать задачу
@@ -987,6 +1088,173 @@ export default {
       }
     },
 
+    confirm_task(){
+      if(this.available_date.length != 0){
+        this.date_unavailable = false;
+        this.suggested_time = this.available_date[0];
+        let modal = document.querySelector('#my-modal');
+        modal.style.display = 'block';
+      }
+      else{
+        let modal = document.querySelector('#my-modal');
+        modal.style.display = 'block';
+        this.date_unavailable = true;
+      }
+    },
+
+    task_no(){
+      let l = [];
+      for (let i = 1; i < this.available_date.length; i++){
+        l.push(this.available_date[i]);
+      }
+      this.available_date = l;
+      this.confirm_task();
+    },
+
+    task_yes(){
+  
+      let year = this.date.getFullYear();
+      let month = this.date.getMonth() + 1;
+      let day = this.date.getDate();
+
+      let hours = "";
+
+      if(this.suggested_time == "08:00"){
+        hours = "8";
+      }
+      else if(this.suggested_time == "10:00"){
+        hours = "10";
+      }
+      else if(this.suggested_time == "12:00"){
+        hours = "12";
+      }
+      else if(this.suggested_time == "14:00"){
+        hours = "14";
+      }
+      else if(this.suggested_time == "16:00"){
+        hours = "16";
+      }
+      else if(this.suggested_time == "18:00"){
+        hours = "18";
+      }
+
+      // дата задачи (строка) в формате %Y-%m-%d %H:%M:%S
+      let task_date = `${year}-${month}-${day} ${hours}:00:00`;
+
+      // текст задачи
+      let task_text = this.user_task;
+
+      console.log(task_date);
+      console.log(task_text);
+
+      this.number_tickets = Math.round(this.number_tickets);
+      if(this.number_tickets <= 0){
+        this.number_tickets = 5;
+      }
+
+      // post запрос бэку
+      let article = { user_id: this.user_id,
+                        header: task_text,
+                        start_time: task_date,
+                        task_num: this.number_tickets,
+                      };
+      axios.post("http://startup-lab.me/create_task", article)
+        .then(response => {
+          this.response_message = response.data; 
+          let load = document.querySelector('.loader'); 
+          load.style.display = 'none';
+
+          let article = { user_id: this.user_id, };
+          axios.post("http://startup-lab.me/get_user_tasks", article)
+            .then(response => {this.received_tasks = response.data;})
+            .catch(error => { console.log(error.message); });
+
+        })
+        .catch(error => { this.response_message = error.message; this.list_task_show(); });
+
+        let modal = document.querySelector('#my-modal');
+        modal.style.display = 'none';
+        this.date_unavailable = false;
+        this.suggested_time = "";
+                      
+        let load = document.querySelector('.loader'); 
+        load.style.display = 'block';
+        this.add_time = "";
+        this.list_task_show();
+   
+    },
+
+    task_yes_defer(){
+
+      let year = this.date.getFullYear();
+      let month = this.date.getMonth() + 1;
+      let day = this.date.getDate();
+
+      let hours = "";
+
+      if(this.suggested_time == "08:00"){
+        hours = "8";
+      }
+      else if(this.suggested_time == "10:00"){
+        hours = "10";
+      }
+      else if(this.suggested_time == "12:00"){
+        hours = "12";
+      }
+      else if(this.suggested_time == "14:00"){
+        hours = "14";
+      }
+      else if(this.suggested_time == "16:00"){
+        hours = "16";
+      }
+      else if(this.suggested_time == "18:00"){
+        hours = "18";
+      }
+
+      // дата задачи (строка) в формате %Y-%m-%d %H:%M:%S
+      let task_date = `${year}-${month}-${day} ${hours}:00:00`;
+
+      // post запрос бэку
+      let article = { user_id: this.user_id,
+                        task_id: this.defer_task_id,
+                        start_time: task_date,
+                      };
+      axios.post("http://startup-lab.me/move_task_time", article)
+        .then(response => {
+          this.response_message = response.data; 
+          let load = document.querySelector('.loader'); 
+          load.style.display = 'none';
+          let article = { user_id: this.user_id, };
+          axios.post("http://startup-lab.me/get_user_tasks", article)
+            .then(response => {this.received_tasks = response.data;})
+            .catch(error => { console.log(error.message); }); 
+        })
+        .catch(error => { this.response_message = error.message; this.list_task_show(); });
+
+        let modal = document.querySelector('#my-modal');
+        modal.style.display = 'none';
+        this.date_unavailable = false;
+        this.suggested_time = "";
+
+        let load = document.querySelector('.loader'); 
+        load.style.display = 'block';
+        this.add_time = "";
+        this.list_task_show();
+    },
+
+    create_cancel(){
+      try{
+        let modal = document.querySelector('#my-modal');
+        modal.style.display = 'none';
+      }
+      catch{
+        console.log("Костыль");
+      };
+      this.date_unavailable = false;
+      this.suggested_time = "";
+      this.check_available_date();
+    },
+
     check_available_date(){
       let year = this.date.getFullYear();
       let month = this.date.getMonth() + 1;
@@ -996,6 +1264,8 @@ export default {
                     };
       axios.post("http://startup-lab.me/get_available_time", article)
         .then(response => {this.available_date = response.data.time_list; console.log(this.check_available_date);
+
+          this.available_date = this.available_date.slice(0, -1); 
 
           let hours = "";
 
@@ -1161,10 +1431,6 @@ body{
   padding-right: 20px;
 }
 
-.settings__div:hover{
-  cursor: pointer;
-}
-
 .app{
   width: 350px;
   height: 100%;
@@ -1255,9 +1521,8 @@ body{
 
 .login__back{
   margin-top: 10px;
-  margin-left: 10px;
-  margin-left: 7px;
-  margin-bottom: 7px;
+  margin-left: 22px;
+  margin-bottom: -2px;
   background-color: #eaeaea;
   border: none;
   border-radius: 0.5rem;
@@ -1403,7 +1668,7 @@ body{
 
 .modal-content {
   margin: 10% auto;
-  width: 60%;
+  width: 71%;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
   animation-name: modalopen;
   animation-duration: var(--modal-duration);
@@ -1415,7 +1680,8 @@ body{
   border-radius: 5px;
   background: #fff;
   margin-top: 195px;
-  height: 235px;
+  height: 130px;
+  width: 210px;
 }
 
 @keyframes modalopen {
@@ -1777,5 +2043,22 @@ body{
   top: 60%;
   animation-delay: -0.4s;
 }
+
+.div__as__radio{
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: green;
+  margin: 5px;
+}
+
+.div__as__radio__dis{
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: red;
+  margin: 5px;
+}
+
 
 </style>
