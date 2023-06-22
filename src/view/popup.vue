@@ -90,16 +90,18 @@
     <!-- Формочка добавления задачи -->
     <template v-if="login_status == true && add_task == true">
       <div class="calendar__main__div">
-        <div class="calendar__div__back">
-          <button class="login__back" @click="list_task_show">Back</button>
+        <div class="main__buttons">
+          <button class="main__btn" @click="logout_func">Logout</button>
+          <button class="main__btn" @click="add_task_show">Add task</button>
+          <button class="main__btn" @click="list_task_show">Main</button>
         </div>
         <div class="calendar__div">
           <DatePicker v-model="date" mode="date" :min-date='new Date()' locale="en" is-dark/>
-          <div class="add__radio">
+          <!-- <div class="add__radio">
 
             <template v-if="available_date.includes('08:00')">
               <div class="div__radio"> 
-                <!-- <input type="radio" name="time" id="time1" value="1" v-model="add_time"  class="add__input"> -->
+              
                 <div class="div__as__radio"></div>
                 <label for="time1"><span style="color: white">1</span>8 am - 10 am</label>
               </div>
@@ -107,14 +109,14 @@
             <template v-else>
               <div class="div__radio">
                 <div class="div__as__radio__dis"></div> 
-                <!-- <input type="radio" name="time" id="time1" value="1" v-model="add_time" class="add__input" disabled> -->
+            
                 <label for="time1"><span style="color: white">1</span>8 am - 10 am</label>
               </div>
             </template>
             
             <template v-if="available_date.includes('10:00')">
               <div class="div__radio">
-                <!-- <input type="radio" name="time" id="time2" value="2" v-model="add_time" class="add__input"> -->
+             
                 <div class="div__as__radio"></div>
                 <label for="time2">10 am - 12 pm</label>
               </div>
@@ -122,7 +124,7 @@
             <template v-else>
               <div class="div__radio">
                 <div class="div__as__radio__dis"></div> 
-                <!-- <input type="radio" name="time" id="time2" value="2" v-model="add_time" class="add__input" disabled> -->
+             
                 <label for="time2">10 am - 12 pm</label>
               </div>
             </template>
@@ -130,14 +132,14 @@
             <template v-if="available_date.includes('12:00')">
               <div class="div__radio">
                 <div class="div__as__radio"></div>
-                <!-- <input type="radio" name="time" id="time3" value="3" v-model="add_time" class="add__input"> -->
+               
                 <label for="time3">12 pm - 14 pm</label>
               </div>
             </template>
             <template v-else>
               <div class="div__radio">
                 <div class="div__as__radio__dis"></div> 
-                <!-- <input type="radio" name="time" id="time3" value="3" v-model="add_time" class="add__input" disabled> -->
+             
                 <label for="time3">12 pm - 14 pm</label>
               </div>
             </template>
@@ -145,14 +147,14 @@
             <template v-if="available_date.includes('14:00')">
               <div class="div__radio">
                 <div class="div__as__radio"></div>
-                <!-- <input type="radio" name="time" id="time4" value="4" v-model="add_time" class="add__input"> -->
+       
                 <label for="time4">14 pm - 16 pm</label>
               </div>
             </template>
             <template v-else>
               <div class="div__radio">
                 <div class="div__as__radio__dis"></div> 
-                <!-- <input type="radio" name="time" id="time4" value="4" v-model="add_time" class="add__input" disabled> -->
+           
                 <label for="time4">14 pm - 16 pm</label>
               </div>
             </template>
@@ -160,14 +162,14 @@
             <template v-if="available_date.includes('16:00')">
               <div class="div__radio">
                 <div class="div__as__radio"></div>
-                <!-- <input type="radio" name="time" id="time5" value="5" v-model="add_time" class="add__input"> -->
+       
                 <label for="time5">16 pm - 18 pm</label>
               </div>
             </template>
             <template v-else>
               <div class="div__radio">
                 <div class="div__as__radio__dis"></div> 
-                <!-- <input type="radio" name="time" id="time5" value="5" v-model="add_time" class="add__input" disabled> -->
+         
                 <label for="time5">16 pm - 18 pm</label>
               </div>
             </template>
@@ -175,18 +177,18 @@
             <template v-if="available_date.includes('18:00')">
               <div class="div__radio">
                 <div class="div__as__radio"></div>
-                <!-- <input type="radio" name="time" id="time6" value="6" v-model="add_time" class="add__input"> -->
+       
                 <label for="time6">18 pm - 20 pm</label>
               </div>
             </template>
             <template v-else>
               <div class="div__radio">
                 <div class="div__as__radio__dis"></div> 
-                <!-- <input type="radio" name="time" id="time6" value="6" v-model="add_time" class="add__input" disabled> -->
+         
                 <label for="time6">18 pm - 20 pm</label>
               </div>
             </template>
-          </div>
+          </div> -->
         </div>
 
         <div class="add__task">
@@ -349,17 +351,19 @@
 
     <!-- Формочка чтобы отложить задачу -->
     <template v-if="login_status == true && defer_task == true">
-      <div class="calendar__div__back">
-        <button class="login__back" @click="list_task_show">Back</button>
-      </div>
+        
       <div class="calendar__main__div" style="border-top-left-radius: 0px; border-top-right-radius: 0px;">
+        <div class="main__buttons">
+          <button class="main__btn" @click="logout_func">Logout</button>
+          <button class="main__btn" @click="add_task_show">Add task</button>
+          <button class="main__btn" @click="list_task_show">Main</button>
+        </div>
         <div class="calendar__div">
           <DatePicker v-model="date" mode="date" :min-date='new Date()' locale="en" is-dark/>
-          <div class="add__radio">
-
+          <!-- <div class="add__radio">
             <template v-if="available_date.includes('08:00')">
               <div class="div__radio"> 
-                <!-- <input type="radio" name="time" id="time1" value="1" v-model="add_time"  class="add__input"> -->
+           
                 <div class="div__as__radio"></div>
                 <label for="time1"><span style="color: white">1</span>8 am - 10 am</label>
               </div>
@@ -367,14 +371,14 @@
             <template v-else>
               <div class="div__radio">
                 <div class="div__as__radio__dis"></div> 
-                <!-- <input type="radio" name="time" id="time1" value="1" v-model="add_time" class="add__input" disabled> -->
+          
                 <label for="time1"><span style="color: white">1</span>8 am - 10 am</label>
               </div>
             </template>
 
             <template v-if="available_date.includes('10:00')">
               <div class="div__radio">
-                <!-- <input type="radio" name="time" id="time2" value="2" v-model="add_time" class="add__input"> -->
+    
                 <div class="div__as__radio"></div>
                 <label for="time2">10 am - 12 pm</label>
               </div>
@@ -382,7 +386,7 @@
             <template v-else>
               <div class="div__radio">
                 <div class="div__as__radio__dis"></div> 
-                <!-- <input type="radio" name="time" id="time2" value="2" v-model="add_time" class="add__input" disabled> -->
+         
                 <label for="time2">10 am - 12 pm</label>
               </div>
             </template>
@@ -390,14 +394,14 @@
             <template v-if="available_date.includes('12:00')">
               <div class="div__radio">
                 <div class="div__as__radio"></div>
-                <!-- <input type="radio" name="time" id="time3" value="3" v-model="add_time" class="add__input"> -->
+          
                 <label for="time3">12 pm - 14 pm</label>
               </div>
             </template>
             <template v-else>
               <div class="div__radio">
                 <div class="div__as__radio__dis"></div> 
-                <!-- <input type="radio" name="time" id="time3" value="3" v-model="add_time" class="add__input" disabled> -->
+             
                 <label for="time3">12 pm - 14 pm</label>
               </div>
             </template>
@@ -405,14 +409,14 @@
             <template v-if="available_date.includes('14:00')">
               <div class="div__radio">
                 <div class="div__as__radio"></div>
-                <!-- <input type="radio" name="time" id="time4" value="4" v-model="add_time" class="add__input"> -->
+           
                 <label for="time4">14 pm - 16 pm</label>
               </div>
             </template>
             <template v-else>
               <div class="div__radio">
                 <div class="div__as__radio__dis"></div> 
-                <!-- <input type="radio" name="time" id="time4" value="4" v-model="add_time" class="add__input" disabled> -->
+         
                 <label for="time4">14 pm - 16 pm</label>
               </div>
             </template>
@@ -420,14 +424,14 @@
             <template v-if="available_date.includes('16:00')">
               <div class="div__radio">
                 <div class="div__as__radio"></div>
-                <!-- <input type="radio" name="time" id="time5" value="5" v-model="add_time" class="add__input"> -->
+          
                 <label for="time5">16 pm - 18 pm</label>
               </div>
             </template>
             <template v-else>
               <div class="div__radio">
                 <div class="div__as__radio__dis"></div> 
-                <!-- <input type="radio" name="time" id="time5" value="5" v-model="add_time" class="add__input" disabled> -->
+          
                 <label for="time5">16 pm - 18 pm</label>
               </div>
             </template>
@@ -435,21 +439,21 @@
             <template v-if="available_date.includes('18:00')">
               <div class="div__radio">
                 <div class="div__as__radio"></div>
-                <!-- <input type="radio" name="time" id="time6" value="6" v-model="add_time" class="add__input"> -->
+          
                 <label for="time6">18 pm - 20 pm</label>
               </div>
             </template>
             <template v-else>
               <div class="div__radio">
                 <div class="div__as__radio__dis"></div> 
-                <!-- <input type="radio" name="time" id="time6" value="6" v-model="add_time" class="add__input" disabled> -->
+
                 <label for="time6">18 pm - 20 pm</label>
               </div>
             </template>
-          </div>
+          </div> -->
         </div>
 
-        <div style="width: 100%; display: flex; align-items: center; justify-content: center; margin-top: 10px; height: 160px;">
+        <div style="width: 100%; display: flex; align-items: flex-start; justify-content: center; margin-top: 10px; height: 180px;">
 
             <button @click="confirm_task" class="btn__task">Defer</button>
         </div>
@@ -481,8 +485,10 @@
     <!-- Архив (old статистика) -->
     <template v-if="login_status == true && statistics == true ">
       <div class="list__div__main">
-        <div class="calendar__div__back">
-          <button class="login__back" @click="list_task_show">Back</button>
+        <div class="main__buttons">
+          <button class="main__btn" @click="logout_func">Logout</button>
+          <button class="main__btn" @click="add_task_show">Add task</button>
+          <button class="main__btn" @click="list_task_show">Main</button>
         </div>
         <div class="list__task__main">
           <template v-for="(task, index) in received_tasks_done.tasks" :key="index">
@@ -1506,7 +1512,7 @@ body{
 
 .btn__task{
   margin-left: 6px;
-  margin-bottom: 7px;
+  margin-bottom: 16px;
   background-color: #eaeaea;
   border: none;
   border-radius: 0.5rem;
@@ -1573,12 +1579,13 @@ body{
   cursor: pointer;
   margin-bottom: 6px;
   border-radius: 5px;
-  border: solid black 0.2ch;
-  background-color: #ffe7e7;
+  border: none;
+  background-color: rgb(56, 56, 56);
+  color: white;
 }
 
 .task__header__close:hover{
-  background-color: #ffb1b1;
+  background-color: rgb(137, 137, 137);
 }
 
 .task__div{
