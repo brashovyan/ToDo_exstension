@@ -97,98 +97,6 @@
         </div>
         <div class="calendar__div">
           <DatePicker v-model="date" mode="date" :min-date='new Date()' locale="en" is-dark/>
-          <!-- <div class="add__radio">
-
-            <template v-if="available_date.includes('08:00')">
-              <div class="div__radio"> 
-              
-                <div class="div__as__radio"></div>
-                <label for="time1"><span style="color: white">1</span>8 am - 10 am</label>
-              </div>
-            </template>
-            <template v-else>
-              <div class="div__radio">
-                <div class="div__as__radio__dis"></div> 
-            
-                <label for="time1"><span style="color: white">1</span>8 am - 10 am</label>
-              </div>
-            </template>
-            
-            <template v-if="available_date.includes('10:00')">
-              <div class="div__radio">
-             
-                <div class="div__as__radio"></div>
-                <label for="time2">10 am - 12 pm</label>
-              </div>
-            </template>
-            <template v-else>
-              <div class="div__radio">
-                <div class="div__as__radio__dis"></div> 
-             
-                <label for="time2">10 am - 12 pm</label>
-              </div>
-            </template>
-            
-            <template v-if="available_date.includes('12:00')">
-              <div class="div__radio">
-                <div class="div__as__radio"></div>
-               
-                <label for="time3">12 pm - 14 pm</label>
-              </div>
-            </template>
-            <template v-else>
-              <div class="div__radio">
-                <div class="div__as__radio__dis"></div> 
-             
-                <label for="time3">12 pm - 14 pm</label>
-              </div>
-            </template>
-
-            <template v-if="available_date.includes('14:00')">
-              <div class="div__radio">
-                <div class="div__as__radio"></div>
-       
-                <label for="time4">14 pm - 16 pm</label>
-              </div>
-            </template>
-            <template v-else>
-              <div class="div__radio">
-                <div class="div__as__radio__dis"></div> 
-           
-                <label for="time4">14 pm - 16 pm</label>
-              </div>
-            </template>
-
-            <template v-if="available_date.includes('16:00')">
-              <div class="div__radio">
-                <div class="div__as__radio"></div>
-       
-                <label for="time5">16 pm - 18 pm</label>
-              </div>
-            </template>
-            <template v-else>
-              <div class="div__radio">
-                <div class="div__as__radio__dis"></div> 
-         
-                <label for="time5">16 pm - 18 pm</label>
-              </div>
-            </template>
-
-            <template v-if="available_date.includes('18:00')">
-              <div class="div__radio">
-                <div class="div__as__radio"></div>
-       
-                <label for="time6">18 pm - 20 pm</label>
-              </div>
-            </template>
-            <template v-else>
-              <div class="div__radio">
-                <div class="div__as__radio__dis"></div> 
-         
-                <label for="time6">18 pm - 20 pm</label>
-              </div>
-            </template>
-          </div> -->
         </div>
 
         <div class="add__task">
@@ -241,6 +149,7 @@
           <button class="main__btn" @click="add_task_show">Add task</button>
           <button class="main__btn" @click="statistic_show">Archive</button>
         </div>
+        
         <div class="list__task__main">
           <template v-for="(task, index) in received_tasks.tasks" :key="index">
               <template v-if="index==0">
@@ -360,97 +269,6 @@
         </div>
         <div class="calendar__div">
           <DatePicker v-model="date" mode="date" :min-date='new Date()' locale="en" is-dark/>
-          <!-- <div class="add__radio">
-            <template v-if="available_date.includes('08:00')">
-              <div class="div__radio"> 
-           
-                <div class="div__as__radio"></div>
-                <label for="time1"><span style="color: white">1</span>8 am - 10 am</label>
-              </div>
-            </template>
-            <template v-else>
-              <div class="div__radio">
-                <div class="div__as__radio__dis"></div> 
-          
-                <label for="time1"><span style="color: white">1</span>8 am - 10 am</label>
-              </div>
-            </template>
-
-            <template v-if="available_date.includes('10:00')">
-              <div class="div__radio">
-    
-                <div class="div__as__radio"></div>
-                <label for="time2">10 am - 12 pm</label>
-              </div>
-            </template>
-            <template v-else>
-              <div class="div__radio">
-                <div class="div__as__radio__dis"></div> 
-         
-                <label for="time2">10 am - 12 pm</label>
-              </div>
-            </template>
-
-            <template v-if="available_date.includes('12:00')">
-              <div class="div__radio">
-                <div class="div__as__radio"></div>
-          
-                <label for="time3">12 pm - 14 pm</label>
-              </div>
-            </template>
-            <template v-else>
-              <div class="div__radio">
-                <div class="div__as__radio__dis"></div> 
-             
-                <label for="time3">12 pm - 14 pm</label>
-              </div>
-            </template>
-
-            <template v-if="available_date.includes('14:00')">
-              <div class="div__radio">
-                <div class="div__as__radio"></div>
-           
-                <label for="time4">14 pm - 16 pm</label>
-              </div>
-            </template>
-            <template v-else>
-              <div class="div__radio">
-                <div class="div__as__radio__dis"></div> 
-         
-                <label for="time4">14 pm - 16 pm</label>
-              </div>
-            </template>
-
-            <template v-if="available_date.includes('16:00')">
-              <div class="div__radio">
-                <div class="div__as__radio"></div>
-          
-                <label for="time5">16 pm - 18 pm</label>
-              </div>
-            </template>
-            <template v-else>
-              <div class="div__radio">
-                <div class="div__as__radio__dis"></div> 
-          
-                <label for="time5">16 pm - 18 pm</label>
-              </div>
-            </template>
-
-            <template v-if="available_date.includes('18:00')">
-              <div class="div__radio">
-                <div class="div__as__radio"></div>
-          
-                <label for="time6">18 pm - 20 pm</label>
-              </div>
-            </template>
-            <template v-else>
-              <div class="div__radio">
-                <div class="div__as__radio__dis"></div> 
-
-                <label for="time6">18 pm - 20 pm</label>
-              </div>
-            </template>
-          </div> -->
         </div>
 
         <div style="width: 100%; display: flex; align-items: flex-start; justify-content: center; margin-top: 10px; height: 180px;">
@@ -643,7 +461,7 @@ export default {
       answer: "",
       answer_error: "",
       response_message: "",
-      available_date: "",
+      available_date: [],
       number_tickets: "5",
       date_unavailable: false,
       suggested_time: "",
@@ -1021,79 +839,6 @@ export default {
       this.refresh_google();
     },
 
-    // создать задачу
-    create_task(){
-      if(this.add_time != ""){
-        let year = this.date.getFullYear();
-        let month = this.date.getMonth() + 1;
-        let day = this.date.getDate();
-        
-      
-        /* getHours не работает, поэтому костыли
-        let s = this.date.toString();
-        s = s.split(":");
-        let hours = s[0].slice(-2);
-        let minutes = s[1]*/
-
-        let hours = "";
-
-        if(this.add_time == "1"){
-          hours = "8";
-        }
-        else if(this.add_time == "2"){
-          hours = "10";
-        }
-        else if(this.add_time == "3"){
-          hours = "12";
-        }
-        else if(this.add_time == "4"){
-          hours = "14";
-        }
-        else if(this.add_time == "5"){
-          hours = "16";
-        }
-        else if(this.add_time == "6"){
-          hours = "18";
-        }
-
-        // дата задачи (строка) в формате %Y-%m-%d %H:%M:%S
-        let task_date = `${year}-${month}-${day} ${hours}:00:00`;
-
-        // текст задачи
-        let task_text = this.user_task;
-
-        this.number_tickets = Math.round(this.number_tickets);
-        if(this.number_tickets <= 0){
-          this.number_tickets = 5;
-        }
-
-        // post запрос бэку
-        let article = { user_id: this.user_id,
-                          header: task_text,
-                          start_time: task_date,
-                          task_num: this.number_tickets,
-                        };
-        axios.post("http://startup-lab.me/create_task", article)
-          .then(response => {
-            this.response_message = response.data; 
-            let load = document.querySelector('.loader'); 
-            load.style.display = 'none';
-
-            let article = { user_id: this.user_id, };
-            axios.post("http://startup-lab.me/get_user_tasks", article)
-              .then(response => {this.received_tasks = response.data;})
-              .catch(error => { console.log(error.message); });
-
-          })
-          .catch(error => { this.response_message = error.message; this.list_task_show(); });
-                        
-          let load = document.querySelector('.loader'); 
-          load.style.display = 'block';
-          this.add_time = "";
-          this.list_task_show();
-      }
-    },
-
     confirm_task(){
       if(this.available_date.length != 0){
         this.date_unavailable = false;
@@ -1123,35 +868,11 @@ export default {
       let month = this.date.getMonth() + 1;
       let day = this.date.getDate();
 
-      let hours = "";
-
-      if(this.suggested_time == "08:00"){
-        hours = "8";
-      }
-      else if(this.suggested_time == "10:00"){
-        hours = "10";
-      }
-      else if(this.suggested_time == "12:00"){
-        hours = "12";
-      }
-      else if(this.suggested_time == "14:00"){
-        hours = "14";
-      }
-      else if(this.suggested_time == "16:00"){
-        hours = "16";
-      }
-      else if(this.suggested_time == "18:00"){
-        hours = "18";
-      }
-
       // дата задачи (строка) в формате %Y-%m-%d %H:%M:%S
-      let task_date = `${year}-${month}-${day} ${hours}:00:00`;
+      let task_date = `${year}-${month}-${day} ${this.suggested_time}:00`;
 
       // текст задачи
       let task_text = this.user_task;
-
-      console.log(task_date);
-      console.log(task_text);
 
       this.number_tickets = Math.round(this.number_tickets);
       if(this.number_tickets <= 0){
@@ -1185,7 +906,6 @@ export default {
                       
         let load = document.querySelector('.loader'); 
         load.style.display = 'block';
-        this.add_time = "";
         this.list_task_show();
    
     },
@@ -1196,29 +916,8 @@ export default {
       let month = this.date.getMonth() + 1;
       let day = this.date.getDate();
 
-      let hours = "";
-
-      if(this.suggested_time == "08:00"){
-        hours = "8";
-      }
-      else if(this.suggested_time == "10:00"){
-        hours = "10";
-      }
-      else if(this.suggested_time == "12:00"){
-        hours = "12";
-      }
-      else if(this.suggested_time == "14:00"){
-        hours = "14";
-      }
-      else if(this.suggested_time == "16:00"){
-        hours = "16";
-      }
-      else if(this.suggested_time == "18:00"){
-        hours = "18";
-      }
-
       // дата задачи (строка) в формате %Y-%m-%d %H:%M:%S
-      let task_date = `${year}-${month}-${day} ${hours}:00:00`;
+      let task_date = `${year}-${month}-${day} ${this.suggested_time}:00`;
 
       // post запрос бэку
       let article = { user_id: this.user_id,
@@ -1244,7 +943,6 @@ export default {
 
         let load = document.querySelector('.loader'); 
         load.style.display = 'block';
-        this.add_time = "";
         this.list_task_show();
     },
 
@@ -1269,39 +967,7 @@ export default {
                       user_id: this.user_id,
                     };
       axios.post("http://startup-lab.me/get_available_time", article)
-        .then(response => {this.available_date = response.data.time_list; console.log(this.check_available_date);
-
-          this.available_date = this.available_date.slice(0, -1); 
-
-          let hours = "";
-
-          if(this.add_time == "1"){
-            hours = "8:00";
-          }
-          else if(this.add_time == "2"){
-            hours = "10:00";
-          }
-          else if(this.add_time == "3"){
-            hours = "12:00";
-          }
-          else if(this.add_time == "4"){
-            hours = "14:00";
-          }
-          else if(this.add_time == "5"){
-            hours = "16:00";
-          }
-          else if(this.add_time == "6"){
-            hours = "18:00";
-          } 
-
-          if(this.available_date.includes(hours)){
-            console.log("Yes");
-          }
-          else{
-            this.add_time = "";
-          }
-          
-        })
+        .then(response => {this.available_date = response.data.time_list; })
         .catch(error => { console.log(error.message); });
     },
 
@@ -1343,63 +1009,6 @@ export default {
       let fire = document.querySelectorAll('.firework'); 
       for(let f of fire){
         f.style.display = 'none';
-      }
-    },
-
-
-    defer_task_click(){
-      if(this.add_time != ""){
-        let year = this.date.getFullYear();
-        let month = this.date.getMonth() + 1;
-        let day = this.date.getDate();
-        let time_zone = this.date.getTimezoneOffset();
-
-        let hours = "";
-
-        if(this.add_time == "1"){
-          hours = "8";
-        }
-        else if(this.add_time == "2"){
-          hours = "10";
-        }
-        else if(this.add_time == "3"){
-          hours = "12";
-        }
-        else if(this.add_time == "4"){
-          hours = "14";
-        }
-        else if(this.add_time == "5"){
-          hours = "16";
-        }
-        else if(this.add_time == "6"){
-          hours = "18";
-        }
-
-        // дата задачи (строка) в формате %Y-%m-%d %H:%M:%S
-        let task_date = `${year}-${month}-${day} ${hours}:00:00`;
-
-        // post запрос бэку
-        let article = { user_id: this.user_id,
-                          task_id: this.defer_task_id,
-                          start_time: task_date,
-                        };
-        axios.post("http://startup-lab.me/move_task_time", article)
-          .then(response => {
-            this.response_message = response.data; 
-            let load = document.querySelector('.loader'); 
-            load.style.display = 'none';
-            let article = { user_id: this.user_id, };
-            axios.post("http://startup-lab.me/get_user_tasks", article)
-              .then(response => {this.received_tasks = response.data;})
-              .catch(error => { console.log(error.message); }); 
-          })
-          .catch(error => { this.response_message = error.message; this.list_task_show(); });
-
-          let load = document.querySelector('.loader'); 
-          load.style.display = 'block';
-          this.add_time = "";
-          this.list_task_show();
-        
       }
     },
 
